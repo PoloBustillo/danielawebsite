@@ -8,17 +8,44 @@ import {
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { Map, GoogleApiWrapper } from "google-maps-react";
-
+import { Map, Marker, Overlay } from "pigeon-maps";
 const mapStyles = {
   width: "100%",
   height: "30%",
 };
 
 const Social = (props) => {
-  console.log(props);
+  const MAPTILER_ACCESS_TOKEN = "dDN3ez3oCX5JE6lfSmrW";
+  const MAP_ID = "toner";
+
+  function mapTilerProvider(x, y, z, dpr) {
+    return `https://api.maptiler.com/maps/${MAP_ID}/256/${z}/${x}/${y}${
+      dpr >= 2 ? "@2x" : ""
+    }.png?key=${MAPTILER_ACCESS_TOKEN}`;
+  }
   return (
     <div className="social-container">
+      <div className="contact-data">
+        Consultorio: Colonia ex-Rancho Vaquerias
+        <Map
+          provider={mapTilerProvider}
+          defaultCenter={[19.00571, -98.24586]}
+          defaultZoom={12}
+          defaultWidth={400}
+          height={200}
+          defaultZoom={17}
+        >
+          <Marker
+            anchor={[19.00571, -98.24586]}
+            payload={1}
+            onClick={({ event, anchor, payload }) => {}}
+          />
+
+          <Overlay anchor={[50.879, 4.6997]} offset={[120, 79]}>
+            <img src="/corgiParticles3.png" width={50} height={50} alt="" />
+          </Overlay>
+        </Map>
+      </div>
       <Link href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">
         <FontAwesomeIcon fixedWidth size="2x" icon={faLinkedinIn} />
       </Link>
@@ -34,18 +61,7 @@ const Social = (props) => {
       <Link href="/">
         <FontAwesomeIcon fixedWidth size="2x" icon={faWhatsapp} />
       </Link>
-      <div className="contact-data">
-        Consultorio: Colonia ex-Rancho Vaquerias
-        <Map
-          google={props.google}
-          zoom={14}
-          style={mapStyles}
-          initialCenter={{
-            lat: -1.2884,
-            lng: 36.8233,
-          }}
-        />
-      </div>
+
       <style jsx>{`
         .socialContainer {
           color: #aaa;
@@ -58,6 +74,4 @@ const Social = (props) => {
   );
 };
 
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyDNt3UlPcC7doZjPZCnHI95QfU6hbIisDM",
-})(Social);
+export default Social;
