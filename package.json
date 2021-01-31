@@ -8,8 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "bootstrap": "^4.6.0",
+    "google-maps-react": "^2.0.6",
+    "hamburger-react": "^2.4.0",
     "next": "10.0.5",
+    "next-images": "^1.7.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-animated-cursor": "^2.1.8",
+    "react-bootstrap": "^1.4.3",
+    "react-burger-menu": "^3.0.3",
+    "react-calendar": "^3.3.0",
+    "react-dom": "17.0.1",
+    "react-lazy-hero": "^2.0.0",
+    "react-particle-image": "^1.0.1",
+    "react-scroll-detect": "^1.2.0",
+    "styled-components": "^5.2.1"
   }
 }
