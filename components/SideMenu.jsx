@@ -57,16 +57,7 @@ const SideMenu = (props) => {
           <FontAwesomeIcon icon={faPeopleArrows} /> Servicios
         </a>
       </Link>
-      <div
-        style={{
-          width: "100%",
-          borderTop: "solid #8a8a8a",
-          borderBottom: "solid #8a8a8a",
-          height: "10px",
-          right: "10%",
-          position: "relative",
-        }}
-      ></div>
+
       <Social></Social>
     </Menu>
   );

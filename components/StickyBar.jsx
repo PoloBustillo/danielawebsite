@@ -48,7 +48,7 @@ const StickyBar = ({ color = "white", setOpenMenu, isMenuOpen }) => {
           height={100}
           scale={1}
           entropy={0}
-          maxParticles={6000}
+          maxParticles={3000}
           particleOptions={particleOptions}
           mouseMoveForce={motionForce}
         />
