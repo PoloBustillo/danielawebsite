@@ -138,6 +138,7 @@ canvas {
   position: absolute;
   right: 12vw;
   z-index: 1040;
+  width: 70vw !important;
 }
 @keyframes animate {
   0% {
