@@ -46,7 +46,7 @@ const SectionOne = (props) => {
       </div>
       <div
         className="gifContainer"
-        style={{ top: "42vh", position: "relative" }}
+        style={{ top: "35vh", position: "relative" }}
       >
         <Image
           src={scrollDown}

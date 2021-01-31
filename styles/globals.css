@@ -3,7 +3,7 @@
 
 .menu-item {
   font-family: "Yanone Kaffeesatz";
-  font-size: 4vmin;
+  font-size: 6vmin;
   color: rgb(178 178 178);
   font-weight: 900;
 }
@@ -219,7 +219,7 @@ body {
   justify-content: center !important;
   align-items: center !important;
 }
-@media (max-width: 850px) {
+@media (max-width: 950px) {
   .sectionButtonsContainer {
     display: none !important;
   }
@@ -255,7 +255,7 @@ body {
   font-family: "Yanone Kaffeesatz" !important;
 }
 .buttonHero:hover {
-  color: yellow !important;
+  color: #ffd43b !important;
   border-color: rgb(255, 255, 255) !important;
   background-color: rgba(0, 0, 0, 0.2) !important;
   padding: 1rem 3rem !important;
@@ -312,12 +312,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
   cursor: grab !important;
   color: white;
   text-decoration: none;
-  margin: 10% 10%;
+  margin: 5% 10%;
 }
 .bm-item:hover {
   display: inline-block;
   cursor: grab !important;
-  color: yellow;
+  color: #ffd43b;
   text-decoration: none;
 }
 .bm-item:active {

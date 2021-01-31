@@ -25,38 +25,40 @@ const SideMenu = (props) => {
       customBurgerIcon={false}
       width="50vw"
     >
-      <Link id="home" href="/">
-        <a
-          onClick={() => props.setOpen(false)}
-          className="bm-item menu-item element-animation"
-        >
-          <FontAwesomeIcon icon={faHome} /> Home
-        </a>
-      </Link>
-      <Link Link id="about" className="menu-item element-animation" href="/">
-        <a
-          onClick={() => props.setOpen(false)}
-          className="bm-item menu-item element-animation"
-        >
-          <FontAwesomeIcon icon={faCalendarAlt} /> Citas
-        </a>
-      </Link>
-      <Link id="contact" className="menu-item element-animation" href="/">
-        <a
-          onClick={() => props.setOpen(false)}
-          className="bm-item menu-item element-animation"
-        >
-          <FontAwesomeIcon icon={faFilm} /> Recursos
-        </a>
-      </Link>
-      <Link className="menu-item element-animation" href="/">
-        <a
-          onClick={() => props.setOpen(false)}
-          className="bm-item menu-item element-animation"
-        >
-          <FontAwesomeIcon icon={faPeopleArrows} /> Servicios
-        </a>
-      </Link>
+      <div className="menu-container">
+        <Link id="home" href="/">
+          <a
+            onClick={() => props.setOpen(false)}
+            className="bm-item menu-item element-animation"
+          >
+            <FontAwesomeIcon icon={faHome} /> Home
+          </a>
+        </Link>
+        <Link Link id="about" className="menu-item element-animation" href="/">
+          <a
+            onClick={() => props.setOpen(false)}
+            className="bm-item menu-item element-animation"
+          >
+            <FontAwesomeIcon icon={faCalendarAlt} /> Citas
+          </a>
+        </Link>
+        <Link id="contact" className="menu-item element-animation" href="/">
+          <a
+            onClick={() => props.setOpen(false)}
+            className="bm-item menu-item element-animation"
+          >
+            <FontAwesomeIcon icon={faFilm} /> Recursos
+          </a>
+        </Link>
+        <Link className="menu-item element-animation" href="/">
+          <a
+            onClick={() => props.setOpen(false)}
+            className="bm-item menu-item element-animation"
+          >
+            <FontAwesomeIcon icon={faPeopleArrows} /> Servicios
+          </a>
+        </Link>
+      </div>
 
       <Social></Social>
     </Menu>

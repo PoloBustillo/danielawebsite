@@ -46,28 +46,43 @@ const Social = (props) => {
           </Overlay>
         </Map>
       </div>
-      <Link href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">
-        <FontAwesomeIcon fixedWidth size="2x" icon={faLinkedinIn} />
-      </Link>
-      <Link href="/">
-        <FontAwesomeIcon fixedWidth size="2x" icon={faAt} />
-      </Link>
-      <Link href="/">
-        <FontAwesomeIcon fixedWidth size="2x" icon={faFacebookMessenger} />
-      </Link>
-      <Link href="/">
-        <FontAwesomeIcon fixedWidth size="2x" icon={faInstagram} />
-      </Link>
-      <Link href="/">
-        <FontAwesomeIcon fixedWidth size="2x" icon={faWhatsapp} />
-      </Link>
+      <div className="icons-container">
+        <Link href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">
+          <FontAwesomeIcon fixedWidth size="x" icon={faLinkedinIn} />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon fixedWidth size="x" icon={faAt} />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon fixedWidth size="x" icon={faFacebookMessenger} />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon fixedWidth size="x" icon={faInstagram} />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon fixedWidth size="x" icon={faWhatsapp} />
+        </Link>
+      </div>
 
       <style jsx>{`
-        .socialContainer {
+        .social-container {
           color: #aaa;
+          position: absolute;
+          margin: auto;
+          padding: 0;
+          width: 96%;
+          bottom: 0;
         }
         .contact-data {
           font-family: "Open Sans Condensed", sans-serif;
+          position: realtive;
+        }
+        .icons-container {
+          bottom: 5%;
+          color: rgb(178 178 178, 0.8);
+          position: realtive;
+          left: 10%;
+          font-size: 3vmax;
         }
       `}</style>
     </div>
