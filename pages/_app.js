@@ -1,7 +1,8 @@
+import "../styles/timeline.css";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
 });

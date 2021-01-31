@@ -6,7 +6,7 @@ import Image from "next/image";
 import scrollDown from "public/scroll-down3.gif";
 import "react-calendar/dist/Calendar.css";
 
-const SectionOne = (props) => {
+const SectionHome = (props) => {
   const [value, onChange] = useState(new Date());
   return (
     <LazyHero
@@ -64,6 +64,6 @@ const SectionOne = (props) => {
   );
 };
 
-SectionOne.propTypes = {};
+SectionHome.propTypes = {};
 
-export default SectionOne;
+export default SectionHome;

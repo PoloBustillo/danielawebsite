@@ -255,7 +255,7 @@ body {
   font-family: "Yanone Kaffeesatz" !important;
 }
 .buttonHero:hover {
-  color: #ffd43b !important;
+  color: yellow !important;
   border-color: rgb(255, 255, 255) !important;
   background-color: rgba(0, 0, 0, 0.2) !important;
   padding: 1rem 3rem !important;
@@ -312,12 +312,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
   cursor: grab !important;
   color: white;
   text-decoration: none;
-  margin: 5% 10%;
+  margin: 5% 5%;
 }
 .bm-item:hover {
   display: inline-block;
   cursor: grab !important;
-  color: #ffd43b;
+  color: yellow;
   text-decoration: none;
 }
 .bm-item:active {

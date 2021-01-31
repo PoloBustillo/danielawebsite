@@ -32,7 +32,7 @@ const Social = (props) => {
           defaultCenter={[19.00571, -98.24586]}
           defaultZoom={12}
           defaultWidth={400}
-          height={200}
+          height={180}
           defaultZoom={17}
         >
           <Marker
@@ -48,19 +48,19 @@ const Social = (props) => {
       </div>
       <div className="icons-container">
         <Link href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">
-          <FontAwesomeIcon fixedWidth size="x" icon={faLinkedinIn} />
+          <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
         </Link>
         <Link href="/">
-          <FontAwesomeIcon fixedWidth size="x" icon={faAt} />
+          <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
         </Link>
         <Link href="/">
-          <FontAwesomeIcon fixedWidth size="x" icon={faFacebookMessenger} />
+          <FontAwesomeIcon fixedWidth size="1x" icon={faFacebookMessenger} />
         </Link>
         <Link href="/">
-          <FontAwesomeIcon fixedWidth size="x" icon={faInstagram} />
+          <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
         </Link>
         <Link href="/">
-          <FontAwesomeIcon fixedWidth size="x" icon={faWhatsapp} />
+          <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
         </Link>
       </div>
 
