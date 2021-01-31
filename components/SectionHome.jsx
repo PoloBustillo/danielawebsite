@@ -42,7 +42,7 @@ const SectionHome = (props) => {
         <h1 className="title border-button" style={{ color: "white" }}>
           Psic. Daniela Diaz Merino
         </h1>
-        <h6 style={{ color: "white" }}>Puebla, Pue.</h6>
+        <h6 style={{ color: "white" }}>Puebla, Mexico.</h6>
       </div>
       <div
         className="gifContainer"

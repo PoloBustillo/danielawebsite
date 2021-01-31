@@ -15,19 +15,18 @@ const mapStyles = {
 };
 
 const Social = (props) => {
-  const MAPTILER_ACCESS_TOKEN = "dDN3ez3oCX5JE6lfSmrW";
+  /* const MAPTILER_ACCESS_TOKEN = "dDN3ez3oCX5JE6lfSmrW";
   const MAP_ID = "toner";
 
   function mapTilerProvider(x, y, z, dpr) {
     return `https://api.maptiler.com/maps/${MAP_ID}/256/${z}/${x}/${y}${
       dpr >= 2 ? "@2x" : ""
     }.png?key=${MAPTILER_ACCESS_TOKEN}`;
-  }
+  } */
   return (
     <div className="social-container">
       <div className="contact-data">
-        Consultorio: Colonia ex-Rancho Vaquerias
-        <Map
+        {/*<Map
           provider={mapTilerProvider}
           defaultCenter={[19.00571, -98.24586]}
           defaultZoom={12}
@@ -44,27 +43,51 @@ const Social = (props) => {
           <Overlay anchor={[50.879, 4.6997]} offset={[120, 79]}>
             <img src="/corgiParticles3.png" width={50} height={50} alt="" />
           </Overlay>
-        </Map>
+        </Map>*/}
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
+          frameBorder="0"
+          style={{ border: "0", height: "35vh", width: "40vw" }}
+          allowFullScreen={false}
+          aria-hidden="false"
+          tabIndex="0"
+        ></iframe>
       </div>
       <div className="icons-container">
-        <Link href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">
-          <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
-        </Link>
-        <Link href="/">
-          <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
-        </Link>
-        <Link href="/">
-          <FontAwesomeIcon fixedWidth size="1x" icon={faFacebookMessenger} />
-        </Link>
-        <Link href="/">
-          <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
-        </Link>
-        <Link href="/">
-          <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
-        </Link>
+        <span id="social-icon">
+          <Link href="https://linkedin.com/in/daniela-diaz-408967144">
+            <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="mailto:danieladimersic@gmail.com">
+            <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="https://www.facebook.com/nida.niela">
+            <FontAwesomeIcon fixedWidth size="1x" icon={faFacebookMessenger} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="https://www.instagram.com/psic.danielaedm/">
+            <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+            <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
+          </Link>
+        </span>
       </div>
 
       <style jsx>{`
+        #social-icon:hover {
+          color: yellow;
+        }
+        #social-icon:active {
+          cursor: grabbing;
+        }
         .social-container {
           color: #aaa;
           position: absolute;
