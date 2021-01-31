@@ -57,7 +57,7 @@ const SectionOne = (props) => {
       </div>
       <style jsx>{`
         .sectionButtonsContainer {
-          width: 70vw;
+          width: 70vw !important;
         }
       `}</style>
     </LazyHero>
