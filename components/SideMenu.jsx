@@ -26,8 +26,9 @@ const SideMenu = (props) => {
       width="50vw"
     >
       <div className="menu-container">
-        <Link id="home" href="/">
+        <Link id="home" shallow href="/#sectionHome">
           <a
+            href="/#sectionHome"
             onClick={() => props.setOpen(false)}
             className="bm-item menu-item element-animation"
           >
@@ -50,7 +51,11 @@ const SideMenu = (props) => {
             <FontAwesomeIcon icon={faFilm} /> Recursos
           </a>
         </Link>
-        <Link className="menu-item element-animation" href="/">
+        <Link
+          className="menu-item element-animation"
+          shallow
+          href="/#sectionServices"
+        >
           <a
             onClick={() => props.setOpen(false)}
             className="bm-item menu-item element-animation"

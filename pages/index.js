@@ -1,12 +1,10 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import SectionHome from "components/SectionHome";
-import SideMenu from "../components/SideMenu";
-import StickyBar from "../components/StickyBar";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import SectionResume from "components/SectionResume";
+import SideMenu from "components/SideMenu";
+import StickyBar from "components/StickyBar";
+import SectionServices from "components/SectionServices";
 
 export default function Home() {
   const [color, setColor] = useState();
@@ -34,58 +32,8 @@ export default function Home() {
       ></StickyBar>
 
       <SectionHome></SectionHome>
-
-      <div id="section2">
-        <VerticalTimeline>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "rgb(33, 150, 243)",
-              color: "#fff",
-            }}
-            contentArrowStyle={{
-              borderRight: "7px solid  rgb(33, 150, 243)",
-            }}
-            date="2011 - present"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "rgb(33, 150, 243)",
-              color: "#fff",
-            }}
-            contentArrowStyle={{
-              borderRight: "7px solid  rgb(33, 150, 243)",
-            }}
-            date="2011 - present"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
-          </VerticalTimelineElement>
-        </VerticalTimeline>
-      </div>
-      <style jsx>{`
-        #section2 {
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-      `}</style>
+      <SectionServices></SectionServices>
+      <SectionResume></SectionResume>
     </div>
   );
 }
