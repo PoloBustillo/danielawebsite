@@ -5,8 +5,8 @@ const SectionServices = (props) => {
   return (
     <div id="sectionServices">
       <h1 className="section-title header ">
-        <div>Servicios Psicologicos </div>
-        <div>para</div> la Comunidad
+        <div>Servicios</div>
+        <div>OTRO TEXTO</div>
       </h1>
       <style jsx>{`
         #sectionServices {
