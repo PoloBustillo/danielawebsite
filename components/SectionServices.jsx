@@ -23,6 +23,19 @@ const parallaxData = [
     ],
   },
 ];
+const parallaxData3 = [
+  {
+    start: "self",
+    end: 5000,
+    properties: [
+      {
+        startValue: "#181923",
+        endValue: "#ddd",
+        property: "backgroundColor",
+      },
+    ],
+  },
+];
 const parallaxData2 = [
   {
     start: 0,
@@ -44,29 +57,29 @@ const parallaxData2 = [
 
 const SectionServices = (props) => {
   return (
-    <div id="sectionServices">
-      <Plx className="titleParallax" parallaxData={parallaxData}>
+    <Plx className="titleParallax" parallaxData={parallaxData3}>
+      <div id="sectionServices">
         <h1 className="section-title header">
           <div>SERVICIOS</div>
           <div>PROFESIONALES</div>
         </h1>
-      </Plx>
-      <Plx className="imageParallax" parallaxData={parallaxData2}>
-        <Image src={Corgi} alt="Sigue hacia abajo" width={100} height={100} />
-      </Plx>
-      <style jsx>{`
-        #sectionServices {
-          margin-top: -9vh;
-          background-color: #1d1f20;
-          height: 1000px;
-        }
-        .section-title {
-          padding-top: 20vh;
-          text-align: center;
-          margin-block-end: 0;
-        }
-      `}</style>
-    </div>
+
+        <Plx className="imageParallax" parallaxData={parallaxData2}>
+          <Image src={Corgi} alt="Sigue hacia abajo" width={100} height={100} />
+        </Plx>
+        <style jsx>{`
+          #sectionServices {
+            margin-top: -9vh;
+            height: 1000px;
+          }
+          .section-title {
+            padding-top: 40vh;
+            text-align: center;
+            margin-block-end: 0;
+          }
+        `}</style>
+      </div>
+    </Plx>
   );
 };
 

@@ -168,7 +168,7 @@ canvas {
 .sectionButtonsContainer {
   top: 0;
   position: absolute;
-  right: 12vw;
+  right: 30vw;
   z-index: 1040;
   width: 70vw !important;
 }

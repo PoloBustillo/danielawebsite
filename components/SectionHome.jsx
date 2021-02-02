@@ -96,7 +96,11 @@ const SectionHome = (props) => {
         </div>
         <style jsx>{`
           .sectionButtonsContainer {
-            width: 70vw !important;
+            width: 100vw !important;
+            top: 0;
+            position: absolute;
+            right: 30vw;
+            z-index: 1040;
           }
         `}</style>
       </LazyHero>
