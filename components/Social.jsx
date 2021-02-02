@@ -15,7 +15,7 @@ const mapStyles = {
 };
 
 const Social = (props) => {
-  /* const MAPTILER_ACCESS_TOKEN = "dDN3ez3oCX5JE6lfSmrW";
+  /* const MAPTILER_ACCESS_TOKEN = "";
   const MAP_ID = "toner";
 
   function mapTilerProvider(x, y, z, dpr) {

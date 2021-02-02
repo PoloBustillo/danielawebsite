@@ -4,10 +4,13 @@ import PropTypes from "prop-types";
 import LazyHero from "react-lazy-hero";
 import Image from "next/image";
 import scrollDown from "public/scroll-down3.gif";
-import "react-calendar/dist/Calendar.css";
+import Link from "next/link";
+import { particleOptions, motionForce } from "../utils/particles";
+import ParticleImage from "react-particle-image";
 
 const SectionHome = (props) => {
-  const [value, onChange] = useState(new Date());
+  const [style, setStyle] = useState({ display: "none" });
+  const [style2, setStyle2] = useState({ display: "block" });
   return (
     <div id="sectionHome">
       <LazyHero
@@ -21,6 +24,35 @@ const SectionHome = (props) => {
         imageSrc="/heroImage.jpg"
       >
         <Row className="sectionButtonsContainer">
+          <div>
+            <img
+              style={style2}
+              src="/logonobg.png"
+              width="100"
+              height="100"
+              className="align-top"
+              alt="Daniela Díaz Merino Psicóloga"
+              onMouseEnter={(e) => {
+                setStyle({ display: "block" });
+                setStyle2({ display: "none" });
+              }}
+            />
+            <ParticleImage
+              onMouseLeave={(e) => {
+                setStyle({ display: "none" });
+                setStyle2({ display: "block" });
+              }}
+              style={style}
+              src={"/logonobgsmall.png"}
+              width={100}
+              height={100}
+              scale={1}
+              entropy={0}
+              maxParticles={3000}
+              particleOptions={particleOptions}
+              mouseMoveForce={motionForce}
+            />
+          </div>
           <Col className="heroButtonContainer">
             <Button className="buttonHero element-animation">CITAS</Button>
           </Col>
@@ -28,7 +60,11 @@ const SectionHome = (props) => {
             <Button className="buttonHero element-animation">MATERIAL</Button>
           </Col>
           <Col className="heroButtonContainer">
-            <Button className="buttonHero element-animation">SERVICIOS</Button>
+            <Link href="/#sectionServices">
+              <Button className="buttonHero element-animation">
+                SERVICIOS
+              </Button>
+            </Link>
           </Col>
         </Row>
         <div
@@ -49,12 +85,14 @@ const SectionHome = (props) => {
           className="gifContainer"
           style={{ top: "35vh", position: "relative" }}
         >
-          <Image
-            src={scrollDown}
-            alt="Sigue hacia abajo"
-            width={100}
-            height={100}
-          />
+          <Link href="/#sectionServices">
+            <Image
+              src={scrollDown}
+              alt="Sigue hacia abajo"
+              width={100}
+              height={100}
+            />
+          </Link>
         </div>
         <style jsx>{`
           .sectionButtonsContainer {

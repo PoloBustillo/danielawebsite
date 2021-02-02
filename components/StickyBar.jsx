@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { particleOptions, motionForce } from "../utils/particles";
-import ParticleImage from "react-particle-image";
+
 import { Sling as Hamburger } from "hamburger-react";
 
 const StickyBar = ({ color = "white", setOpenMenu, isMenuOpen }) => {
-  const [style, setStyle] = useState({ display: "none" });
-  const [style2, setStyle2] = useState({ display: "block" });
   const [isOpen, setOpen] = useState(isMenuOpen);
 
   return (
@@ -19,40 +15,6 @@ const StickyBar = ({ color = "white", setOpenMenu, isMenuOpen }) => {
         margin: "2% 2%",
       }}
     >
-      <div
-        onMouseEnter={(e) => {
-          setStyle({ display: "block" });
-          setStyle2({ display: "none" });
-        }}
-      >
-        <img
-          style={style2}
-          src="/logonobg.png"
-          width="100"
-          height="100"
-          className="align-top"
-          alt="Daniela Díaz Merino Psicóloga"
-          onMouseEnter={(e) => {
-            setStyle({ display: "block" });
-            setStyle2({ display: "none" });
-          }}
-        />
-        <ParticleImage
-          onMouseLeave={(e) => {
-            setStyle({ display: "none" });
-            setStyle2({ display: "block" });
-          }}
-          style={style}
-          src={"/logonobgsmall.png"}
-          width={100}
-          height={100}
-          scale={1}
-          entropy={0}
-          maxParticles={3000}
-          particleOptions={particleOptions}
-          mouseMoveForce={motionForce}
-        />
-      </div>
       <div
         aria-controls="responsive-navbar-nav"
         className="toggle-nav"
