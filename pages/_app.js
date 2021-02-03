@@ -19,8 +19,7 @@ function MyApp({ Component, pageProps }) {
         appId="430433931632815"
         htmlRef="messengerRef"
         minimized={true}
-        themeColor="#000000"
-        loggedInGreeting="Hola, Bienvenido a Leolandia, estamos atento a cualquier duda, responderemos lo mas pronto posible"
+        loggedInGreeting="Hola, Bienvenido al cchat de la psicóloga Daniela Diaz, estamos atentos a cualquier duda, responderemos lo mas pronto posible"
         greetingDialogDisplay="fade"
         language="es_LA"
         shouldShowDialog={false}
