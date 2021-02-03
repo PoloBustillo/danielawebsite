@@ -7,7 +7,7 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 });
 
 export function reportWebVitals(metric) {
-  console.log(metric);
+  //console.log(metric);
 }
 
 function MyApp({ Component, pageProps }) {

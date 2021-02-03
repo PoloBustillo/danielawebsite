@@ -7,6 +7,10 @@ import scrollDown from "public/scroll-down3.gif";
 import Link from "next/link";
 import { particleOptions, motionForce } from "../utils/particles";
 import ParticleImage from "react-particle-image";
+import dynamic from "next/dynamic";
+const LogoMobile = dynamic(() => import("../components/LogoMobile"), {
+  ssr: false,
+});
 
 const SectionHome = (props) => {
   const [style, setStyle] = useState({ display: "none" });
@@ -73,6 +77,7 @@ const SectionHome = (props) => {
             top: "40vh",
           }}
         >
+          <LogoMobile></LogoMobile>
           <h5 style={{ color: "white", letterSpacing: "3px" }}>
             UNA VIDA LLENA DE SALUD EMPIEZA CON UNA MENTE SALUDABLE.
           </h5>
@@ -97,7 +102,8 @@ const SectionHome = (props) => {
         <style jsx>{`
           .sectionButtonsContainer {
             width: 100vw !important;
-            top: 0;
+            top: 0;import LogoMobile from './LogoMobile';
+
             position: absolute;
             right: 30vw;
             z-index: 1040;
