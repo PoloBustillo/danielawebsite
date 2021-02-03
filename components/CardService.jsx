@@ -28,7 +28,7 @@ const CardService = (props) => {
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
       <Card.Footer>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Haz tu cita!!!</Button>
       </Card.Footer>
     </Card>
   );
