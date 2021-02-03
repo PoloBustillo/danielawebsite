@@ -26,7 +26,7 @@ const parallaxModeFromLeft = [
     properties: [
       {
         startValue: -150,
-        endValue: 25,
+        endValue: 12.5,
         unit: "vw",
         property: "translateX",
       },
@@ -41,7 +41,7 @@ const parallaxModeFromRight = [
     properties: [
       {
         startValue: 150,
-        endValue: 0,
+        endValue: 12.5,
         unit: "vw",
         property: "translateX",
       },
@@ -53,10 +53,12 @@ const SectionServices = (props) => {
   return (
     <Plx className="titleParallax" parallaxData={parallaxDataColor}>
       <div id="sectionServices">
-        <h1 className="section-title header">
-          <div>SERVICIOS</div>
-          <div>PROFESIONALES</div>
-        </h1>
+        <Tilt>
+          <h1 className="section-title header">
+            <div>SERVICIOS</div>
+            <div>PROFESIONALES</div>
+          </h1>
+        </Tilt>
 
         <Plx className="imageParallax" parallaxData={parallaxModeFromLeft}>
           <CardService></CardService>

@@ -6,7 +6,14 @@ import Image from "next/image";
 
 const CardService = (props) => {
   return (
-    <Card style={{ width: "75vw", margin: "10vh 0" }}>
+    <Card
+      style={{
+        width: "75vw",
+        margin: "10vh 0",
+        backgroundColor: "transparent",
+        color: "white",
+      }}
+    >
       <Card.Header>Featured</Card.Header>
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

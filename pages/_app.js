@@ -1,6 +1,7 @@
 import "../styles/timeline.css";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import dynamic from "next/dynamic";
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
@@ -13,6 +14,20 @@ export function reportWebVitals(metric) {
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <MessengerCustomerChat
+        pageId="106715554719583"
+        appId="430433931632815"
+        htmlRef="messengerRef"
+        minimized={true}
+        themeColor="#000000"
+        loggedInGreeting="Hola, Bienvenido a Leolandia, estamos atento a cualquier duda, responderemos lo mas pronto posible"
+        greetingDialogDisplay="fade"
+        language="es_LA"
+        shouldShowDialog={false}
+        onCustomerChatDialogShow={(data) => {
+          console.log("FB CHAT", data);
+        }}
+      />
       <div style={{ zIndex: "1100" }}>
         <AnimatedCursor
           innerSize={18}
