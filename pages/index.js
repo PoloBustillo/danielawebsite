@@ -8,6 +8,7 @@ import SectionServices from "components/SectionServices";
 import axios from "axios";
 
 export default function Home(props) {
+  console.log("PROPS", props);
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
 
@@ -44,26 +45,29 @@ export const getStaticProps = async (context) => {
     const { data } = await axios.get(
       process.env.NEXT_SERVER_CMS_URL + "servicios"
     );
-    const dataMapped = data.map((tratamiento) => {
-      if (tratamiento.habilitado)
-        return {
+    const dataMapped = data.reduce(function (filtered, tratamiento) {
+      if (tratamiento.habilitado) {
+        var someNewValue = {
           contenido: tratamiento.Descripcion,
           tipoTerapia: tratamiento.Subtitulo,
           terapiaCategoria: tratamiento.Titulo,
           precio: tratamiento.costo,
           id: tratamiento.id,
-          imagen: tratamiento.Imagen[0]?.formats.medium
-            ? tratamiento.Imagen[0].formats.medium.url
-            : tratamiento.Imagen[0].url,
+          imagen: tratamiento.Imagen[0].url,
         };
-    });
+        filtered.push(someNewValue);
+      }
+      return filtered;
+    }, []);
+
+    console.log(dataMapped);
     return {
       props: {
         terapias: dataMapped,
       },
-      revalidate: 60,
     };
   } catch (error) {
+    console.log("Error", error);
     return {
       props: {
         terapias: [],
