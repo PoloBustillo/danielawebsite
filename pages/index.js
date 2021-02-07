@@ -8,7 +8,6 @@ import SectionServices from "components/SectionServices";
 import axios from "axios";
 
 export default function Home(props) {
-  console.log("PROPS:", props);
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
 
@@ -41,7 +40,6 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async (context) => {
-  console.log("STATIC");
   try {
     const { data } = await axios.get(
       process.env.NEXT_SERVER_CMS_URL + "servicios"
@@ -59,10 +57,9 @@ export const getStaticProps = async (context) => {
             : tratamiento.Imagen[0].url,
         };
     });
-    console.log("DATA", dataMapped);
     return {
       props: {
-        terapias: dataMapped,
+        terapias: data,
       },
     };
   } catch (error) {
