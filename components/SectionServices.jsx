@@ -60,7 +60,15 @@ const SectionServices = (props) => {
           </h1>
         </Tilt>
         {props.terapias.map((terapia, index) => {
-          if (index % 2 == 0) {
+          if (index == 0) {
+            return (
+              <CardService
+                style={{ marginLeft: "12.5vw !important" }}
+                key={terapia.id}
+                terapia={terapia}
+              ></CardService>
+            );
+          } else if (index % 2 == 0) {
             return (
               <Plx
                 key={terapia.id}

@@ -8,7 +8,6 @@ import SectionServices from "components/SectionServices";
 import axios from "axios";
 
 export default function Home(props) {
-  console.log("PROPS", props);
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
 
@@ -60,7 +59,6 @@ export const getStaticProps = async (context) => {
       return filtered;
     }, []);
 
-    console.log(dataMapped);
     return {
       props: {
         terapias: dataMapped,
@@ -68,7 +66,6 @@ export const getStaticProps = async (context) => {
       revalidate: 30,
     };
   } catch (error) {
-    console.log("Error", error);
     return {
       props: {
         terapias: [],
