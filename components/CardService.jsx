@@ -22,7 +22,7 @@ const CardService = (props) => {
       <Card.Body>
         <Card.Title> {props.terapia?.tipoTerapia}</Card.Title>
         <Card.Img
-          style={{ height: "300px" }}
+          style={{ height: "25vh" }}
           variant="bottom"
           src={props.terapia?.imagen}
         />

@@ -61,6 +61,7 @@ export const getStaticProps = async (context) => {
       props: {
         terapias: dataMapped,
       },
+      revalidate: 60,
     };
   } catch (error) {
     return {
