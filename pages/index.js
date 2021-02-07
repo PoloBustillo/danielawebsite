@@ -59,7 +59,7 @@ export const getStaticProps = async (context) => {
     });
     return {
       props: {
-        terapias: data,
+        terapias: dataMapped,
       },
     };
   } catch (error) {
