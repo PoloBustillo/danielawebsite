@@ -44,7 +44,6 @@ export const getStaticProps = async (context) => {
     const { data } = await axios.get(
       process.env.NEXT_PUBLIC_URL + "/api/tratamientos"
     );
-    console.log(data);
     return {
       props: {
         terapias: data,
