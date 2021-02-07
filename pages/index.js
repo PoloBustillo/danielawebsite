@@ -40,9 +40,11 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async (context) => {
+  console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+  console.log(process.env.NEXT_SERVER_CMS_URL);
   try {
     const { data } = await axios.get(
-      process.env.NEXT_PUBLIC_URL + "/api/tratamientos"
+      process.env.NEXT_PUBLIC_VERCEL_URL + "/api/tratamientos"
     );
     return {
       props: {

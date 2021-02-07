@@ -14,6 +14,8 @@ const onNoMatch = (req, res) => {
 const handler = nc({ onError, onNoMatch });
 
 handler.get(async (req, res, next) => {
+  console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
+  console.log(process.env.NEXT_SERVER_CMS_URL);
   const { data } = await axios.get(
     process.env.NEXT_SERVER_CMS_URL + "servicios"
   );
