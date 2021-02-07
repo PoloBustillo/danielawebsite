@@ -44,16 +44,28 @@ export const getStaticProps = async (context) => {
   console.log("STATIC");
   try {
     const { data } = await axios.get(
-      "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/api/tratamientos"
+      process.env.NEXT_SERVER_CMS_URL + "servicios"
     );
-    console.log("DATA", data);
+    const dataMapped = data.map((tratamiento) => {
+      if (tratamiento.habilitado)
+        return {
+          contenido: tratamiento.Descripcion,
+          tipoTerapia: tratamiento.Subtitulo,
+          terapiaCategoria: tratamiento.Titulo,
+          precio: tratamiento.costo,
+          id: tratamiento.id,
+          imagen: tratamiento.Imagen[0]?.formats.medium
+            ? tratamiento.Imagen[0].formats.medium.url
+            : tratamiento.Imagen[0].url,
+        };
+    });
+    console.log("DATA", dataMapped);
     return {
       props: {
-        terapias: data,
+        terapias: dataMapped,
       },
     };
   } catch (error) {
-    console.log("ErrorGETSTATICPROPS", error);
     return {
       props: {
         terapias: [],
