@@ -65,6 +65,7 @@ export const getStaticProps = async (context) => {
       props: {
         terapias: dataMapped,
       },
+      revalidate: 30,
     };
   } catch (error) {
     console.log("Error", error);
