@@ -25,6 +25,33 @@ const Social = (props) => {
   } */
   return (
     <div className="social-container">
+      <div className="icons-container">
+        <span id="social-icon">
+          <Link href="https://linkedin.com/in/daniela-diaz-408967144">
+            <FontAwesomeIcon fixedWidth size="2x" icon={faLinkedinIn} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="mailto:danieladimersic@gmail.com">
+            <FontAwesomeIcon fixedWidth size="2x" icon={faAt} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="https://www.facebook.com/nida.niela">
+            <FontAwesomeIcon fixedWidth size="2x" icon={faFacebookMessenger} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="https://www.instagram.com/psic.danielaedm/">
+            <FontAwesomeIcon fixedWidth size="2x" icon={faInstagram} />
+          </Link>
+        </span>
+        <span id="social-icon">
+          <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+            <FontAwesomeIcon fixedWidth size="2x" icon={faWhatsapp} />
+          </Link>
+        </span>
+      </div>
       <div className="contact-data">
         {/*<Map
           provider={mapTilerProvider}
@@ -52,33 +79,6 @@ const Social = (props) => {
           aria-hidden="false"
           tabIndex="0"
         ></iframe>
-      </div>
-      <div className="icons-container">
-        <span id="social-icon">
-          <Link href="https://linkedin.com/in/daniela-diaz-408967144">
-            <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
-          </Link>
-        </span>
-        <span id="social-icon">
-          <Link href="mailto:danieladimersic@gmail.com">
-            <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
-          </Link>
-        </span>
-        <span id="social-icon">
-          <Link href="https://www.facebook.com/nida.niela">
-            <FontAwesomeIcon fixedWidth size="1x" icon={faFacebookMessenger} />
-          </Link>
-        </span>
-        <span id="social-icon">
-          <Link href="https://www.instagram.com/psic.danielaedm/">
-            <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
-          </Link>
-        </span>
-        <span id="social-icon">
-          <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
-            <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
-          </Link>
-        </span>
       </div>
 
       <style jsx>{`

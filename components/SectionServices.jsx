@@ -50,6 +50,7 @@ const parallaxModeFromRight = [
 ];
 
 const SectionServices = (props) => {
+  console.log(props);
   return (
     <Plx className="titleParallax" parallaxData={parallaxDataColor}>
       <div id="sectionServices">
@@ -59,19 +60,28 @@ const SectionServices = (props) => {
             <div>PROFESIONALES</div>
           </h1>
         </Tilt>
-
-        <Plx className="imageParallax" parallaxData={parallaxModeFromLeft}>
-          <CardService></CardService>
-        </Plx>
-        <Plx className="imageParallax" parallaxData={parallaxModeFromRight}>
-          <CardService></CardService>
-        </Plx>
-        <Plx className="imageParallax" parallaxData={parallaxModeFromLeft}>
-          <CardService></CardService>
-        </Plx>
-        <Plx className="imageParallax" parallaxData={parallaxModeFromRight}>
-          <CardService></CardService>
-        </Plx>
+        {props.terapias.map((terapia, index) => {
+          if (index % 2 == 0) {
+            return (
+              <Plx
+                key={terapia.id}
+                className="imageParallax"
+                parallaxData={parallaxModeFromLeft}
+              >
+                <CardService terapia={terapia}></CardService>
+              </Plx>
+            );
+          } else {
+            return (
+              <Plx
+                className="imageParallax"
+                parallaxData={parallaxModeFromRight}
+              >
+                <CardService terapia={terapia}></CardService>
+              </Plx>
+            );
+          }
+        })}
         <style jsx>{`
           #sectionServices {
             margin-top: -9vh;
@@ -82,6 +92,7 @@ const SectionServices = (props) => {
           .section-title {
             padding-top: 40vh;
             text-align: center;
+            font-weight: 900;
             margin-block-end: 0;
           }
         `}</style>

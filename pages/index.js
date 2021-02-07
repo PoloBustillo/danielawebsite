@@ -5,8 +5,9 @@ import SectionResume from "components/SectionResume";
 import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
+import axios from "axios";
 
-export default function Home() {
+export default function Home(props) {
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
 
@@ -32,8 +33,28 @@ export default function Home() {
       ></StickyBar>
 
       <SectionHome></SectionHome>
-      <SectionServices></SectionServices>
+      <SectionServices terapias={props.terapias}></SectionServices>
       <SectionResume></SectionResume>
     </div>
   );
 }
+
+export const getStaticProps = async (context) => {
+  try {
+    const { data } = await axios.get(
+      process.env.NEXT_PUBLIC_URL + "/api/tratamientos"
+    );
+    console.log(data);
+    return {
+      props: {
+        terapias: data,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        terapias: [],
+      },
+    };
+  }
+};

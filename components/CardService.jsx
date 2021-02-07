@@ -1,10 +1,15 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
-import Corgi from "public/corgiParticles3.png";
+
 import Image from "next/image";
 
+const myLoader = ({ src, width, quality }) => {
+  return `${src}`;
+};
+
 const CardService = (props) => {
+  console.log(props);
   return (
     <Card
       style={{
@@ -14,16 +19,18 @@ const CardService = (props) => {
         color: "white",
       }}
     >
-      <Card.Header>Featured</Card.Header>
+      <Card.Header>{props.terapia.terapiaCategoria}</Card.Header>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Img style={{ height: "300px" }} variant="bottom" src={Corgi} />
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Text>
-          <Image src={Corgi} alt="Sigue hacia abajo" width={100} height={100} />
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title> {props.terapia?.tipoTerapia}</Card.Title>
+        <Card.Img
+          style={{ height: "300px" }}
+          variant="bottom"
+          src={props.terapia?.imagen}
+        />
+        <Card.Subtitle className="mb-2 text-muted">
+          {props.terapia?.tipoTerapia}
+        </Card.Subtitle>
+        <Card.Text>{props.terapia?.contenido}</Card.Text>
         <Card.Link href="#">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
