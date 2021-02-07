@@ -19,13 +19,10 @@ function MyApp({ Component, pageProps }) {
         appId="430433931632815"
         htmlRef="messengerRef"
         minimized={true}
-        loggedInGreeting="Hola, Bienvenido al cchat de la psicóloga Daniela Diaz, estamos atentos a cualquier duda, responderemos lo mas pronto posible"
+        loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
         greetingDialogDisplay="fade"
         language="es_LA"
         shouldShowDialog={false}
-        onCustomerChatDialogShow={(data) => {
-          console.log("FB CHAT", data);
-        }}
       />
       <div style={{ zIndex: "1100" }}>
         <AnimatedCursor

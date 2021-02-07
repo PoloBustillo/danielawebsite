@@ -9,7 +9,6 @@ const myLoader = ({ src, width, quality }) => {
 };
 
 const CardService = (props) => {
-  console.log(props);
   return (
     <Card
       style={{

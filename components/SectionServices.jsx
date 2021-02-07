@@ -50,7 +50,6 @@ const parallaxModeFromRight = [
 ];
 
 const SectionServices = (props) => {
-  console.log(props);
   return (
     <Plx className="titleParallax" parallaxData={parallaxDataColor}>
       <div id="sectionServices">
@@ -60,7 +59,7 @@ const SectionServices = (props) => {
             <div>PROFESIONALES</div>
           </h1>
         </Tilt>
-        {props.terapias.map((terapia, index) => {
+        {props.terapias?.map((terapia, index) => {
           if (index % 2 == 0) {
             return (
               <Plx

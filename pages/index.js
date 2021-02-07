@@ -50,6 +50,7 @@ export const getStaticProps = async (context) => {
       },
     };
   } catch (error) {
+    console.log("ErrorGETSTATICPROPS", error);
     return {
       props: {
         terapias: [],
