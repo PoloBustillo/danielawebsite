@@ -8,6 +8,7 @@ import SectionServices from "components/SectionServices";
 import axios from "axios";
 
 export default function Home(props) {
+  console.log("PROPS:", props);
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
 
@@ -40,10 +41,12 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async (context) => {
+  console.log("STATIC");
   try {
     const { data } = await axios.get(
       "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/api/tratamientos"
     );
+    console.log("DATA", data);
     return {
       props: {
         terapias: data,
