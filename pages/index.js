@@ -32,7 +32,7 @@ export default function Home(props) {
         color={color}
       ></StickyBar>
 
-      <SectionHome></SectionHome>
+      <SectionHome slogan={props.slogan}></SectionHome>
       <SectionServices terapias={props.terapias}></SectionServices>
       <SectionResume></SectionResume>
     </div>
@@ -41,35 +41,43 @@ export default function Home(props) {
 
 export const getStaticProps = async (context) => {
   try {
+    const slogan = await axios.get(process.env.NEXT_SERVER_CMS_URL + "slogan");
     const { data } = await axios.get(
-      process.env.NEXT_SERVER_CMS_URL + "servicios"
+      process.env.NEXT_SERVER_CMS_URL + "tipos-terapias"
     );
+    console.log("DATA", data);
     const dataMapped = data.reduce(function (filtered, tratamiento) {
-      if (tratamiento.habilitado) {
+      if (tratamiento.published_at) {
         var someNewValue = {
-          contenido: tratamiento.Descripcion,
-          tipoTerapia: tratamiento.Subtitulo,
-          terapiaCategoria: tratamiento.Titulo,
-          precio: tratamiento.costo,
+          contenido: "revisar",
+          tipoTerapia: tratamiento.Nombre,
+          terapiaCategoria: tratamiento.areas.map((area) => {
+            return area.Nombre;
+          }),
+          precio: tratamiento.Contenido[0].Costo,
           id: tratamiento.id,
-          imagen: tratamiento.Imagen[0].url,
+          imagen: tratamiento.Contenido[0].Imagen?.url,
         };
         filtered.push(someNewValue);
       }
       return filtered;
     }, []);
-
+    console.log("DATAMAPPED", dataMapped);
     return {
       props: {
         terapias: dataMapped,
+        slogan: slogan?.data.Texto,
       },
       revalidate: 30,
     };
   } catch (error) {
+    console.log("ERROR", error);
     return {
       props: {
         terapias: [],
+        slogan: "UNA VIDA SALUDABLE EMPIEZA CON UNA MENTE SALUDABLE",
       },
+      revalidate: 30,
     };
   }
 };

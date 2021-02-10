@@ -79,7 +79,7 @@ const SectionHome = (props) => {
         >
           <LogoMobile></LogoMobile>
           <h5 style={{ color: "white", letterSpacing: "3px" }}>
-            UNA VIDA LLENA DE SALUD EMPIEZA CON UNA MENTE SALUDABLE.
+            {props.slogan}
           </h5>
           <h1 className="title border-button" style={{ color: "white" }}>
             Psic. Daniela Diaz Merino
