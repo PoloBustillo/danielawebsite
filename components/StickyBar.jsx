@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Sling as Hamburger } from "hamburger-react";
 
-const StickyBar = ({ color = "white", setOpenMenu, isMenuOpen }) => {
+const StickyBar = ({ color = "#888888", setOpenMenu, isMenuOpen }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);
 
   return (

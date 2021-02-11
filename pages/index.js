@@ -10,16 +10,19 @@ import axios from "axios";
 export default function Home(props) {
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
+  const [filter, setFilter] = useState("");
 
-  const handleSectionChange = (section) => {
-    switch (section) {
-      case 1:
-        setColor("white");
-        break;
-      default:
-        setColor("white");
+  const filterData = () => {
+    let terapiasFiltered = props.terapias;
+    if (filter !== "") {
+      terapiasFiltered = props.terapias.filter((data) => {
+        return data.Nombre === filter;
+      });
     }
+    console.log(terapiasFiltered);
+    return terapiasFiltered;
   };
+
   return (
     <div className="container-fluid">
       <Head>
@@ -33,7 +36,11 @@ export default function Home(props) {
       ></StickyBar>
 
       <SectionHome slogan={props.slogan}></SectionHome>
-      <SectionServices terapias={props.terapias}></SectionServices>
+      <SectionServices
+        areas={props.areas}
+        terapias={filterData()}
+        setFilter={setFilter}
+      ></SectionServices>
       <SectionResume></SectionResume>
     </div>
   );
@@ -42,30 +49,13 @@ export default function Home(props) {
 export const getStaticProps = async (context) => {
   try {
     const slogan = await axios.get(process.env.NEXT_SERVER_CMS_URL + "slogan");
-    const { data } = await axios.get(
-      process.env.NEXT_SERVER_CMS_URL + "tipos-terapias"
-    );
-    console.log("DATA", data);
-    const dataMapped = data.reduce(function (filtered, tratamiento) {
-      if (tratamiento.published_at) {
-        var someNewValue = {
-          contenido: "revisar",
-          tipoTerapia: tratamiento.Nombre,
-          terapiaCategoria: tratamiento.areas.map((area) => {
-            return area.Nombre;
-          }),
-          precio: tratamiento.Contenido[0].Costo,
-          id: tratamiento.id,
-          imagen: tratamiento.Contenido[0].Imagen?.url,
-        };
-        filtered.push(someNewValue);
-      }
-      return filtered;
-    }, []);
-    console.log("DATAMAPPED", dataMapped);
+    const { data } = await axios.get(process.env.NEXT_SERVER_CMS_URL + "areas");
     return {
       props: {
-        terapias: dataMapped,
+        areas: data.map((area) => {
+          return area.Nombre;
+        }),
+        terapias: data,
         slogan: slogan?.data.Texto,
       },
       revalidate: 30,
@@ -74,6 +64,7 @@ export const getStaticProps = async (context) => {
     console.log("ERROR", error);
     return {
       props: {
+        areas: [],
         terapias: [],
         slogan: "UNA VIDA SALUDABLE EMPIEZA CON UNA MENTE SALUDABLE",
       },
