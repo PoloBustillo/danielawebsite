@@ -34,7 +34,7 @@
   font-weight: 900;
 }
 .menu-item:hover {
-  color: yellow !important;
+  color: white !important;
 }
 .element-animation:hover {
   animation: animationFrames linear 1s;
@@ -316,7 +316,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: rgba(0, 0, 0, 0);
+  background: #292f45;
   width: 50vw;
   text-align: center;
   font-size: 1.15em;
@@ -346,7 +346,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item:hover {
   display: inline-block;
   cursor: grab !important;
-  color: yellow;
+  color: white;
   text-decoration: none;
 }
 .bm-item:active {
@@ -355,6 +355,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: #292f45;
   top: 0;
 }

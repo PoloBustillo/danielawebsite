@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Tilt from "react-parallax-tilt";
 import Jump from "react-reveal/Jump";
+import Fade from "react-reveal/Fade";
 import Plx from "react-plx";
 import CardService from "./CardService";
+import { Row, Col } from "react-bootstrap";
 
 const parallaxDataColor = [
   {
@@ -54,77 +55,67 @@ const SectionServices = (props) => {
   return (
     <Plx className="titleParallax" parallaxData={parallaxDataColor}>
       <div id="sectionServices">
-        <Tilt>
-          <h1 className="section-title header">
-            <div>Servicios</div>
-            <div>Profesionales</div>
-          </h1>
-        </Tilt>{" "}
-        <Jump ssrFadeout>
-          <div className="subMenuServicios">
-            <div
-              onClick={() => {
-                props.setFilter("");
-              }}
-              className="headerAnimation subMenu"
-            >
-              Todos
-            </div>
-            {props.areas.map((terapia, index) => {
-              return (
+        <Fade top cascade ssrFadeout>
+          <div className="services-header">
+            <h1 className="section-title header">
+              <div>Servicios</div>
+              <div>Profesionales</div>
+            </h1>
+          </div>
+        </Fade>
+        <Row style={{ justifyContent: "center", backgroundColor: "white" }}>
+          <Row>
+            <Jump top cascade ssrFadeout>
+              <div className="subMenuServicios">
                 <div
                   onClick={() => {
-                    props.setFilter(terapia);
+                    props.setFilter("");
                   }}
                   className="headerAnimation subMenu"
                 >
-                  {terapia}
+                  Todos
                 </div>
-              );
+                {props.areas.map((terapia, index) => {
+                  return (
+                    <div
+                      onClick={() => {
+                        props.setFilter(terapia);
+                      }}
+                      className="headerAnimation subMenu"
+                    >
+                      {terapia}
+                    </div>
+                  );
+                })}
+              </div>
+            </Jump>
+          </Row>
+          <Row>
+            {props.terapias.map((terapia, index) => {
+              console.log(terapia);
+              return terapia.tipos_terapias?.map((tipo_terapia) => {
+                return (
+                  <Col xs={12} md={6} lg={4}>
+                    <CardService
+                      key={tipo_terapia.id}
+                      terapia={tipo_terapia}
+                    ></CardService>
+                  </Col>
+                );
+              });
             })}
-          </div>
-        </Jump>
-        {props.terapias.map((terapia, index) => {
-          console.log(terapia);
-          return terapia.tipos_terapias?.map((tipo_terapia) => {
-            if (index == 0) {
-              return (
-                <div className="firstCard">
-                  <CardService
-                    key={tipo_terapia.id}
-                    terapia={tipo_terapia}
-                  ></CardService>
-                </div>
-              );
-            } else if (index % 2 == 0) {
-              return (
-                <Plx
-                  key={tipo_terapia.id}
-                  className="imageParallax"
-                  parallaxData={parallaxModeFromLeft}
-                >
-                  <CardService terapia={tipo_terapia}></CardService>
-                </Plx>
-              );
-            } else {
-              return (
-                <Plx
-                  key={tipo_terapia.id}
-                  className="imageParallax"
-                  parallaxData={parallaxModeFromRight}
-                >
-                  <CardService terapia={tipo_terapia}></CardService>
-                </Plx>
-              );
-            }
-          });
-        })}
+          </Row>
+        </Row>
         <style jsx>{`
           #sectionServices {
-            margin-top: -9vh;
+            top: 10vh;
             height: 100%;
             overflow: hidden;
             position: relative;
+          }
+          .services-header {
+            padding: 10vmin;
+            background-color: rgb(236, 240, 249);
           }
           .subMenuServicios {
             display: flex;
@@ -140,7 +131,6 @@ const SectionServices = (props) => {
             margin-left: 12.5vw !important;
           }
           .section-title {
-            padding-top: 30vh;
             text-align: center;
             color: rgb(41, 47, 69);
             font-weight: 900;

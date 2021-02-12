@@ -14,18 +14,20 @@ const CardService = (props) => {
     <Card
       style={{
         ...props.style,
-        width: "75vw",
-        margin: "10vh 0",
-        backgroundColor: "transparent",
+        margin: "3vh 0",
+        backgroundColor: "white",
         color: "rgb(41, 47, 69)",
         textAlign: "center",
+        border: "none",
+        borderRadius: "30px",
+        backdropFilter: "blur(92px)",
+        boxShadow: "0 0 30px #bfbfbf",
       }}
     >
-      <Card.Header>{props.terapia.terapiaCategoria}</Card.Header>
       <Card.Body>
         <Card.Title> {props.terapia?.Nombre}</Card.Title>
         <Card.Img
-          style={{ height: "50vmin", width: "70vmin" }}
+          style={{ height: "20vmin", width: "100%" }}
           variant="bottom"
           src={props.terapia?.Contenido[0]?.Imagen.url}
         />
@@ -42,10 +44,8 @@ const CardService = (props) => {
         </Card.Text>
         <Card.Link href="#">Blog 1</Card.Link>
         <Card.Link href="#">Blog 2</Card.Link>
-      </Card.Body>
-      <Card.Footer>
         <Button variant="primary">Haz tu cita!!!</Button>
-      </Card.Footer>
+      </Card.Body>
     </Card>
   );
 };

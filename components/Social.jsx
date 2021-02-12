@@ -1,7 +1,7 @@
 import React from "react";
 import {
   faLinkedinIn,
-  faFacebookMessenger,
+  faFacebook,
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
@@ -37,8 +37,8 @@ const Social = (props) => {
           </Link>
         </span>
         <span id="social-icon">
-          <Link href="https://www.facebook.com/nida.niela">
-            <FontAwesomeIcon fixedWidth size="2x" icon={faFacebookMessenger} />
+          <Link href="https://www.facebook.com/PsicoterapiaDiazMer">
+            <FontAwesomeIcon fixedWidth size="2x" icon={faFacebook} />
           </Link>
         </span>
         <span id="social-icon">
@@ -83,7 +83,7 @@ const Social = (props) => {
 
       <style jsx>{`
         #social-icon:hover {
-          color: yellow;
+          color: white;
         }
         #social-icon:active {
           cursor: grabbing;

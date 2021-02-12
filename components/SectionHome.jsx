@@ -58,15 +58,15 @@ const SectionHome = (props) => {
             />
           </div>
           <Col className="heroButtonContainer">
-            <Button className="buttonHero element-animation">CITAS</Button>
+            <Button className="buttonHero element-animation">Citas</Button>
           </Col>
           <Col className="heroButtonContainer">
-            <Button className="buttonHero element-animation">MATERIAL</Button>
+            <Button className="buttonHero element-animation">Contacto</Button>
           </Col>
           <Col className="heroButtonContainer">
             <Link href="/#sectionServices">
               <Button className="buttonHero element-animation">
-                SERVICIOS
+                Servicios
               </Button>
             </Link>
           </Col>

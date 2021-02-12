@@ -1,5 +1,5 @@
 import React from "react";
-import { bubble as Menu } from "react-burger-menu";
+import { stack as Menu } from "react-burger-menu";
 import Link from "next/link";
 import {
   faHome,
@@ -30,41 +30,27 @@ const SideMenu = (props) => {
           <a
             href="/#sectionHome"
             onClick={() => props.setOpen(false)}
-            className="bm-item menu-item element-animation"
+            className="bm-item menu-item "
           >
             <FontAwesomeIcon icon={faHome} /> Home
           </a>
         </Link>
-        <Link Link id="about" className="menu-item element-animation" href="/">
-          <a
-            onClick={() => props.setOpen(false)}
-            className="bm-item menu-item element-animation"
-          >
+        <Link Link id="about" className="menu-item " href="/">
+          <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
             <FontAwesomeIcon icon={faCalendarAlt} /> Citas
           </a>
         </Link>
-        <Link id="contact" className="menu-item element-animation" href="/">
-          <a
-            onClick={() => props.setOpen(false)}
-            className="bm-item menu-item element-animation"
-          >
+        <Link id="contact" className="menu-item" href="/">
+          <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
             <FontAwesomeIcon icon={faFilm} /> Recursos
           </a>
         </Link>
-        <Link
-          className="menu-item element-animation"
-          shallow
-          href="/#sectionServices"
-        >
-          <a
-            onClick={() => props.setOpen(false)}
-            className="bm-item menu-item element-animation"
-          >
+        <Link className="menu-item" shallow href="/#sectionServices">
+          <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
             <FontAwesomeIcon icon={faPeopleArrows} /> Servicios
           </a>
         </Link>
       </div>
-
       <Social></Social>
     </Menu>
   );
