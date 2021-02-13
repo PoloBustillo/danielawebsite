@@ -21,7 +21,7 @@ const parallaxDataColor = [
 ];
 
 const SectionServices = (props) => {
-  console.log(props);
+  const [selected, setSelected] = useState("todos");
   return (
     <div id="sectionServices">
       <Fade top cascade ssrFadeout>
@@ -47,24 +47,11 @@ const SectionServices = (props) => {
                 <div
                   onClick={() => {
                     props.setFilter("");
+                    setSelected("todos");
                   }}
-                  className="headerAnimation subMenu all active"
-                >
-                  Todos
-                </div>
-                <div
-                  onClick={() => {
-                    props.setFilter("");
-                  }}
-                  className="headerAnimation subMenu"
-                >
-                  Todos
-                </div>
-                <div
-                  onClick={() => {
-                    props.setFilter("");
-                  }}
-                  className="headerAnimation subMenu"
+                  className={`headerAnimation subMenu all ${
+                    selected == "todos" ? "active" : ""
+                  }`}
                 >
                   Todos
                 </div>
@@ -73,8 +60,11 @@ const SectionServices = (props) => {
                     <div
                       onClick={() => {
                         props.setFilter(terapia);
+                        setSelected(terapia);
                       }}
-                      className="headerAnimation subMenu"
+                      className={`headerAnimation subMenu ${
+                        selected == terapia ? "active" : ""
+                      }`}
                     >
                       {terapia}
                     </div>
@@ -126,7 +116,6 @@ const SectionServices = (props) => {
         .subMenuServicios {
           display: flex;
           justify-content: center;
-          margin-top: 2vh;
           text-align: center;
           max-width: 95vw;
           overflow-y: scroll;

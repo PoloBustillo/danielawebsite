@@ -19,7 +19,6 @@ const CardService = (props) => {
         color: "rgb(41, 47, 69)",
         textAlign: "center",
         border: "none",
-        borderRadius: "30px",
         backdropFilter: "blur(92px)",
         boxShadow: "0 0 30px #bfbfbf",
       }}
