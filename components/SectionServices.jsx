@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 import Plx from "react-plx";
 import CardService from "./CardService";
 import { Row, Col } from "react-bootstrap";
+import SubMenuServices from "./SubMenuServices";
 
 const parallaxDataColor = [
   {
@@ -21,7 +22,6 @@ const parallaxDataColor = [
 ];
 
 const SectionServices = (props) => {
-  const [selected, setSelected] = useState("todos");
   return (
     <div id="sectionServices">
       <Fade top cascade ssrFadeout>
@@ -43,39 +43,14 @@ const SectionServices = (props) => {
             }}
           >
             <Jump top cascade ssrFadeout>
-              <div className="subMenuServicios">
-                <div
-                  onClick={() => {
-                    props.setFilter("");
-                    setSelected("todos");
-                  }}
-                  className={`headerAnimation subMenu all ${
-                    selected == "todos" ? "active" : ""
-                  }`}
-                >
-                  Todos
-                </div>
-                {props.areas.map((terapia, index) => {
-                  return (
-                    <div
-                      onClick={() => {
-                        props.setFilter(terapia);
-                        setSelected(terapia);
-                      }}
-                      className={`headerAnimation subMenu ${
-                        selected == terapia ? "active" : ""
-                      }`}
-                    >
-                      {terapia}
-                    </div>
-                  );
-                })}
-              </div>
+              <SubMenuServices
+                areas={props.areas}
+                setFilter={props.setFilter}
+              ></SubMenuServices>
             </Jump>
           </Row>
           <Row>
             {props.terapias.map((terapia, index) => {
-              console.log(terapia);
               return terapia.tipos_terapias?.map((tipo_terapia) => {
                 return (
                   <Col
@@ -112,28 +87,9 @@ const SectionServices = (props) => {
           font-weight: 600;
           padding: 10vmin;
           background-color: rgb(255, 255, 255);
-        }
-        .subMenuServicios {
-          display: flex;
-          justify-content: center;
-          text-align: center;
-          max-width: 95vw;
-          overflow-y: scroll;
-          border-radius: 60px;
-          box-shadow: 0 5px 25px 0 rgba(151, 158, 185, 0.25);
-          background-color: #fff;
-        }
-        .subMenu {
-          margin: 14px;
-          padding: 14px;
+          margin-bottom: 2vh;
         }
 
-        .active {
-          background-color: rgba(29, 181, 120, 0.8);
-          color: white;
-          padding: 14px;
-          border-radius: 60px;
-        }
         .firstCard {
           margin-left: 12.5vw !important;
         }

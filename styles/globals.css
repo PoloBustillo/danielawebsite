@@ -285,6 +285,11 @@ body {
 .nav-link:hover {
   font-size: medium;
 }
+.dropdown-menu.show {
+  left: 30vw !important;
+  top: 40vh !important;
+  position: fixed !important;
+}
 
 .toggle-nav {
   font-size: 0.7rem !important;
@@ -299,6 +304,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   height: 100%;
   cursor: grab;
   top: 0px;
+}
+.drop-item:hover,
+.skylight-close-button:hover {
+  color: rgba(29, 181, 120, 0.8) !important;
 }
 
 /* General sidebar styles */

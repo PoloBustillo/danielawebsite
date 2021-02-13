@@ -19,7 +19,6 @@ export default function Home(props) {
         return data.Nombre === filter;
       });
     }
-    console.log(terapiasFiltered);
     return terapiasFiltered;
   };
 
