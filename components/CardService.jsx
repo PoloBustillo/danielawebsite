@@ -27,7 +27,7 @@ const CardService = (props) => {
       <Card.Body>
         <Card.Title> {props.terapia?.Nombre}</Card.Title>
         <Card.Img
-          style={{ height: "20vmin", width: "100%" }}
+          style={{ height: "55.45%", width: "100%" }}
           variant="bottom"
           src={props.terapia?.Contenido[0]?.Imagen.url}
         />

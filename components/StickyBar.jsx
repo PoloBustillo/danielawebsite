@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Sling as Hamburger } from "hamburger-react";
 
-const StickyBar = ({ color = "#888888", setOpenMenu, isMenuOpen }) => {
+const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);
 
   return (
@@ -29,13 +29,15 @@ const StickyBar = ({ color = "#888888", setOpenMenu, isMenuOpen }) => {
           position: "relative",
         }}
       >
-        <span style={{ color: color }}>{isMenuOpen ? "CERRAR" : "MENU"}</span>
+        <span style={{ color: isMenuOpen ? "white" : color }}>
+          {isMenuOpen ? "CERRAR" : "MENU"}
+        </span>
         <Hamburger
           label="Menu principal"
           rounded
           duration={1}
           distance="lg"
-          color={color}
+          color={isMenuOpen ? "white" : color}
           size={90}
           direction={"left"}
           toggled={isMenuOpen}

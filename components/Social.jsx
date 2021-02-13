@@ -83,7 +83,7 @@ const Social = (props) => {
 
       <style jsx>{`
         #social-icon:hover {
-          color: white;
+          color: rgba(29, 181, 120, 0.8);
         }
         #social-icon:active {
           cursor: grabbing;
