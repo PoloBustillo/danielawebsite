@@ -7,7 +7,6 @@ import scrollDown from "public/scroll-down3.gif";
 import Link from "next/link";
 import { particleOptions, motionForce } from "../utils/particles";
 import ParticleImage from "react-particle-image";
-import dynamic from "next/dynamic";
 
 const SectionHome = (props) => {
   const [style, setStyle] = useState({ display: "none" });
@@ -42,7 +41,7 @@ const SectionHome = (props) => {
         <div
           style={{
             position: "absolute",
-            top: "40vh",
+            bottom: "40vh",
           }}
         >
           <h5 style={{ color: "white", letterSpacing: "3px" }}>
@@ -77,16 +76,17 @@ const SectionHome = (props) => {
           }
           .logo {
             position: absolute;
-            top: 20%;
-            right: 20%;
+            bottom: 5%;
+            right: 4%;
+            z-index: 998;
           }
         `}</style>
         <div className="logo">
           <img
             style={style2}
-            src="/logonobg.png"
-            width="100"
-            height="100"
+            src="/logo500.webp"
+            width="200"
+            height="200"
             className="align-top"
             alt="Daniela Díaz Merino Psicóloga"
             onMouseEnter={(e) => {
@@ -100,9 +100,9 @@ const SectionHome = (props) => {
               setStyle2({ display: "block" });
             }}
             style={style}
-            src={"/logonobgsmall.png"}
-            width={100}
-            height={100}
+            src={"/logo200nobg.png"}
+            width={200}
+            height={200}
             scale={1}
             entropy={0}
             maxParticles={3000}
