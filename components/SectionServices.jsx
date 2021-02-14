@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Jump from "react-reveal/Jump";
+
 import Fade from "react-reveal/Fade";
 import Plx from "react-plx";
 import CardService from "./CardService";
@@ -42,12 +42,10 @@ const SectionServices = (props) => {
               color: "#007bff",
             }}
           >
-            <Jump top cascade ssrFadeout>
-              <SubMenuServices
-                areas={props.areas}
-                setFilter={props.setFilter}
-              ></SubMenuServices>
-            </Jump>
+            <SubMenuServices
+              areas={props.areas}
+              setFilter={props.setFilter}
+            ></SubMenuServices>
           </Row>
           <Row>
             {props.terapias.map((terapia, index) => {
