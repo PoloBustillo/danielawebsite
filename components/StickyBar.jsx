@@ -47,7 +47,7 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
           toggle={setOpen}
         />
       </div>
-      <div class="box"></div>
+      <div className="box"></div>
     </div>
   );
 };

@@ -21,11 +21,12 @@ class MyDocument extends Document {
             content="width=device-width, initial-scale=1.0"
           />
           <link rel="shortcut icon" href="logonobg.png" />
-          <script>
-            window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {}
-          </script>
         </Head>
         <body>
+          <script>
+            if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object')
+            (__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {})
+          </script>
           <Main />
           <NextScript />
         </body>
