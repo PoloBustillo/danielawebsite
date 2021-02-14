@@ -5,7 +5,7 @@
 @import url("https://use.typekit.net/yfz7sly.css");
 
 .row-cards {
-  width: 80vw;
+  width: 90vw;
 }
 
 .menu-item {
@@ -294,7 +294,7 @@ body {
   padding: 1rem 3rem !important;
   letter-spacing: 3px !important;
   margin-bottom: 7%;
-  border: solid;
+  border: 1px solid;
   font-family: "Yanone Kaffeesatz" !important;
 }
 .vertical-timeline {

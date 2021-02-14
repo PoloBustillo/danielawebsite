@@ -45,7 +45,6 @@ const SubMenuServices = (props) => {
             justify-content: center;
             text-align: center;
             max-width: 95vw;
-            overflow-y: scroll;
             border-radius: 60px;
             box-shadow: 0 5px 25px 0 rgba(151, 158, 185, 0.25);
             background-color: #fff;
@@ -150,7 +149,6 @@ const SubMenuServices = (props) => {
             justify-content: center;
             text-align: center;
             max-width: 95vw;
-            overflow-y: scroll;
             border-radius: 60px;
             box-shadow: 0 5px 25px 0 rgba(151, 158, 185, 0.25);
             background-color: #fff;

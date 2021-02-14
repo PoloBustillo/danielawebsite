@@ -8,9 +8,6 @@ import Link from "next/link";
 import { particleOptions, motionForce } from "../utils/particles";
 import ParticleImage from "react-particle-image";
 import dynamic from "next/dynamic";
-const LogoMobile = dynamic(() => import("../components/LogoMobile"), {
-  ssr: false,
-});
 
 const SectionHome = (props) => {
   const [style, setStyle] = useState({ display: "none" });
@@ -28,35 +25,6 @@ const SectionHome = (props) => {
         imageSrc="/heroImage.jpg"
       >
         <Row className="sectionButtonsContainer">
-          <div>
-            <img
-              style={style2}
-              src="/logonobg.png"
-              width="100"
-              height="100"
-              className="align-top"
-              alt="Daniela Díaz Merino Psicóloga"
-              onMouseEnter={(e) => {
-                setStyle({ display: "block" });
-                setStyle2({ display: "none" });
-              }}
-            />
-            <ParticleImage
-              onMouseLeave={(e) => {
-                setStyle({ display: "none" });
-                setStyle2({ display: "block" });
-              }}
-              style={style}
-              src={"/logonobgsmall.png"}
-              width={100}
-              height={100}
-              scale={1}
-              entropy={0}
-              maxParticles={3000}
-              particleOptions={particleOptions}
-              mouseMoveForce={motionForce}
-            />
-          </div>
           <Col className="heroButtonContainer">
             <Button className="buttonHero element-animation">Citas</Button>
           </Col>
@@ -77,7 +45,6 @@ const SectionHome = (props) => {
             top: "40vh",
           }}
         >
-          <LogoMobile></LogoMobile>
           <h5 style={{ color: "white", letterSpacing: "3px" }}>
             {props.slogan}
           </h5>
@@ -102,13 +69,47 @@ const SectionHome = (props) => {
         <style jsx>{`
           .sectionButtonsContainer {
             width: 100vw !important;
-            top: 0;import LogoMobile from './LogoMobile';
+            top: 0;
 
             position: absolute;
             right: 30vw;
             z-index: 1040;
           }
+          .logo {
+            position: absolute;
+            top: 20%;
+            right: 20%;
+          }
         `}</style>
+        <div className="logo">
+          <img
+            style={style2}
+            src="/logonobg.png"
+            width="100"
+            height="100"
+            className="align-top"
+            alt="Daniela Díaz Merino Psicóloga"
+            onMouseEnter={(e) => {
+              setStyle({ display: "block" });
+              setStyle2({ display: "none" });
+            }}
+          />
+          <ParticleImage
+            onMouseLeave={(e) => {
+              setStyle({ display: "none" });
+              setStyle2({ display: "block" });
+            }}
+            style={style}
+            src={"/logonobgsmall.png"}
+            width={100}
+            height={100}
+            scale={1}
+            entropy={0}
+            maxParticles={3000}
+            particleOptions={particleOptions}
+            mouseMoveForce={motionForce}
+          />
+        </div>
       </LazyHero>
     </div>
   );

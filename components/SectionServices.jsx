@@ -51,15 +51,7 @@ const SectionServices = (props) => {
             {props.terapias.map((terapia, index) => {
               return terapia.tipos_terapias?.map((tipo_terapia) => {
                 return (
-                  <Col
-                    style={{
-                      float: "none",
-                      margin: "0 auto",
-                    }}
-                    xs={12}
-                    md={6}
-                    lg={6}
-                  >
+                  <Col xs={12} md={6} lg={{ span: 4 }}>
                     <CardService
                       key={tipo_terapia.id}
                       terapia={tipo_terapia}
