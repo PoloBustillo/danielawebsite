@@ -23,10 +23,6 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="logonobg.png" />
         </Head>
         <body>
-          <script>
-            if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object')
-            (__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {})
-          </script>
           <Main />
           <NextScript />
         </body>
