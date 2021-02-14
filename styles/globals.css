@@ -4,17 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @import url("https://use.typekit.net/yfz7sly.css");
 
-.box {
-  min-height: 10em;
-}
-.box:before {
-  z-index: 0;
-  position: absolute;
-  margin: -5.3em;
-  padding: 5.3em;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.25);
-  content: "";
+.row-cards {
+  width: 80vw;
 }
 
 .menu-item {
@@ -246,6 +237,32 @@ body {
 @media (max-width: 768px) {
   .gifContainer {
     right: 30vw;
+  }
+  .toggle-nav {
+    z-index: 200;
+    padding: 0.8vh !important;
+    color: white !important;
+  }
+  .toggle-nav span {
+    color: white !important;
+  }
+  .hamburger-react div {
+    background-color: white !important;
+  }
+  .box {
+    min-height: 10em;
+  }
+  .box:before {
+    z-index: 0;
+    position: absolute;
+    margin: -5.3em;
+    padding: 5.3em;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    content: "";
+  }
+  .row-cards {
+    width: 100vw;
   }
   .sectionButtonsContainer {
     display: none !important;

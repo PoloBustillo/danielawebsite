@@ -47,7 +47,7 @@ const SectionServices = (props) => {
               setFilter={props.setFilter}
             ></SubMenuServices>
           </Row>
-          <Row style={{ width: "100vw" }}>
+          <Row className="row-cards">
             {props.terapias.map((terapia, index) => {
               return terapia.tipos_terapias?.map((tipo_terapia) => {
                 return (
@@ -58,7 +58,7 @@ const SectionServices = (props) => {
                     }}
                     xs={12}
                     md={6}
-                    lg={4}
+                    lg={6}
                   >
                     <CardService
                       key={tipo_terapia.id}
