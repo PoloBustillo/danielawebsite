@@ -5,8 +5,9 @@ import SectionResume from "components/SectionResume";
 import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
-require("disable-react-devtools");
 import axios from "axios";
+import dynamic from "next/dynamic";
+dynamic(() => import("disable-react-devtools"));
 
 export default function Home(props) {
   const [color, setColor] = useState();
