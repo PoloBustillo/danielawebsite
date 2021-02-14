@@ -23,7 +23,7 @@ const CardService = (props) => {
           boxShadow: "0 0 30px #bfbfbf",
         }}
       >
-        <Card.Body style={{ padding: "0.25rem" }}>
+        <Card.Body style={{ padding: "0.6rem" }}>
           <Card.Img
             style={{ height: "55.45%", width: "100%", minHeight: "270px" }}
             variant="bottom"

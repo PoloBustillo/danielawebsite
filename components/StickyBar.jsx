@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Sling as Hamburger } from "hamburger-react";
 
-const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
+const StickyBar = ({ color = "white", setOpenMenu, isMenuOpen }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);
 
   return (
@@ -12,7 +12,9 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
         position: "sticky",
         top: "0",
         zIndex: "1030",
-        margin: "2% 2%",
+        overflow: "hidden",
+        width: "100vw",
+        height: "100%",
       }}
     >
       <div
@@ -26,6 +28,8 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
           borderColor: color,
           textAlign: "center",
           marginLeft: "auto",
+          zIndex: "200",
+          padding: 0.8vh;
           position: "relative",
         }}
       >
@@ -44,6 +48,7 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
           toggle={setOpen}
         />
       </div>
+      <div class="box"></div>
     </div>
   );
 };

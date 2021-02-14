@@ -47,7 +47,7 @@ const SectionServices = (props) => {
               setFilter={props.setFilter}
             ></SubMenuServices>
           </Row>
-          <Row>
+          <Row style={{ width: "100vw" }}>
             {props.terapias.map((terapia, index) => {
               return terapia.tipos_terapias?.map((tipo_terapia) => {
                 return (
