@@ -13,8 +13,9 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
         top: "0",
         zIndex: "1030",
         overflow: "hidden",
-        width: "100vw",
-        height: "100%",
+        float: "right",
+        maxHeight: "100%",
+        maxWidth: "100%",
       }}
     >
       <div
@@ -41,13 +42,13 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
           duration={1}
           distance="lg"
           color={isMenuOpen ? "white" : color}
-          size={90}
+          size={85}
           direction={"left"}
           toggled={isMenuOpen}
           toggle={setOpen}
         />
       </div>
-      <div className="box"></div>
+      <div className={`box ${isMenuOpen ? "animate-menu" : ""}`}></div>
     </div>
   );
 };

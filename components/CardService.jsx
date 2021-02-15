@@ -29,8 +29,11 @@ const CardService = (props) => {
             variant="bottom"
             src={props.terapia?.Contenido[0]?.Imagen.url}
           />
-          <Card.Title> {props.terapia?.Nombre}</Card.Title>
-          <Card.Text
+          <Card.Title style={{ margin: "2vh 0" }}>
+            {" "}
+            {props.terapia?.Nombre}
+          </Card.Title>
+          <div
             style={{
               textAlign: "center",
               fontFamily: "source-sans-pro, sans-serif",
@@ -38,6 +41,8 @@ const CardService = (props) => {
               fontStyle: "normal",
               width: "80%",
               marginLeft: "10%",
+              marginTop: "2vh",
+              marginBottom: "2vh",
             }}
           >
             <p
@@ -46,9 +51,18 @@ const CardService = (props) => {
                 __html: marked(props.terapia?.Contenido[0]?.Descripcion),
               }}
             ></p>
-          </Card.Text>
-          <Button variant="primary">Haz tu cita</Button>
-          <Card.Link href="#">Más Información</Card.Link>
+          </div>
+          <div
+            style={{ borderBottom: "1px solid gray", margin: "3vh 10vw" }}
+          ></div>
+          <Row>
+            <Col>
+              <Button variant="info">Haz tu cita</Button>
+            </Col>
+            <Col>
+              <Card.Link href="#">Más Información</Card.Link>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
     </Fade>

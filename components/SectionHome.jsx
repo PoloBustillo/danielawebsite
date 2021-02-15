@@ -22,6 +22,7 @@ const SectionHome = (props) => {
         isCentered={true}
         minHeight={"75vh"}
         imageSrc="/heroImage.jpg"
+        height="100vh"
       >
         <Row className="sectionButtonsContainer">
           <Col className="heroButtonContainer">
@@ -42,6 +43,7 @@ const SectionHome = (props) => {
           style={{
             position: "absolute",
             bottom: "40vh",
+            zIndex: "20",
           }}
         >
           <h5 style={{ color: "white", letterSpacing: "3px" }}>
@@ -66,6 +68,9 @@ const SectionHome = (props) => {
           </Link>
         </div>
         <style jsx>{`
+          #sectionHome {
+            height: 100vh !important;
+          }
           .sectionButtonsContainer {
             width: 100vw !important;
             top: 0;
@@ -78,7 +83,7 @@ const SectionHome = (props) => {
             position: absolute;
             bottom: 5%;
             right: 4%;
-            z-index: 998;
+            z-index: 10;
           }
         `}</style>
         <div className="logo">
