@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Col, Row } from "react-bootstrap";
 import PropTypes from "prop-types";
 import marked from "marked";
 import Fade from "react-reveal/Fade";
@@ -45,12 +45,12 @@ const CardService = (props) => {
               marginBottom: "2vh",
             }}
           >
-            <p
+            <div
               style={{ textAlign: "center" }}
               dangerouslySetInnerHTML={{
                 __html: marked(props.terapia?.Contenido[0]?.Descripcion),
               }}
-            ></p>
+            ></div>
           </div>
           <div
             style={{ borderBottom: "1px solid gray", margin: "3vh 10vw" }}
