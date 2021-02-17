@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../../lib/api";
-import Seo from "../../components/seo";
+import Seo from "../../components/SEO";
 
 const Article = ({ article }) => {
   const seo = {
