@@ -1,7 +1,51 @@
 import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../../lib/api";
 import Seo from "../../components/SEO";
-
+import absoluteUrl from "next-absolute-url";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton,
+} from "react-share";
+import {
+  EmailIcon,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  HatenaIcon,
+  InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon,
+} from "react-share";
 const Article = ({ article }) => {
   const seo = {
     metaTitle: article.Nombre,
@@ -9,9 +53,13 @@ const Article = ({ article }) => {
     shareImage: article.Contenido[0]?.Imagen.url,
     article: true,
   };
+  const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/tratamiento/${article.id}`;
   return (
     <div>
       <Seo seo={seo} />
+      <FacebookShareButton url={shareUrl}>
+        <FacebookIcon size={32} round={true} />
+      </FacebookShareButton>
       <div
         id="banner"
         className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
