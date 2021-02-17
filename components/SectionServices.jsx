@@ -32,6 +32,7 @@ const SectionServices = (props) => {
           </h1>
         </div>
       </Fade>
+
       <Row style={{ justifyContent: "center" }}>
         <Plx className="titleParallax" parallaxData={parallaxDataColor}>
           <Row
@@ -65,7 +66,6 @@ const SectionServices = (props) => {
       </Row>
       <style jsx>{`
         #sectionServices {
-          top: 10vh;
           height: 100%;
           overflow: hidden;
           background-color: rgb(236, 240, 249);

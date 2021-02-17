@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { fetchAPI } from "../lib/api";
 import React, { useState } from "react";
 import SectionHome from "components/SectionHome";
 import SectionResume from "components/SectionResume";
@@ -47,15 +48,18 @@ export default function Home(props) {
 
 export const getStaticProps = async (context) => {
   try {
-    const slogan = await axios.get(process.env.NEXT_SERVER_CMS_URL + "slogan");
-    const { data } = await axios.get(process.env.NEXT_SERVER_CMS_URL + "areas");
+    const [slogan, areas] = await Promise.all([
+      fetchAPI("slogan"),
+      fetchAPI("areas"),
+    ]);
+
     return {
       props: {
-        areas: data.map((area) => {
+        areas: areas.map((area) => {
           return area.Nombre;
         }),
-        terapias: data,
-        slogan: slogan?.data.Texto,
+        terapias: areas,
+        slogan: slogan.Texto,
       },
       revalidate: 30,
     };

@@ -20,7 +20,7 @@ const SectionHome = (props) => {
         opacity={0.4}
         transitionDuration={1000}
         isCentered={true}
-        minHeight={"75vh"}
+        minHeight={"100vh"}
         imageSrc="/heroImage.jpg"
         height="100vh"
       >
