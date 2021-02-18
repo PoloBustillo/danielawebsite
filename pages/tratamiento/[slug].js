@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import { useState } from "react";
 import { fetchAPI } from "../../lib/api";
 import Seo from "../../components/SEO";
 import absoluteUrl from "next-absolute-url";
@@ -46,7 +47,10 @@ import {
   WhatsappIcon,
   WorkplaceIcon,
 } from "react-share";
+import StickyBar from "../../components/StickyBar";
+import SideMenu from "../../components/SideMenu";
 const Article = ({ article }) => {
+  const [isOpen, setOpen] = useState(false);
   const seo = {
     metaTitle: article.Nombre,
     metaDescription: article.Contenido[0].Description,
@@ -56,38 +60,60 @@ const Article = ({ article }) => {
   const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/tratamiento/${article.id}`;
   return (
     <div>
+      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+      <StickyBar
+        isMenuOpen={isOpen}
+        setOpenMenu={setOpen}
+        color={"black"}
+      ></StickyBar>
       <Seo seo={seo} />
-      <FacebookShareButton url={shareUrl}>
-        <FacebookIcon size={32} round={true} />
-      </FacebookShareButton>
-      <div
-        id="banner"
-        className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-        data-src={article.Contenido[0]?.Imagen.url}
-        data-srcset={article.Contenido[0]?.Imagen.url}
-        data-uk-img
-      >
-        <h1>{article.Nombre}</h1>
-      </div>
+
       <div className="uk-section">
         <div className="uk-container uk-container-small">
-          <ReactMarkdown
-            source={article.Contenido[0].DescripcionAmplia}
-            escapeHtml={false}
-          />
-          <hr className="uk-divider-small" />
-          <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+          <div
+            id="banner"
+            className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
+            data-src={article.Contenido[0]?.Imagen.url}
+            data-srcset={article.Contenido[0]?.Imagen.url}
+            data-uk-img
+          >
+            <h1>{article.Nombre}</h1>
+          </div>
+          <div className="social-container">
+            <FacebookShareButton url={shareUrl}>
+              <FacebookIcon size={32} round={true} />
+            </FacebookShareButton>
+            <WhatsappShareButton url={shareUrl}>
+              <WhatsappIcon size={32} round={true} />
+            </WhatsappShareButton>
+          </div>
+          <hr className="divider uk-divider-small" />
+          <div
+            className="author uk-grid-small uk-flex-left"
+            data-uk-grid="true"
+          >
             <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">By Daniela</p>
+              <p className="uk-margin-remove-bottom">
+                Publicado por Daniela Diaz Merino
+              </p>
               <p className="uk-text-meta uk-margin-remove-top">
                 {article.published_at}
               </p>
             </div>
           </div>
+          <div className="content-article">
+            <ReactMarkdown
+              source={article.Contenido[0].DescripcionAmplia}
+              escapeHtml={false}
+            />
+          </div>
         </div>
       </div>
       <style jsx>
         {`
+          .content-article {
+            padding: 5vw 8vh;
+          }
           a {
             text-decoration: none;
           }
@@ -108,10 +134,12 @@ const Article = ({ article }) => {
             font-size: 1.375rem;
             line-height: 1.13636;
           }
-
+          .author,
+          .divider {
+            margin-left: 6vw;
+          }
           #banner {
             margin: 20px;
-            height: 800px;
           }
 
           #editor {
@@ -128,6 +156,10 @@ const Article = ({ article }) => {
           img:hover {
             opacity: 1;
             transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+          }
+          .social-container {
+            float: right;
+            margin: 0vh 10vw;
           }
         `}
       </style>

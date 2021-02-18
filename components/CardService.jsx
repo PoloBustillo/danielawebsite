@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import PropTypes from "prop-types";
 import marked from "marked";
@@ -60,12 +61,10 @@ const CardService = (props) => {
               marginBottom: "2vh",
             }}
           >
-            <div
-              style={{ textAlign: "center" }}
-              dangerouslySetInnerHTML={{
-                __html: marked(props.terapia?.Contenido[0]?.Descripcion),
-              }}
-            ></div>
+            <ReactMarkdown
+              source={props.terapia?.Contenido[0]?.Descripcion}
+              escapeHtml={false}
+            />
           </div>
           <div
             style={{
