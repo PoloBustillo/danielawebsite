@@ -86,6 +86,15 @@ const Article = ({ article }) => {
             <WhatsappShareButton url={shareUrl}>
               <WhatsappIcon size={32} round={true} />
             </WhatsappShareButton>
+            <TelegramShareButton url={shareUrl}>
+              <TelegramIcon size={32} round={true} />
+            </TelegramShareButton>
+            <TwitterShareButton url={shareUrl}>
+              <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <EmailShareButton url={shareUrl}>
+              <EmailIcon size={32} round={true} />
+            </EmailShareButton>
           </div>
           <hr className="divider uk-divider-small" />
           <div
@@ -93,9 +102,7 @@ const Article = ({ article }) => {
             data-uk-grid="true"
           >
             <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">
-                Publicado por Daniela Diaz Merino
-              </p>
+              <p className="uk-margin-remove-bottom">Daniela Diaz Merino</p>
               <p className="uk-text-meta uk-margin-remove-top">
                 {article.published_at}
               </p>
@@ -120,7 +127,7 @@ const Article = ({ article }) => {
 
           h1 {
             font-family: Staatliches;
-            font-size: 120px;
+            font-size: 5rem;
           }
 
           #category {
