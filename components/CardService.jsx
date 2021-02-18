@@ -1,9 +1,20 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { Card, Button, Col, Row } from "react-bootstrap";
+import {
+  Card,
+  Button,
+  Col,
+  Row,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import PropTypes from "prop-types";
 import marked from "marked";
-import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDay,
+  faDollarSign,
+  faQuestionCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 <i class="fas fa-calendar-day"></i>;
 import Fade from "react-reveal/Fade";
@@ -27,11 +38,12 @@ const CardService = (props) => {
           border: "none",
           backdropFilter: "blur(92px)",
           boxShadow: "0 0 30px #bfbfbf",
-          maxHeight: "70vh",
+          maxHeight: "76vh",
+          minHeight: "76vh",
         }}
       >
         <Card.Body
-          style={{ padding: "0.8rem", maxHeight: "70vh", minHeight: "70vh" }}
+          style={{ padding: "0.8rem", maxHeight: "90vh", minHeight: "70vh" }}
         >
           <Card.Img
             style={{ height: "55.45%", width: "100%", minHeight: "270px" }}
@@ -66,6 +78,32 @@ const CardService = (props) => {
               escapeHtml={false}
             />
           </div>
+          <OverlayTrigger
+            placement={"bottom"}
+            overlay={
+              <Tooltip id={`tooltip-bottom`}>
+                Precio puede ajustarse de acuerdo a un{" "}
+                <strong>estudio socieconómico</strong> o si pertenece a alguna{" "}
+                <strong>institución asociada</strong>
+              </Tooltip>
+            }
+          >
+            <span>
+              Costo:{" "}
+              <FontAwesomeIcon
+                fixedWidth
+                size="sm"
+                icon={faDollarSign}
+              ></FontAwesomeIcon>
+              {props.terapia?.Contenido[0]?.Costo}
+              <FontAwesomeIcon
+                style={{ verticalAlign: "5px", fontSize: "15px" }}
+                fixedWidth
+                size="sm"
+                icon={faQuestionCircle}
+              ></FontAwesomeIcon>
+            </span>
+          </OverlayTrigger>
           <div
             style={{
               borderBottom: "1px solid #d8e3f2",

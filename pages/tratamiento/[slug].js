@@ -80,19 +80,33 @@ const Article = ({ article }) => {
             <h1>{article.Nombre}</h1>
           </div>
           <div className="social-container">
-            <FacebookShareButton url={shareUrl}>
+            <FacebookShareButton
+              quote={`Te invito a checar esta terapia: ${article.Nombre}`}
+              url={shareUrl}
+              hashtag={"#Puebla"}
+            >
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>
             <WhatsappShareButton url={shareUrl}>
               <WhatsappIcon size={32} round={true} />
             </WhatsappShareButton>
-            <TelegramShareButton url={shareUrl}>
+            <TelegramShareButton
+              title={`Te invito a checar esta terapia: ${article.Nombre}`}
+              url={shareUrl}
+            >
               <TelegramIcon size={32} round={true} />
             </TelegramShareButton>
-            <TwitterShareButton url={shareUrl}>
+            <TwitterShareButton
+              title={`Te invito a checar esta terapia: ${article.Nombre}`}
+              hashtags={["Psicologo", "Puebla", "Psicologa"]}
+              url={shareUrl}
+            >
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
-            <EmailShareButton url={shareUrl}>
+            <EmailShareButton
+              subject={`Te invito a checar esta terapia: ${article.Nombre}`}
+              body={article.Contenido[0].Descripcion}
+            >
               <EmailIcon size={32} round={true} />
             </EmailShareButton>
           </div>
