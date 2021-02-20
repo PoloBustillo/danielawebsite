@@ -3,7 +3,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @import url("https://use.typekit.net/yfz7sly.css");
-
+.sc-bdfBwQ {
+  background-size: 100% 100% !important;
+}
+.toggle-nav {
+  z-index: 200;
+  padding: 0.8vh !important;
+  color: white !important;
+}
+.toggle-nav span {
+  color: white !important;
+}
+.hamburger-react div {
+  background-color: white !important;
+}
+.box {
+  min-height: 10em;
+}
+.box:before {
+  position: absolute;
+  margin: -5.3em;
+  padding: 5.3em;
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
+}
 .row-cards {
   width: 90vw;
 }

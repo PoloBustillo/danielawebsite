@@ -12,14 +12,12 @@ const SectionFAQ = (props) => {
   const [flag, setFlag] = useState();
   return (
     <div id="sectionFAQ">
-      <Fade distance={"100px"} top cascade ssrFadeout>
-        <div className="services-header">
-          <h1 className="section-title header">
-            <div>Preguntas</div>
-            <div>Frecuentes</div>
-          </h1>
-        </div>
-      </Fade>
+      <div className="services-header">
+        <h1 className="section-title header">
+          <div>Preguntas</div>
+          <div>Frecuentes</div>
+        </h1>
+      </div>
 
       <Row style={{ justifyContent: "center" }}>
         <Col style={{ margin: "4vh 0" }} sm={{ span: 8 }} centered={"true"}>
@@ -75,7 +73,7 @@ const SectionFAQ = (props) => {
                       )}
                     </span>
                   </Accordion.Toggle>
-                  <HeadShake left cascade ssrFadeout>
+                  <HeadShake left cascade>
                     <Accordion.Collapse
                       eventKey={index}
                       style={{

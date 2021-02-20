@@ -7,6 +7,7 @@ import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
+import LazyHero from "react-lazy-hero";
 
 export default function Home(props) {
   const [color, setColor] = useState();
@@ -40,6 +41,19 @@ export default function Home(props) {
         terapias={filterData()}
         setFilter={setFilter}
       ></SectionServices>
+      <div>
+        <LazyHero
+          style={{ backgroundSize: "100% 100%" }}
+          parallaxOffset={200}
+          color="#000"
+          opacity={0}
+          transitionDuration={1000}
+          isCentered={true}
+          minHeight={"50vh"}
+          imageSrc="/bannerAgendar.png"
+          height="50vh"
+        ></LazyHero>
+      </div>
       <SectionFAQ preguntas={props.preguntas} />
       <SectionResume></SectionResume>
     </div>

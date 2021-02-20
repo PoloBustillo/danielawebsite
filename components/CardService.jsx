@@ -38,13 +38,10 @@ const CardService = (props) => {
           border: "none",
           backdropFilter: "blur(92px)",
           boxShadow: "0 0 30px #bfbfbf",
-          maxHeight: "90vh",
-          minHeight: "76vh",
+          minHeight: "100%",
         }}
       >
-        <Card.Body
-          style={{ padding: "0.8rem", maxHeight: "90vh", minHeight: "70vh" }}
-        >
+        <Card.Body style={{ padding: "0.8rem", minHeight: "100%" }}>
           <Card.Img
             style={{ height: "55.45%", width: "100%", minHeight: "270px" }}
             variant="bottom"

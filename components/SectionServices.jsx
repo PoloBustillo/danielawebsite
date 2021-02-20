@@ -23,46 +23,42 @@ const parallaxDataColor = [
 
 const SectionServices = (props) => {
   return (
-    <div id="sectionServices">
-      <Fade top cascade ssrFadeout fraction={0.05}>
-        <div className="services-header">
-          <h1 className="section-title header">
-            <div>Servicios</div>
-            <div>Profesionales</div>
-          </h1>
-        </div>
-      </Fade>
+    <div id="sectionServices" style={{ justifyContent: "center" }}>
+      <div className="services-header">
+        <h1 className="section-title header">
+          <div>Servicios</div>
+          <div>Profesionales</div>
+        </h1>
+      </div>
 
       <Row style={{ justifyContent: "center" }}>
-        <Plx className="titleParallax" parallaxData={parallaxDataColor}>
-          <Row
-            style={{
-              display: "flex",
-              marginTop: "-45px",
-              justifyContent: "center",
-              color: "#007bff",
-            }}
-          >
-            <SubMenuServices
-              areas={props.areas}
-              setFilter={props.setFilter}
-            ></SubMenuServices>
-          </Row>
-          <Row className="row-cards">
-            {props.terapias.map((terapia, index) => {
-              return terapia.tipos_terapias?.map((tipo_terapia) => {
-                return (
-                  <Col xs={12} md={6} lg={{ span: 4 }}>
-                    <CardService
-                      key={tipo_terapia.id}
-                      terapia={tipo_terapia}
-                    ></CardService>
-                  </Col>
-                );
-              });
-            })}
-          </Row>
-        </Plx>
+        <Row
+          style={{
+            display: "flex",
+            marginTop: "-45px",
+            justifyContent: "center",
+            color: "#007bff",
+          }}
+        >
+          <SubMenuServices
+            areas={props.areas}
+            setFilter={props.setFilter}
+          ></SubMenuServices>
+        </Row>
+        <Row className="row-cards">
+          {props.terapias.map((terapia, index) => {
+            return terapia.tipos_terapias?.map((tipo_terapia) => {
+              return (
+                <Col xs={12} md={6} lg={{ span: 4 }}>
+                  <CardService
+                    key={tipo_terapia.id}
+                    terapia={tipo_terapia}
+                  ></CardService>
+                </Col>
+              );
+            });
+          })}
+        </Row>
       </Row>
       <style jsx>{`
         #sectionServices {
