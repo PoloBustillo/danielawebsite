@@ -24,7 +24,7 @@ const parallaxDataColor = [
 const SectionServices = (props) => {
   return (
     <div id="sectionServices">
-      <Fade top cascade ssrFadeout>
+      <Fade top cascade ssrFadeout fraction={0.05}>
         <div className="services-header">
           <h1 className="section-title header">
             <div>Servicios</div>

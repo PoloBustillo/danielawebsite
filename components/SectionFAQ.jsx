@@ -31,7 +31,7 @@ const SectionFAQ = (props) => {
               setAccordionSelected(e);
             }}
           >
-            {props.preguntas.map((item, index) => {
+            {props.preguntas?.map((item, index) => {
               index = index + 1;
               return (
                 <Card
@@ -39,6 +39,7 @@ const SectionFAQ = (props) => {
                     background: "transparent",
                     border: "none",
                   }}
+                  key={item.id}
                 >
                   <Accordion.Toggle
                     as={Card.Header}

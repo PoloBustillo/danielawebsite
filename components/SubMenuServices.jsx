@@ -30,6 +30,7 @@ const SubMenuServices = (props) => {
                 props.setFilter(terapia);
                 setSelected(terapia);
               }}
+              key={terapia.id}
               className={`headerAnimation subMenu ${
                 selected == terapia ? "active" : ""
               }`}
