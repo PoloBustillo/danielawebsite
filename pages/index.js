@@ -41,7 +41,7 @@ export default function Home(props) {
         terapias={filterData()}
         setFilter={setFilter}
       ></SectionServices>
-      <div>
+      <div id="banner">
         <LazyHero
           style={{ backgroundSize: "100% 100%" }}
           parallaxOffset={200}
