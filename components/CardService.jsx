@@ -27,7 +27,7 @@ const myLoader = ({ src, width, quality }) => {
 
 const CardService = (props) => {
   return (
-    <Fade bottom ssrFadeout>
+    <Fade bottom ssrFadeout distance={"100px"}>
       <Card
         style={{
           ...props.style,

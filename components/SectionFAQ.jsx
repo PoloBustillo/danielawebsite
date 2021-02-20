@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
-import LightSpeed from "react-reveal/LightSpeed";
+import HeadShake from "react-reveal/HeadShake";
 import Fade from "react-reveal/Fade";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +12,7 @@ const SectionFAQ = (props) => {
   const [flag, setFlag] = useState();
   return (
     <div id="sectionFAQ">
-      <Fade top cascade ssrFadeout>
+      <Fade distance={"100px"} top cascade ssrFadeout>
         <div className="services-header">
           <h1 className="section-title header">
             <div>Preguntas</div>
@@ -74,7 +74,7 @@ const SectionFAQ = (props) => {
                       )}
                     </span>
                   </Accordion.Toggle>
-                  <LightSpeed left cascade ssrFadeout>
+                  <HeadShake left cascade ssrFadeout>
                     <Accordion.Collapse
                       eventKey={index}
                       style={{
@@ -86,7 +86,7 @@ const SectionFAQ = (props) => {
                         <ReactMarkdown source={item.Respuesta} />
                       </Card.Body>
                     </Accordion.Collapse>
-                  </LightSpeed>
+                  </HeadShake>
                 </Card>
               );
             })}
