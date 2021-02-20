@@ -136,6 +136,7 @@ const SubMenuServices = (props) => {
                     setSelected(terapia);
                     animated.hide();
                   }}
+                  key={terapia.id}
                 >
                   {terapia}
                 </ListGroup.Item>

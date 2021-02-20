@@ -22,7 +22,7 @@ const SectionFAQ = (props) => {
       </Fade>
 
       <Row style={{ justifyContent: "center" }}>
-        <Col style={{ margin: "4vh 0" }} sm={{ span: 8 }} centered>
+        <Col style={{ margin: "4vh 0" }} sm={{ span: 8 }} centered={"true"}>
           <Accordion
             style={{
               background: "transparent",
