@@ -38,7 +38,7 @@ const CardService = (props) => {
           border: "none",
           backdropFilter: "blur(92px)",
           boxShadow: "0 0 30px #bfbfbf",
-          maxHeight: "76vh",
+          maxHeight: "90vh",
           minHeight: "76vh",
         }}
       >

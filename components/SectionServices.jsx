@@ -79,10 +79,6 @@ const SectionServices = (props) => {
           background-color: rgb(255, 255, 255);
           margin-bottom: 2vh;
         }
-
-        .firstCard {
-          margin-left: 12.5vw !important;
-        }
         .section-title {
           text-align: center;
           color: rgb(41, 47, 69);

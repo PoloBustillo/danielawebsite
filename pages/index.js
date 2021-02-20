@@ -6,7 +6,7 @@ import SectionResume from "components/SectionResume";
 import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
-import axios from "axios";
+import SectionFAQ from "../components/SectionFAQ";
 
 export default function Home(props) {
   const [color, setColor] = useState();
@@ -34,13 +34,13 @@ export default function Home(props) {
         setOpenMenu={setOpen}
         color={color}
       ></StickyBar>
-
       <SectionHome slogan={props.slogan}></SectionHome>
       <SectionServices
         areas={props.areas}
         terapias={filterData()}
         setFilter={setFilter}
       ></SectionServices>
+      <SectionFAQ preguntas={props.preguntas} />
       <SectionResume></SectionResume>
     </div>
   );
@@ -48,9 +48,10 @@ export default function Home(props) {
 
 export const getStaticProps = async (context) => {
   try {
-    const [slogan, areas] = await Promise.all([
+    const [slogan, areas, preguntas] = await Promise.all([
       fetchAPI("slogan"),
       fetchAPI("areas"),
+      fetchAPI("preguntas"),
     ]);
 
     return {
@@ -60,6 +61,7 @@ export const getStaticProps = async (context) => {
         }),
         terapias: areas,
         slogan: slogan.Texto,
+        preguntas: preguntas.Pregunta,
       },
       revalidate: 30,
     };
