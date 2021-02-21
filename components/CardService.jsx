@@ -43,7 +43,12 @@ const CardService = (props) => {
       >
         <Card.Body style={{ padding: "0.8rem", minHeight: "100%" }}>
           <Card.Img
-            style={{ height: "55.45%", width: "100%", minHeight: "270px" }}
+            style={{
+              height: "55.45%",
+              width: "100%",
+              minHeight: "270px",
+              maxHeight: "270px",
+            }}
             variant="bottom"
             src={props.terapia?.Contenido[0]?.Imagen.url}
           />
