@@ -2,12 +2,11 @@ import Head from "next/head";
 import { fetchAPI } from "../lib/api";
 import React, { useState } from "react";
 import SectionHome from "components/SectionHome";
-import SectionResume from "components/SectionResume";
 import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
-import LazyHero from "react-lazy-hero";
+import Footer from "../components/Footer";
 
 export default function Home(props) {
   const [color, setColor] = useState();
@@ -42,20 +41,10 @@ export default function Home(props) {
         setFilter={setFilter}
       ></SectionServices>
       <div id="banner">
-        <LazyHero
-          style={{ backgroundSize: "100% 100%" }}
-          parallaxOffset={200}
-          color="#000"
-          opacity={0}
-          transitionDuration={1000}
-          isCentered={true}
-          minHeight={"50vh"}
-          imageSrc="/bannerAgendar.png"
-          height="50vh"
-        ></LazyHero>
+        <img src="/bannerAgendar.png" alt="Banner"></img>
       </div>
       <SectionFAQ preguntas={props.preguntas} />
-      <SectionResume></SectionResume>
+      <Footer></Footer>
     </div>
   );
 }
