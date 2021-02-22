@@ -34,7 +34,6 @@ const Footer = () => {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            maxWidth: "1200px",
             color: "white",
           }}
         >
@@ -76,7 +75,6 @@ const Footer = () => {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            maxWidth: "1200px",
             color: "white",
             borderTop: "1px solid rgba(146,146,146,0.5)",
           }}
