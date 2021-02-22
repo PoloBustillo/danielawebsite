@@ -278,6 +278,12 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .logo {
+    position: relative;
+    float: right;
+    left: -20%;
+    margin-top: 2vh !important;
+  }
   .card,
   .card-body {
     min-height: 100% !important;

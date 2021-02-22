@@ -331,6 +331,7 @@ const Footer = () => {
       </Row>
       <style jsx>{`
         .logo {
+          position: relative;
           float: right;
           left: -20%;
           margin-top: 10vh;
