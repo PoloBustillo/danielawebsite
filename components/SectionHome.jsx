@@ -26,10 +26,16 @@ const SectionHome = (props) => {
       >
         <Row className="sectionButtonsContainer">
           <Col className="heroButtonContainer">
-            <Button className="buttonHero element-animation">Citas</Button>
+            <Link href="/#citas">
+              <Button className="buttonHero element-animation">Citas</Button>
+            </Link>
           </Col>
           <Col className="heroButtonContainer">
-            <Button className="buttonHero element-animation">Contacto</Button>
+            <Link href="/instituciones">
+              <Button className="buttonHero element-animation">
+                Instituciones
+              </Button>
+            </Link>
           </Col>
           <Col className="heroButtonContainer">
             <Link href="/#sectionServices">

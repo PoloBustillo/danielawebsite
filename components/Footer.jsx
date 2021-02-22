@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-import { Row, Col } from "react-bootstrap";
-import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { faAngleUp, faAt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { particleOptions, motionForce } from "../utils/particles";
-import ParticleImage from "react-particle-image";
+import Link from "next/link";
 import {
-  EmailShareButton,
-  FacebookShareButton,
-  TelegramShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-  EmailIcon,
-  FacebookIcon,
-  TelegramIcon,
-  TwitterIcon,
-  WhatsappIcon,
-} from "react-share";
+  faLinkedinIn,
+  faFacebook,
+  faInstagram,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import ParticleImage from "react-particle-image";
+
 const Footer = () => {
   const [style, setStyle] = useState({ display: "none" });
   const [style2, setStyle2] = useState({ display: "block" });
@@ -54,10 +50,32 @@ const Footer = () => {
               }}
             >
               <li>
-                <a>© Takito Corp</a>
+                <OverlayTrigger
+                  placement={"bottom"}
+                  delay={{ show: 250, hide: 1000 }}
+                  overlay={
+                    <Tooltip>
+                      <ParticleImage
+                        src={"/corgiParticles3.png"}
+                        width={100}
+                        height={150}
+                        scale={0.5}
+                        entropy={0}
+                        maxParticles={2000}
+                        particleOptions={particleOptions}
+                        mouseMoveForce={motionForce}
+                      />
+                    </Tooltip>
+                  }
+                >
+                  <a>© Takito Corp</a>
+                </OverlayTrigger>
               </li>
               <li>
-                <a style={{ opacity: "1", fontWeight: "bold" }}>
+                <a
+                  href="/#sectionHome"
+                  style={{ opacity: "1", fontWeight: "bold" }}
+                >
                   IR A HOME{" "}
                   <FontAwesomeIcon
                     fixedWidth
@@ -102,7 +120,9 @@ const Footer = () => {
                 <a>TERMINOS</a>
               </li>
               <li>
-                <a>TECH SUPPORT</a>
+                <a href="https://wa.me/523317700339?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+                  TECH SUPPORT
+                </a>
               </li>
             </ul>
           </Row>
@@ -149,80 +169,31 @@ const Footer = () => {
               tabIndex="0"
             ></iframe>
             <div className="social-container">
-              <FacebookShareButton
-                quote={`Te invito a checar esta terapia`}
-                url={shareUrl}
-                hashtag={"#Puebla"}
-              >
-                <FacebookIcon
-                  size={32}
-                  bgStyle={{
-                    fill: "transparent",
-                    stroke: "white",
-                    border: "solid white",
-                  }}
-                  iconFillColor={"white"}
-                  round={true}
-                />
-              </FacebookShareButton>
-              <WhatsappShareButton url={shareUrl}>
-                <WhatsappIcon
-                  bgStyle={{
-                    fill: "transparent",
-                    stroke: "white",
-                    border: "solid white",
-                  }}
-                  iconFillColor={"white"}
-                  size={32}
-                  round={true}
-                />
-              </WhatsappShareButton>
-              <TelegramShareButton
-                title={`Te invito a checar esta terapia`}
-                url={shareUrl}
-              >
-                <TelegramIcon
-                  bgStyle={{
-                    fill: "transparent",
-                    stroke: "white",
-                    border: "solid white",
-                  }}
-                  iconFillColor={"white"}
-                  size={32}
-                  round={true}
-                />
-              </TelegramShareButton>
-              <TwitterShareButton
-                title={`Te invito a checar esta terapia`}
-                hashtags={["Psicologo", "Puebla", "Psicologa"]}
-                url={shareUrl}
-              >
-                <TwitterIcon
-                  bgStyle={{
-                    fill: "transparent",
-                    stroke: "white",
-                    border: "solid white",
-                  }}
-                  iconFillColor={"white"}
-                  size={32}
-                  round={true}
-                />
-              </TwitterShareButton>
-              <EmailShareButton
-                subject={`Te invito a checar esta terapia`}
-                body={""}
-              >
-                <EmailIcon
-                  bgStyle={{
-                    fill: "transparent",
-                    stroke: "white",
-                    border: "solid white",
-                  }}
-                  iconFillColor={"white"}
-                  size={32}
-                  round={true}
-                />
-              </EmailShareButton>
+              <span id="social-icon">
+                <Link href="https://linkedin.com/in/daniela-diaz-408967144">
+                  <FontAwesomeIcon fixedWidth size="2x" icon={faLinkedinIn} />
+                </Link>
+              </span>
+              <span id="social-icon">
+                <Link href="mailto:danieladimersic@gmail.com">
+                  <FontAwesomeIcon fixedWidth size="2x" icon={faAt} />
+                </Link>
+              </span>
+              <span id="social-icon">
+                <Link href="https://www.facebook.com/PsicoterapiaDiazMer">
+                  <FontAwesomeIcon fixedWidth size="2x" icon={faFacebook} />
+                </Link>
+              </span>
+              <span id="social-icon">
+                <Link href="https://www.instagram.com/psic.danielaedm/">
+                  <FontAwesomeIcon fixedWidth size="2x" icon={faInstagram} />
+                </Link>
+              </span>
+              <span id="social-icon">
+                <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+                  <FontAwesomeIcon fixedWidth size="2x" icon={faWhatsapp} />
+                </Link>
+              </span>
             </div>
           </div>
         </Col>
@@ -338,8 +309,11 @@ const Footer = () => {
           position: relative;
           top: 3vh;
         }
-        svg {
+        a svg {
           margin-right: 1vw;
+        }
+        #social-icon:hover {
+          color: bisque;
         }
         .footerCol {
           font-family: "Gotham-Book", "Arial", sans-serif;
@@ -355,7 +329,8 @@ const Footer = () => {
           line-height: 1.5;
           color: white;
           opacity: 0.7;
-          text-decoration: none;
+          padding: 12px 0;
+          text-decoration: none !important;
         }
         .social-container {
           margin-top: 2vh;
