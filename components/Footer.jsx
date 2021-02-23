@@ -114,14 +114,18 @@ const Footer = () => {
               }}
             >
               <li>
-                <a>AVISO DE PRIVACIDAD</a>
+                <a href="/DECLARACIONPRIVACIDAD.pdf" target="_blank">
+                  AVISO&middot;DE&middot;PRIVACIDAD
+                </a>
               </li>
               <li>
-                <a>TERMINOS</a>
+                <a href="/TERMINOSSERVICIO.pdf" target="_blank">
+                  TERMINOS&middot;DE&middot;SERVICIO
+                </a>
               </li>
               <li>
                 <a href="https://wa.me/523317700339?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
-                  TECH SUPPORT
+                  TECH&middot;SUPPORT
                 </a>
               </li>
             </ul>
