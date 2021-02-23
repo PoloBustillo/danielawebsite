@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { faAngleUp, faAt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleUp,
+  faAt,
+  faPhoneAlt,
+  faMapMarkerAlt,
+  faBrain,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { particleOptions, motionForce } from "../utils/particles";
 import Link from "next/link";
@@ -148,20 +154,8 @@ const Footer = () => {
               fontStyle: "italic",
             }}
           >
-            Psic. Daniela Diaz Merino
+            Psicologa Daniela Diaz Merino
           </span>
-          <div
-            style={{
-              fontFamily: "WoodfordBournePRO",
-              fonSize: "12px",
-              lineHeight: "1.5",
-              fontSize: "12px",
-              margin: "2vmin",
-              fontWeight: "900",
-            }}
-          >
-            Psicologa en Puebla, Mexico. Rancho Ex-Vaquerias.
-          </div>
 
           <div id="map-container">
             <iframe
@@ -212,19 +206,19 @@ const Footer = () => {
             }}
           >
             <li>
-              <a>SERVICIOS /</a>
+              <a href="/#sectionServices">SERVICIOS /</a>
             </li>
             <li>
-              <a>FAQ /</a>
+              <a href="/#sectionFAQ">FAQ /</a>
             </li>
             <li>
-              <a>BLOG /</a>
+              <a href="/blogs">BLOGS /</a>
             </li>
             <li>
-              <a>INSTITUCIONES&middot;ASOCIADAS /</a>
+              <a href="/instituciones">INSTITUCIONES&middot;ASOCIADAS /</a>
             </li>
             <li>
-              <a>CITAS /</a>
+              <a href="/#citas">CITAS /</a>
             </li>
           </ul>
           <span style={{ marginTop: "10vh" }} className="footerCol">
@@ -249,6 +243,28 @@ const Footer = () => {
               <a>OTROS /</a>
             </li>
           </ul>
+          <div
+            style={{
+              fontFamily: "WoodfordBournePRO",
+              fonSize: "12px",
+              lineHeight: "1.5",
+              fontSize: "12px",
+              margin: "2vmin",
+              fontWeight: "900",
+            }}
+          >
+            <div>
+              <FontAwesomeIcon fixedWidth size="1x" icon={faBrain} />
+              Psicologa en Puebla.
+            </div>
+            <div>
+              <FontAwesomeIcon fixedWidth size="1x" icon={faMapMarkerAlt} />
+              Mártires del 2 de Octubre, Reserva Territorial Atlixcáyotl,
+              Ex-Rancho Vaquerías, 72464 Puebla, Pue.
+            </div>
+            <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
+            22&middot;11&middot;16&middot;58&middot;66
+          </div>
         </Col>
         <Col style={{ position: "relative", marginTop: "5vh" }} sm={3}>
           <span className="footerCol">ACERCA DE NOSOTROS</span>
@@ -262,13 +278,19 @@ const Footer = () => {
             }}
           >
             <li>
-              <a>CONTACTO /</a>
+              <a href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+                CONTACTO /
+              </a>
             </li>
             <li>
-              <a>UNETE&middot;AL&middot;EQUIPO /</a>
+              <a href="/jobs">
+                UNETE&middot;AL&middot;EQUIPO /
+              </a>
             </li>
             <li>
-              <a>SERVICIOS&middot;ESPECIALES</a>
+              <a href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+                SERVICIOS&middot;ESPECIALES
+              </a>
             </li>
           </ul>
           <div className="logo">
