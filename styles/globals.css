@@ -9,6 +9,9 @@
   src: url("/fonts/WoodfordBournePRO-Bold.otf") format("opentype"),
     url("/fonts/WoodfordBournePRO-Bold.otf") format("opentype");
 }
+.content-article {
+  text-align: justify;
+}
 .social-icon svg {
   margin-right: 1vw;
 }

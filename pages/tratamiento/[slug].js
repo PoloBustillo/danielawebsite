@@ -1,6 +1,8 @@
 import ReactMarkdown from "react-markdown";
+import Head from "next/head";
 import { useState } from "react";
 import { fetchAPI } from "../../lib/api";
+import SinglePageLayout from "../../components/SinglePageLayout";
 import Seo from "../../components/SEO";
 import {
   EmailShareButton,
@@ -16,7 +18,8 @@ import {
 } from "react-share";
 import StickyBar from "../../components/StickyBar";
 import SideMenu from "../../components/SideMenu";
-const Article = ({ article }) => {
+const Article = ({ article, sitios }) => {
+  console.log(sitios);
   const [isOpen, setOpen] = useState(false);
   const seo = {
     metaTitle: article.Nombre,
@@ -25,8 +28,18 @@ const Article = ({ article }) => {
     article: true,
   };
   const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/tratamiento/${article.id}`;
+  const date = new Date(article.published_at);
+  console.log(date);
   return (
-    <div>
+    <SinglePageLayout title={article.Nombre} id={article.id} sitios={sitios}>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="description" content="Servicios psicologicos" />
+        <meta name="keywords" content={`{article.Nombre}`} />
+        <meta name="author" content="Daniela Diaz Merino" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="logonobg.png" />
+      </Head>
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
       <StickyBar
         isMenuOpen={isOpen}
@@ -37,15 +50,14 @@ const Article = ({ article }) => {
 
       <div className="uk-section">
         <div className="uk-container uk-container-small">
+          <h1>{article.Nombre}</h1>
           <div
             id="banner"
             className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
             data-src={article.Contenido[0]?.Imagen.url}
             data-srcset={article.Contenido[0]?.Imagen.url}
             data-uk-img
-          >
-            <h1>{article.Nombre}</h1>
-          </div>
+          ></div>
           <div className="social-container">
             <FacebookShareButton
               quote={`Te invito a checar esta terapia: ${article.Nombre}`}
@@ -85,7 +97,7 @@ const Article = ({ article }) => {
             <div className="uk-width-expand">
               <p className="uk-margin-remove-bottom">Daniela Diaz Merino</p>
               <p className="uk-text-meta uk-margin-remove-top">
-                {article.published_at}
+                {date.toLocaleString()}
               </p>
             </div>
           </div>
@@ -107,8 +119,9 @@ const Article = ({ article }) => {
           }
 
           h1 {
+            text-align: center;
             font-family: Staatliches;
-            font-size: 5rem;
+            font-size: 9vw;
           }
 
           #category {
@@ -151,7 +164,7 @@ const Article = ({ article }) => {
           }
         `}
       </style>
-    </div>
+    </SinglePageLayout>
   );
 };
 
@@ -168,16 +181,19 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params }) => {
   try {
-    const article = await fetchAPI(`tipos-terapias/${params.slug}`);
-    console.log("ARTICLE", article);
+    const [article, footer] = await Promise.all([
+      fetchAPI(`tipos-terapias/${params.slug}`),
+      fetchAPI("footer"),
+    ]);
+
     return {
       props: {
         article: article,
+        sitios: footer?.SitiosAfines,
       },
       revalidate: 5,
     };
   } catch (error) {
-    console.log("ERROR", error);
     return {
       props: {
         areas: [],

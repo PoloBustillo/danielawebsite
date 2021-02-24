@@ -18,7 +18,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import ParticleImage from "react-particle-image";
 
-const Footer = () => {
+const Footer = (props) => {
+  console.log(props);
   const [style, setStyle] = useState({ display: "none" });
   const [style2, setStyle2] = useState({ display: "block" });
   const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}`;
@@ -233,15 +234,15 @@ const Footer = () => {
               justifyContent: "center",
             }}
           >
-            <li>
-              <a>PARROQUIA&middot;TEZIUTLAN /</a>
-            </li>
-            <li>
-              <a>ORATORIO&middot;DON&middot;BOSCO /</a>
-            </li>
-            <li>
-              <a>OTROS /</a>
-            </li>
+            {props.sitios?.map((item) => {
+              return (
+                <li key={item.id}>
+                  <a href={item.URL}>
+                    {item.Nombre?.toUpperCase().replace(" ", "·")} /
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <div
             style={{
@@ -283,9 +284,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/jobs">
-                UNETE&middot;AL&middot;EQUIPO /
-              </a>
+              <a href="/jobs">UNETE&middot;AL&middot;EQUIPO /</a>
             </li>
             <li>
               <a href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">

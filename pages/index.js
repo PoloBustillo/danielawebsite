@@ -44,17 +44,18 @@ export default function Home(props) {
         <img src="/bannerAgendar.png" alt="Banner"></img>
       </div>
       <SectionFAQ preguntas={props.preguntas} />
-      <Footer></Footer>
+      <Footer sitios={props.sitios}></Footer>
     </div>
   );
 }
 
 export const getStaticProps = async (context) => {
   try {
-    const [slogan, areas, preguntas] = await Promise.all([
+    const [slogan, areas, preguntas, footer] = await Promise.all([
       fetchAPI("slogan"),
       fetchAPI("areas"),
       fetchAPI("preguntas"),
+      fetchAPI("footer"),
     ]);
 
     return {
@@ -65,6 +66,7 @@ export const getStaticProps = async (context) => {
         terapias: areas,
         slogan: slogan.Texto,
         preguntas: preguntas.Pregunta,
+        sitios: footer?.SitiosAfines,
       },
       revalidate: 30,
     };
