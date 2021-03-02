@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { fetchAPI } from "../lib/api";
 import React, { useState } from "react";
 import SectionHome from "components/SectionHome";
@@ -6,12 +7,17 @@ import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
+import SectionCitas from "../components/SectionCitas";
 import Footer from "../components/Footer";
+import { useSession, signIn, signOut } from "next-auth/client";
 
 export default function Home(props) {
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
+  const [session, loading] = useSession();
+  console.log(session, loading);
+  const router = useRouter();
 
   const filterData = () => {
     let terapiasFiltered = props.terapias;
@@ -43,7 +49,30 @@ export default function Home(props) {
       <div id="banner">
         <img src="/bannerAgendar.png" alt="Banner"></img>
       </div>
+      <SectionCitas
+        areas={props.areas}
+        terapias={filterData()}
+        setFilter={setFilter}
+      ></SectionCitas>
       <SectionFAQ preguntas={props.preguntas} />
+      {session && (
+        <>
+          Signed in as {session.user.email} <br />
+          <button onClick={async () => await signOut({ callbackUrl: "/foo" })}>
+            Sign out
+          </button>
+        </>
+      )}
+      <button
+        onClick={async () => {
+          const data = await signIn("google", {
+            redirect: false,
+          });
+          router.push("/citas");
+        }}
+      >
+        Sign in with Google
+      </button>
       <Footer sitios={props.sitios}></Footer>
     </div>
   );
