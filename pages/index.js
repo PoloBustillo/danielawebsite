@@ -55,20 +55,20 @@ export default function Home(props) {
         setFilter={setFilter}
       ></SectionCitas>
       <SectionFAQ preguntas={props.preguntas} />
-      {session && (
-        <>
-          Signed in as {session.user.email} <br />
-          <button onClick={async () => await signOut({ callbackUrl: "/foo" })}>
-            Sign out
-          </button>
-        </>
-      )}
+
+      <>
+        Signed in as {session?.user.email} <br />
+        <button onClick={async () => await signOut({ callbackUrl: "/foo" })}>
+          Sign out
+        </button>
+      </>
+
       <button
         onClick={async () => {
           const data = await signIn("google", {
             redirect: false,
           });
-          router.push("/citas");
+          //router.push("/citas");
         }}
       >
         Sign in with Google

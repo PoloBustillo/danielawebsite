@@ -8,7 +8,7 @@ import {
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { Map, Marker, Overlay } from "pigeon-maps";
+
 const mapStyles = {
   width: "100%",
   height: "30%",

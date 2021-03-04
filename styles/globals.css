@@ -9,6 +9,18 @@
   src: url("/fonts/WoodfordBournePRO-Bold.otf") format("opentype"),
     url("/fonts/WoodfordBournePRO-Bold.otf") format("opentype");
 }
+
+.MuiPaper-root {
+  background-color: transparent !important;
+}
+.progress {
+  height: 1.4rem !important;
+  background-color: #ecf0f9 !important;
+  border: 1px solid #212629;
+}
+.progress-bar {
+  background-color: #212629 !important;
+}
 .content-article {
   text-align: justify;
 }
