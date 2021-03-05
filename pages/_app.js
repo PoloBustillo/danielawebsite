@@ -3,9 +3,13 @@ import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-awesome-button/dist/themes/theme-one.css";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+import { Provider } from "next-auth/client";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
+const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,
 });
 
@@ -14,7 +18,6 @@ export function reportWebVitals(metric) {
 }
 
 function MyApp({ Component, pageProps }) {
-  const { global } = pageProps;
   return (
     <>
       <Head>
@@ -40,17 +43,21 @@ function MyApp({ Component, pageProps }) {
         language="es_LA"
         shouldShowDialog={false}
       />
-      <div style={{ zIndex: "1100" }}>
-        <AnimatedCursor
-          innerSize={18}
-          outerSize={24}
-          color="182,95,207"
-          outerAlpha={0.2}
-          innerScale={2}
-          outerScale={5}
-        />
-      </div>
-      <Component {...pageProps} />
+      <NotMobile>
+        <div style={{ zIndex: "1100" }}>
+          <AnimatedCursor
+            innerSize={18}
+            outerSize={24}
+            color="182,95,207"
+            outerAlpha={0.2}
+            innerScale={2}
+            outerScale={5}
+          />
+        </div>
+      </NotMobile>
+      <Provider session={pageProps.session}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

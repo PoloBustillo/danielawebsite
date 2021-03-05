@@ -16,7 +16,7 @@ export default function Home(props) {
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
   const [session, loading] = useSession();
-  console.log(session, loading);
+
   const router = useRouter();
 
   const filterData = () => {
@@ -56,23 +56,6 @@ export default function Home(props) {
       ></SectionCitas>
       <SectionFAQ preguntas={props.preguntas} />
 
-      <>
-        Signed in as {session?.user.email} <br />
-        <button onClick={async () => await signOut({ callbackUrl: "/foo" })}>
-          Sign out
-        </button>
-      </>
-
-      <button
-        onClick={async () => {
-          const data = await signIn("google", {
-            redirect: false,
-          });
-          //router.push("/citas");
-        }}
-      >
-        Sign in with Google
-      </button>
       <Footer sitios={props.sitios}></Footer>
     </div>
   );

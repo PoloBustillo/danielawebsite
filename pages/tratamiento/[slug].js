@@ -19,7 +19,6 @@ import {
 import StickyBar from "../../components/StickyBar";
 import SideMenu from "../../components/SideMenu";
 const Article = ({ article, sitios }) => {
-  console.log(sitios);
   const [isOpen, setOpen] = useState(false);
   const seo = {
     metaTitle: article.Nombre,
@@ -29,7 +28,7 @@ const Article = ({ article, sitios }) => {
   };
   const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/tratamiento/${article.id}`;
   const date = new Date(article.published_at);
-  console.log(date);
+
   return (
     <SinglePageLayout title={article.Nombre} id={article.id} sitios={sitios}>
       <Head>

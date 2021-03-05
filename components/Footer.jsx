@@ -10,6 +10,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { particleOptions, motionForce } from "../utils/particles";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const NotMobile = dynamic(() => import("../components/NotMobile"), {
+  ssr: false,
+});
 import {
   faLinkedinIn,
   faFacebook,
@@ -19,7 +24,6 @@ import {
 import ParticleImage from "react-particle-image";
 
 const Footer = (props) => {
-  console.log(props);
   const [style, setStyle] = useState({ display: "none" });
   const [style2, setStyle2] = useState({ display: "block" });
   const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}`;
@@ -292,35 +296,37 @@ const Footer = (props) => {
               </a>
             </li>
           </ul>
-          <div className="logo">
-            <img
-              style={style2}
-              src="/logo500.webp"
-              width="200"
-              height="200"
-              className="align-top"
-              alt="Daniela Díaz Merino Psicóloga"
-              onMouseEnter={(e) => {
-                setStyle({ display: "block" });
-                setStyle2({ display: "none" });
-              }}
-            />
-            <ParticleImage
-              onMouseLeave={(e) => {
-                setStyle({ display: "none" });
-                setStyle2({ display: "block" });
-              }}
-              style={style}
-              src={"/logo200nobg.png"}
-              width={200}
-              height={200}
-              scale={1}
-              entropy={0}
-              maxParticles={3000}
-              particleOptions={particleOptions}
-              mouseMoveForce={motionForce}
-            />
-          </div>
+          <NotMobile>
+            <div className="logo">
+              <img
+                style={style2}
+                src="/logo500.webp"
+                width="200"
+                height="200"
+                className="align-top"
+                alt="Daniela Díaz Merino Psicóloga"
+                onMouseEnter={(e) => {
+                  setStyle({ display: "block" });
+                  setStyle2({ display: "none" });
+                }}
+              />
+              <ParticleImage
+                onMouseLeave={(e) => {
+                  setStyle({ display: "none" });
+                  setStyle2({ display: "block" });
+                }}
+                style={style}
+                src={"/logo200nobg.png"}
+                width={200}
+                height={200}
+                scale={1}
+                entropy={0}
+                maxParticles={3000}
+                particleOptions={particleOptions}
+                mouseMoveForce={motionForce}
+              />
+            </div>
+          </NotMobile>
         </Col>
       </Row>
       <style jsx>{`

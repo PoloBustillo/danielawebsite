@@ -10,6 +10,23 @@
     url("/fonts/WoodfordBournePRO-Bold.otf") format("opentype");
 }
 
+.MuiAvatar-root {
+  width: 80px !important;
+  height: 80px !important;
+}
+.MuiBadge-dot {
+  background-color: green;
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+  color: #59832c !important;
+}
+.MuiSvgIcon-root {
+  font-size: 2.9rem !important;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #24201e !important;
+}
 .MuiPaper-root {
   background-color: transparent !important;
 }

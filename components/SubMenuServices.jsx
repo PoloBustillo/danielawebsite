@@ -114,7 +114,6 @@ const SubMenuServices = (props) => {
           }}
           hideOnOverlayClicked
           afterClose={() => {
-            console.log(selected);
             if (selected == "Filtrar") {
               setSelected("todos");
             }

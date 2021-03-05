@@ -7,6 +7,11 @@ import scrollDown from "public/scroll-down3.gif";
 import Link from "next/link";
 import { particleOptions, motionForce } from "../utils/particles";
 import ParticleImage from "react-particle-image";
+import dynamic from "next/dynamic";
+
+const NotMobile = dynamic(() => import("../components/NotMobile"), {
+  ssr: false,
+});
 
 const SectionHome = (props) => {
   const [style, setStyle] = useState({ display: "none" });
@@ -92,35 +97,50 @@ const SectionHome = (props) => {
             z-index: 10;
           }
         `}</style>
-        <div className="logo">
-          <img
-            style={style2}
-            src="/logo500.webp"
-            width="200"
-            height="200"
-            className="align-top"
-            alt="Daniela Díaz Merino Psicóloga"
-            onMouseEnter={(e) => {
-              setStyle({ display: "block" });
-              setStyle2({ display: "none" });
-            }}
-          />
-          <ParticleImage
-            onMouseLeave={(e) => {
-              setStyle({ display: "none" });
-              setStyle2({ display: "block" });
-            }}
-            style={style}
-            src={"/logo200nobg.png"}
-            width={200}
-            height={200}
-            scale={1}
-            entropy={0}
-            maxParticles={3000}
-            particleOptions={particleOptions}
-            mouseMoveForce={motionForce}
-          />
-        </div>
+        <NotMobile
+          mobileChildren={
+            <div className="logo">
+              <img
+                style={style2}
+                src="/logo500.webp"
+                width="150"
+                height="150"
+                className="align-top"
+                alt="Daniela Díaz Merino Psicóloga"
+              />
+            </div>
+          }
+        >
+          <div className="logo">
+            <img
+              style={style2}
+              src="/logo500.webp"
+              width="200"
+              height="200"
+              className="align-top"
+              alt="Daniela Díaz Merino Psicóloga"
+              onMouseEnter={(e) => {
+                setStyle({ display: "block" });
+                setStyle2({ display: "none" });
+              }}
+            />
+            <ParticleImage
+              onMouseLeave={(e) => {
+                setStyle({ display: "none" });
+                setStyle2({ display: "block" });
+              }}
+              style={style}
+              src={"/logo200nobg.png"}
+              width={200}
+              height={200}
+              scale={1}
+              entropy={0}
+              maxParticles={3000}
+              particleOptions={particleOptions}
+              mouseMoveForce={motionForce}
+            />
+          </div>
+        </NotMobile>
       </LazyHero>
     </div>
   );
