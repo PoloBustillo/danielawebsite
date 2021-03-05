@@ -32,8 +32,15 @@ function getStepContent(step, handleBack, handleNext) {
     case 1:
       return (
         <div>
-          An ad group contains one or more ads which target a shared set of
-          keywords
+          <div style={{ height: "800px" }}>
+            <iframe
+              src="https://calendly.com/psic-danieladiazmerino"
+              width="100%"
+              height="100%"
+              frameborder="0"
+            ></iframe>
+          </div>
+
           <div>
             <Button disabled={step === 0} onClick={handleBack}>
               Back

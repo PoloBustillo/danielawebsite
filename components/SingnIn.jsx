@@ -10,7 +10,7 @@ import {
   faFacebook,
   faGoogle,
   faTwitter,
-  faWhatsapp,
+  faSpotify,
 } from "@fortawesome/free-brands-svg-icons";
 import { faAt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -66,14 +66,22 @@ const SingnIn = (props) => {
           </Card>
         </Col>
         <Col sm={4}>
-          <Card border="dark">
+          <Card
+            border="dark"
+            onClick={async () => {
+              signIn("spotify", {
+                callbackUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/#sectionCitas`,
+              });
+              props.handleNext();
+            }}
+          >
             <Card.Body>
               <span id="social-icon">
-                <FontAwesomeIcon fixedWidth size="4x" icon={faTwitter} />
+                <FontAwesomeIcon fixedWidth size="4x" icon={faSpotify} />
               </span>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">Twitter</small>
+              <small className="text-muted">Spotify</small>
             </Card.Footer>
           </Card>
         </Col>
