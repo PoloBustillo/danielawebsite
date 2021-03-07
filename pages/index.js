@@ -32,12 +32,6 @@ export default function Home(props) {
   return (
     <div className="container-fluid">
       <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#009cff","display_item_mode":"block","sb_review_image":"","dark_font_color":"#2d3a58","light_font_color":"#ffffff","btn_color_1":"#ff3f6c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#dad2ce","sb_available":"#d3e0f1"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"Reservar ahora","button_background_color":"#009cff","button_text_color":"#ffffff","button_position":"right","button_position_offset":"55%"});
-`,
-          }}
-        />
         <title>Pagina de Psicologo Daniela Diaz Merino</title>
       </Head>
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
@@ -55,13 +49,14 @@ export default function Home(props) {
       <div id="banner">
         <img src="/bannerAgendar.png" alt="Banner"></img>
       </div>
+      {/*
       <SectionCitas
         areas={props.areas}
         terapias={filterData()}
         setFilter={setFilter}
-      ></SectionCitas>
+      ></SectionCitas>*/}
       <SectionFAQ preguntas={props.preguntas} />
-      <div style={{ height: "800px" }}>
+      {/*<div style={{ height: "800px" }}>
         <iframe
           src="https://calendly.com/psic-danieladiazmerino"
           width="100%"
@@ -77,14 +72,15 @@ export default function Home(props) {
           height="100%"
           frameborder="0"
         ></iframe>
-      </div>
+        </div>*/}
 
       <script
         dangerouslySetInnerHTML={{
-          __html: `var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#009cff","display_item_mode":"block","sb_review_image":"","dark_font_color":"#2d3a58","light_font_color":"#ffffff","btn_color_1":"#ff3f6c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#dad2ce","sb_available":"#d3e0f1"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"Reservar ahora","button_background_color":"#009cff","button_text_color":"#ffffff","button_position":"right","button_position_offset":"55%"});
+          __html: `var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#0a3d65","display_item_mode":"list","sb_review_image":"6","sb_review_image_preview":"\/uploads\/psicdaniela\/image_files\/preview\/801453c79c2bc1a14c066ad82b046c55.png","dark_font_color":"#262020","light_font_color":"#ecf0f9","btn_color_1":"#ffa64c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#f57070","sb_available":"#f7faff"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"Reserva tu cita ","button_background_color":"#009cff","button_text_color":"#ffffff","button_position":"right","button_position_offset":"55%"});
 `,
         }}
       />
+
       <Footer sitios={props.sitios}></Footer>
     </div>
   );

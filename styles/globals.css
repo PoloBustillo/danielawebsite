@@ -284,6 +284,9 @@ body {
   box-sizing: border-box;
 }
 @media (min-width: 769px) {
+  .simplybook-widget-container {
+    width: 75vw !important;
+  }
   .navbar-expand-md {
     justify-content: center;
   }
