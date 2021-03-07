@@ -8,12 +8,20 @@ const SinglePageLayout = (props) => {
     <>
       <Navbar style={{ backgroundColor: "#24201e" }} bg="dark" variant="dark">
         <Navbar.Brand href="#home">
-          {props.title ? props.title : "Psic. Daniela Diaz Merino"}
+          <p
+            style={{
+              width: "50vw",
+              wordWrap: "break-word",
+              whiteSpace: "initial",
+            }}
+          >
+            {props.title ? props.title : "Psic. Daniela Diaz Merino"}
+          </p>
         </Navbar.Brand>
 
         <Nav className="mr-auto">
           <Nav.Link href="/#sectionServices">Regresar</Nav.Link>
-          <Nav.Link href={`/cita?terapia=${props.id ? props.id : "all"}`}>
+          <Nav.Link href={`/citas?terapia=${props.id ? props.id : "all"}`}>
             Cita
           </Nav.Link>
         </Nav>

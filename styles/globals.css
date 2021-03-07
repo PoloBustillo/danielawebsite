@@ -78,11 +78,11 @@
 .menu-item {
   font-family: "Lato", sans-serif;
   font-size: 6vmin;
-  color: rgb(178 178 178) !important;
+  color: rgb(255 255 255) !important;
   font-weight: 900;
 }
 .menu-item:hover {
-  color: rgba(29, 181, 120, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 .element-animation:hover {
   animation: animationFrames linear 1s;
@@ -443,7 +443,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: rgba(41, 47, 69, 0.96);
+  background: rgba(0, 0, 0, 0.8);
   width: 50vw;
   text-align: center;
   font-size: 1.15em;
@@ -457,23 +457,27 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #ffffff;
+  color: #000000;
   padding: 0.8em;
   cursor: grab;
+  padding: 0 !important;
 }
 
 /* Individual item */
+.bm-item .menu-container {
+  padding: 15px;
+}
 .bm-item {
   display: inline-block;
   cursor: grab !important;
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin: 2% 5%;
 }
 .bm-item:hover {
   display: inline-block;
   cursor: grab !important;
-  color: rgba(29, 181, 120, 0.8);
+  color: rgba(148, 148, 148, 0.8);
   text-decoration: none;
 }
 .bm-item:active {

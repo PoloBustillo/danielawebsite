@@ -25,30 +25,38 @@ const Social = (props) => {
   } */
   return (
     <div className="social-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
+        frameBorder="0"
+        style={{ border: "0", height: "35vh", width: "40vw" }}
+        allowFullScreen={false}
+        aria-hidden="false"
+        tabIndex="0"
+      ></iframe>
       <div className="icons-container">
         <span id="social-icon">
           <Link href="https://linkedin.com/in/daniela-diaz-408967144">
-            <FontAwesomeIcon fixedWidth size="2x" icon={faLinkedinIn} />
+            <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
           </Link>
         </span>
         <span id="social-icon">
           <Link href="mailto:danieladimersic@gmail.com">
-            <FontAwesomeIcon fixedWidth size="2x" icon={faAt} />
+            <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
           </Link>
         </span>
         <span id="social-icon">
           <Link href="https://www.facebook.com/PsicoterapiaDiazMer">
-            <FontAwesomeIcon fixedWidth size="2x" icon={faFacebook} />
+            <FontAwesomeIcon fixedWidth size="1x" icon={faFacebook} />
           </Link>
         </span>
         <span id="social-icon">
           <Link href="https://www.instagram.com/psic_danieladiazm/">
-            <FontAwesomeIcon fixedWidth size="2x" icon={faInstagram} />
+            <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
           </Link>
         </span>
         <span id="social-icon">
           <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
-            <FontAwesomeIcon fixedWidth size="2x" icon={faWhatsapp} />
+            <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
           </Link>
         </span>
       </div>
@@ -71,14 +79,6 @@ const Social = (props) => {
             <img src="/corgiParticles3.png" width={50} height={50} alt="" />
           </Overlay>
         </Map>*/}
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
-          frameBorder="0"
-          style={{ border: "0", height: "35vh", width: "40vw" }}
-          allowFullScreen={false}
-          aria-hidden="false"
-          tabIndex="0"
-        ></iframe>
       </div>
 
       <style jsx>{`
@@ -102,10 +102,12 @@ const Social = (props) => {
         }
         .icons-container {
           bottom: 5%;
-          color: rgb(178 178 178, 0.8);
+          color: white;
           position: realtive;
           left: 10%;
           font-size: 3vmax;
+          margin: 20px 0;
+          font-size: 30px;
         }
       `}</style>
     </div>

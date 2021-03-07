@@ -42,27 +42,32 @@ const CardService = (props) => {
         }}
       >
         <Card.Body style={{ padding: "0.8rem", minHeight: "100%" }}>
-          <Card.Img
-            style={{
-              height: "55.45%",
-              width: "100%",
-              minHeight: "270px",
-              maxHeight: "270px",
-            }}
-            variant="bottom"
-            src={props.terapia?.Contenido[0]?.Imagen.url}
-          />
-          <Card.Title
-            style={{
-              margin: "2vh 0",
-              fontFamily: "Noto Sans",
-              fontWeight: "900",
-              color: "#4a5568",
-            }}
-          >
-            {" "}
-            {props.terapia?.Nombre}
-          </Card.Title>
+          <Link href={`/tratamiento/${props.terapia.id}`}>
+            <Card.Img
+              style={{
+                height: "55.45%",
+                width: "100%",
+                minHeight: "270px",
+                maxHeight: "270px",
+              }}
+              variant="bottom"
+              src={props.terapia?.Contenido[0]?.Imagen.url}
+            />
+          </Link>
+          <Link href={`/tratamiento/${props.terapia.id}`}>
+            <Card.Title
+              style={{
+                margin: "2vh 0",
+                fontFamily: "Noto Sans",
+                fontWeight: "900",
+                color: "#4a5568",
+              }}
+            >
+              {" "}
+              {props.terapia?.Nombre}
+            </Card.Title>
+          </Link>
+
           <div
             style={{
               textAlign: "center",
@@ -113,7 +118,13 @@ const CardService = (props) => {
             }}
           ></div>
           <Row>
-            <Col>
+            <Col
+              onClick={() => {
+                document
+                  .getElementsByClassName("simplybook-widget-button")[0]
+                  .click();
+              }}
+            >
               <AwesomeButton
                 button-primary-color={"#000"}
                 button-raise-level={"5px"}
