@@ -31,9 +31,9 @@ const SectionHome = (props) => {
       >
         <Row className="sectionButtonsContainer">
           <Col className="heroButtonContainer">
-            <a href="/citas">
+            <Link href="/#citas">
               <Button className="buttonHero element-animation">Citas</Button>
-            </a>
+            </Link>
           </Col>
           <Col className="heroButtonContainer">
             <Link href="/instituciones">

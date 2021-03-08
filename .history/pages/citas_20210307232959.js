@@ -21,6 +21,7 @@ const citas = (props) => {
   return (
     <div>
       <Head>
+        <title>Cita Psicologo Daniela Diaz</title>
         <script
           dangerouslySetInnerHTML={{
             __html: `var widget = new SimplybookWidget({"widget_type":"iframe","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#0a3d65","display_item_mode":"list","sb_review_image":"4","sb_review_image_preview":"\/uploads\/psicdaniela\/image_files\/preview\/66e70686719fc5b091f04a8714131686.png","dark_font_color":"#262020","light_font_color":"#ecf0f9","btn_color_1":"#ffa64c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#f57070","sb_available":"#f7faff"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]}});`,
@@ -52,7 +53,7 @@ const citas = (props) => {
         <Nav className="mr-auto">
           <Nav.Link href="/#sectionServices">
             {" "}
-            <FontAwesomeIcon icon={faUndo} /> Regresar
+            <FontAwesomeIcon icon={faUndo} /> Otras Terapias
           </Nav.Link>
         </Nav>
       </Navbar>

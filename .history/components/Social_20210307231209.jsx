@@ -5,7 +5,7 @@ import {
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faAt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faAt,faPhoneAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -25,6 +25,12 @@ const Social = (props) => {
   } */
   return (
     <div className="social-container">
+      <Link href="tel:2211165866">
+        <div>
+          <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
+          22&middot;11&middot;16&middot;58&middot;66
+        </div>
+      </Link>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
         frameBorder="0"
@@ -33,12 +39,6 @@ const Social = (props) => {
         aria-hidden="false"
         tabIndex="0"
       ></iframe>
-      <Link href="tel:2211165866">
-        <div>
-          <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-          22&middot;11&middot;16&middot;58&middot;66
-        </div>
-      </Link>
       <div className="icons-container">
         <span id="social-icon">
           <Link href="https://linkedin.com/in/daniela-diaz-408967144">

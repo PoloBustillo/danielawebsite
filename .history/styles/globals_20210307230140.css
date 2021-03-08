@@ -350,7 +350,7 @@ body {
   }
   .gifContainer {
     right: 30vw;
-    z-index: 1000;
+    z-index: 3000;
   }
   .toggle-nav {
     z-index: 200;

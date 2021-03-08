@@ -132,7 +132,7 @@ const CardService = (props) => {
                     size="sm"
                     icon={faDollarSign}
                   ></FontAwesomeIcon>
-                  {props.terapia?.CostoOnline}
+                  {props.terapia?.Contenido[0]?.CostoOnline}
                   <FontAwesomeIcon
                     style={{ verticalAlign: "5px", fontSize: "15px" }}
                     fixedWidth

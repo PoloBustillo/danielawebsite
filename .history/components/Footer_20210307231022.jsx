@@ -269,12 +269,9 @@ const Footer = (props) => {
                 Ex-Rancho Vaquerías, 72464 Puebla, Pue.
               </div>
             </Link>
-            <Link href="tel:2211165866">
-              <div>
-                <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-                22&middot;11&middot;16&middot;58&middot;66
-              </div>
-            </Link>
+            <Link href="tel:2211165866"></Link>
+            <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
+            22&middot;11&middot;16&middot;58&middot;66
           </div>
         </Col>
         <Col style={{ position: "relative", marginTop: "5vh" }} sm={3}>

@@ -85,64 +85,32 @@ const CardService = (props) => {
               escapeHtml={false}
             />
           </div>
-          <div>
-            <OverlayTrigger
-              placement={"bottom"}
-              overlay={
-                <Tooltip id={`tooltip-bottom`}>
-                  Precio puede ajustarse de acuerdo a un{" "}
-                  <strong>estudio socieconómico</strong> o si pertenece a alguna{" "}
-                  <strong>institución asociada</strong>
-                </Tooltip>
-              }
-            >
-              <span>
-                Costo:{" "}
-                <FontAwesomeIcon
-                  fixedWidth
-                  size="sm"
-                  icon={faDollarSign}
-                ></FontAwesomeIcon>
-                {props.terapia?.Contenido[0]?.Costo}
-                <FontAwesomeIcon
-                  style={{ verticalAlign: "5px", fontSize: "15px" }}
-                  fixedWidth
-                  size="sm"
-                  icon={faQuestionCircle}
-                ></FontAwesomeIcon>
-              </span>
-            </OverlayTrigger>
-          </div>
-          {props.terapia?.AceptaOnline && (
-            <div>
-              <OverlayTrigger
-                placement={"bottom"}
-                overlay={
-                  <Tooltip id={`tooltip-bottom`}>
-                    Precio puede ajustarse de acuerdo a un{" "}
-                    <strong>estudio socieconómico</strong> o si pertenece a
-                    alguna <strong>institución asociada</strong>
-                  </Tooltip>
-                }
-              >
-                <span>
-                  Sesión en linea:{" "}
-                  <FontAwesomeIcon
-                    fixedWidth
-                    size="sm"
-                    icon={faDollarSign}
-                  ></FontAwesomeIcon>
-                  {props.terapia?.CostoOnline}
-                  <FontAwesomeIcon
-                    style={{ verticalAlign: "5px", fontSize: "15px" }}
-                    fixedWidth
-                    size="sm"
-                    icon={faQuestionCircle}
-                  ></FontAwesomeIcon>
-                </span>
-              </OverlayTrigger>
-            </div>
-          )}
+          <OverlayTrigger
+            placement={"bottom"}
+            overlay={
+              <Tooltip id={`tooltip-bottom`}>
+                Precio puede ajustarse de acuerdo a un{" "}
+                <strong>estudio socieconómico</strong> o si pertenece a alguna{" "}
+                <strong>institución asociada</strong>
+              </Tooltip>
+            }
+          >
+            <span>
+              Costo:{" "}
+              <FontAwesomeIcon
+                fixedWidth
+                size="sm"
+                icon={faDollarSign}
+              ></FontAwesomeIcon>
+              {props.terapia?.Contenido[0]?.Costo}
+              <FontAwesomeIcon
+                style={{ verticalAlign: "5px", fontSize: "15px" }}
+                fixedWidth
+                size="sm"
+                icon={faQuestionCircle}
+              ></FontAwesomeIcon>
+            </span>
+          </OverlayTrigger>
           <div
             style={{
               borderBottom: "1px solid #d8e3f2",

@@ -113,7 +113,7 @@ const CardService = (props) => {
               </span>
             </OverlayTrigger>
           </div>
-          {props.terapia?.AceptaOnline && (
+          {AceptaOnline && (
             <div>
               <OverlayTrigger
                 placement={"bottom"}
@@ -132,7 +132,7 @@ const CardService = (props) => {
                     size="sm"
                     icon={faDollarSign}
                   ></FontAwesomeIcon>
-                  {props.terapia?.CostoOnline}
+                  {props.terapia?.Contenido[0]?.Costo}
                   <FontAwesomeIcon
                     style={{ verticalAlign: "5px", fontSize: "15px" }}
                     fixedWidth

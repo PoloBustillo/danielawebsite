@@ -27,23 +27,19 @@ const SideMenu = (props) => {
     >
       <div className="menu-container">
         <Link id="home" shallow href="/#sectionHome">
-          <a
-            href="/#sectionHome"
-            onClick={() => props.setOpen(false)}
-            className="bm-item menu-item "
-          >
-            <FontAwesomeIcon icon={faHome} /> Home
+          <a href="/#sectionHome" className="bm-item menu-item ">
+            <FontAwesomeIcon
+              icon={faHome}
+              onClick={() => props.setOpen(false)}
+            />{" "}
+            Home
           </a>
         </Link>
-
-        <a
-          href="/citas"
-          onClick={() => props.setOpen(false)}
-          className="bm-item menu-item"
-        >
-          <FontAwesomeIcon icon={faCalendarAlt} /> Citas
-        </a>
-
+        <Link Link id="about" className="menu-item " href="/#citas">
+          <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
+            <FontAwesomeIcon icon={faCalendarAlt} /> Citas
+          </a>
+        </Link>
         <Link id="contact" className="menu-item" href="/blogs">
           <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
             <FontAwesomeIcon icon={faFilm} /> Recursos

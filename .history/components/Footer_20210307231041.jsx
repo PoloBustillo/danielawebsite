@@ -270,10 +270,8 @@ const Footer = (props) => {
               </div>
             </Link>
             <Link href="tel:2211165866">
-              <div>
-                <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-                22&middot;11&middot;16&middot;58&middot;66
-              </div>
+              <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
+              22&middot;11&middot;16&middot;58&middot;66
             </Link>
           </div>
         </Col>

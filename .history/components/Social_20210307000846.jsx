@@ -5,7 +5,7 @@ import {
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faAt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -33,12 +33,6 @@ const Social = (props) => {
         aria-hidden="false"
         tabIndex="0"
       ></iframe>
-      <Link href="tel:2211165866">
-        <div>
-          <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-          22&middot;11&middot;16&middot;58&middot;66
-        </div>
-      </Link>
       <div className="icons-container">
         <span id="social-icon">
           <Link href="https://linkedin.com/in/daniela-diaz-408967144">

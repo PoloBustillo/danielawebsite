@@ -4,15 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @import url("https://use.typekit.net/yfz7sly.css");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400;1,500;1,800&display=swap");
-.simplybook-widget-container {
+iframe {
   width: 80%;
   margin-left: 10%;
-}
-#citaMenu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-top: 50px;
 }
 .MuiAvatar-root {
   width: 80px !important;
@@ -350,7 +344,7 @@ body {
   }
   .gifContainer {
     right: 30vw;
-    z-index: 1000;
+    z-index: 3000;
   }
   .toggle-nav {
     z-index: 200;

@@ -262,19 +262,13 @@ const Footer = (props) => {
               <FontAwesomeIcon fixedWidth size="1x" icon={faBrain} />
               Psicologa en Puebla.
             </div>
-            <Link href="https://goo.gl/maps/kmrqWeGX3nQRaU8q7">
-              <div>
-                <FontAwesomeIcon fixedWidth size="1x" icon={faMapMarkerAlt} />
-                Mártires del 2 de Octubre, Reserva Territorial Atlixcáyotl,
-                Ex-Rancho Vaquerías, 72464 Puebla, Pue.
-              </div>
-            </Link>
-            <Link href="tel:2211165866">
-              <div>
-                <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-                22&middot;11&middot;16&middot;58&middot;66
-              </div>
-            </Link>
+            <div>
+              <FontAwesomeIcon fixedWidth size="1x" icon={faMapMarkerAlt} />
+              Mártires del 2 de Octubre, Reserva Territorial Atlixcáyotl,
+              Ex-Rancho Vaquerías, 72464 Puebla, Pue.
+            </div>
+            <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
+            22&middot;11&middot;16&middot;58&middot;66
           </div>
         </Col>
         <Col style={{ position: "relative", marginTop: "5vh" }} sm={3}>

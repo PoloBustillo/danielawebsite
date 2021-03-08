@@ -166,7 +166,7 @@ const Footer = (props) => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
               frameBorder="0"
-              style={{ border: "0", height: "35vh" }}
+              style={{ border: "0", height: "35vh", width: "40vw" }}
               allowFullScreen={false}
               aria-hidden="false"
               tabIndex="0"
@@ -223,7 +223,7 @@ const Footer = (props) => {
               <a href="/instituciones">INSTITUCIONES&middot;ASOCIADAS /</a>
             </li>
             <li>
-              <a href="/citas">CITAS /</a>
+              <a href="/#citas">CITAS /</a>
             </li>
           </ul>
           <span style={{ marginTop: "10vh" }} className="footerCol">
@@ -262,19 +262,13 @@ const Footer = (props) => {
               <FontAwesomeIcon fixedWidth size="1x" icon={faBrain} />
               Psicologa en Puebla.
             </div>
-            <Link href="https://goo.gl/maps/kmrqWeGX3nQRaU8q7">
-              <div>
-                <FontAwesomeIcon fixedWidth size="1x" icon={faMapMarkerAlt} />
-                Mártires del 2 de Octubre, Reserva Territorial Atlixcáyotl,
-                Ex-Rancho Vaquerías, 72464 Puebla, Pue.
-              </div>
-            </Link>
-            <Link href="tel:2211165866">
-              <div>
-                <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-                22&middot;11&middot;16&middot;58&middot;66
-              </div>
-            </Link>
+            <div>
+              <FontAwesomeIcon fixedWidth size="1x" icon={faMapMarkerAlt} />
+              Mártires del 2 de Octubre, Reserva Territorial Atlixcáyotl,
+              Ex-Rancho Vaquerías, 72464 Puebla, Pue.
+            </div>
+            <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
+            22&middot;11&middot;16&middot;58&middot;66
           </div>
         </Col>
         <Col style={{ position: "relative", marginTop: "5vh" }} sm={3}>

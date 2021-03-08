@@ -31,9 +31,9 @@ const SectionHome = (props) => {
       >
         <Row className="sectionButtonsContainer">
           <Col className="heroButtonContainer">
-            <a href="/citas">
+            <Link href="/#citas">
               <Button className="buttonHero element-animation">Citas</Button>
-            </a>
+            </Link>
           </Col>
           <Col className="heroButtonContainer">
             <Link href="/instituciones">
@@ -65,19 +65,19 @@ const SectionHome = (props) => {
           </h1>
           <h6 style={{ color: "white" }}>Puebla, Mexico.</h6>
         </div>
-        <Link href="/#sectionServices">
-          <div
-            className="gifContainer"
-            style={{ top: "35vh", position: "relative" }}
-          >
+        <div
+          className="gifContainer"
+          style={{ top: "35vh", position: "relative" }}
+        >
+          <Link href="/#sectionServices">
             <Image
               src={scrollDown}
               alt="Sigue hacia abajo"
               width={100}
               height={100}
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
         <style jsx>{`
           #sectionHome {
             height: 100vh !important;

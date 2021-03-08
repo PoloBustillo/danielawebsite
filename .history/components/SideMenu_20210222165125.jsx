@@ -35,15 +35,11 @@ const SideMenu = (props) => {
             <FontAwesomeIcon icon={faHome} /> Home
           </a>
         </Link>
-
-        <a
-          href="/citas"
-          onClick={() => props.setOpen(false)}
-          className="bm-item menu-item"
-        >
-          <FontAwesomeIcon icon={faCalendarAlt} /> Citas
-        </a>
-
+        <Link Link id="about" className="menu-item " href="/#citas">
+          <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
+            <FontAwesomeIcon icon={faCalendarAlt} /> Citas
+          </a>
+        </Link>
         <Link id="contact" className="menu-item" href="/blogs">
           <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
             <FontAwesomeIcon icon={faFilm} /> Recursos
