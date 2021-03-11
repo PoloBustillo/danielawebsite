@@ -8,6 +8,7 @@ import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
 import SectionCitas from "../components/SectionCitas";
+import CardBlog from "../components/CardBlog";
 import Footer from "../components/Footer";
 import { useSession, signIn, signOut } from "next-auth/client";
 
@@ -80,7 +81,7 @@ export default function Home(props) {
 `,
         }}
       />
-
+      {/*<CardBlog></CardBlog>*/}
       <Footer sitios={props.sitios}></Footer>
     </div>
   );
