@@ -32,11 +32,18 @@ const Article = ({ article, sitios }) => {
   return (
     <SinglePageLayout title={article.Nombre} id={article.id} sitios={sitios}>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="description" content="Servicios psicologicos" />
+        <title>{`${article.Nombre} - Psicologo Puebla - Haz tu cita`}</title>
+        <meta
+          name="title"
+          content={`${article.Nombre} - Psicologo Puebla - Haz tu cita`}
+        />
+        <meta
+          name="description"
+          content={`${article.Nombre} - Especialista Psicologo en ${article.Nombre}, citas en Puebla. Mejores precios en terapia psicologicas`}
+        />
+        <meta http-equiv="content-language" content="es" />
         <meta name="keywords" content={`{article.Nombre}`} />
         <meta name="author" content="Daniela Diaz Merino" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="logonobg.png" />
       </Head>
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>

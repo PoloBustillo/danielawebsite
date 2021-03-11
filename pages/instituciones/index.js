@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import HeadShake from "react-reveal/HeadShake";
@@ -12,6 +13,21 @@ const Insituciones = (props) => {
   const [flag, setFlag] = useState();
   return (
     <div id="sectionFAQ">
+      <Head>
+        <title>Instituciones asociadas con Psicologo Daniela </title>
+        <meta
+          name="title"
+          content="Instituciones asociadas con Psicologo Daniela"
+        />
+        <meta
+          name="description"
+          content="Instituciones asociadas con la piscologa Daniela Diaz, podras encontrar asociaciones con las que puedes acceder a descuentos"
+        />
+        <meta http-equiv="content-language" content="es" />
+        <meta name="keywords" content={`{article.Nombre}`} />
+        <meta name="author" content="Daniela Diaz Merino" />
+        <link rel="shortcut icon" href="logonobg.png" />
+      </Head>
       <div className="services-header">
         <h1 className="section-title header">
           <div>Instituciones</div>
