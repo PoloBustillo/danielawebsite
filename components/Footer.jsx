@@ -214,7 +214,7 @@ const Footer = (props) => {
               <a href="/#sectionServices">SERVICIOS /</a>
             </li>
             <li>
-              <a href="/#sectionFAQ">FAQ /</a>
+              <a href="/faq">FAQ /</a>
             </li>
             <li>
               <a href="/blogs">BLOGS /</a>
