@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import HeadShake from "react-reveal/HeadShake";

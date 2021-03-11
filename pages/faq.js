@@ -6,6 +6,7 @@ import Fade from "react-reveal/Fade";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Accordion, Card } from "react-bootstrap";
+import Head from "next/head";
 
 const FAQ = (props) => {
   const [accordionSelected, setAccordionSelected] = useState();
