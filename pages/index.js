@@ -33,7 +33,16 @@ export default function Home(props) {
   return (
     <div className="container-fluid">
       <Head>
-        <title>Pagina de Psicologo Daniela Diaz Merino</title>
+        <title>Psicologo Puebla - Terapias - Talleres </title>
+        <meta
+          name="title"
+          content="Psicologo en Puebla - Terapias y Talleres - Daniela Merino"
+        />
+        <meta
+          name="description"
+          content="Citas en Puebla para diversas terapias y talleres - Contenido enfocado a la psicologia - Ayuda psicologica para jovenes, adultos y niños"
+        />
+        <meta http-equiv="content-language" content="es" />
       </Head>
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
       <StickyBar

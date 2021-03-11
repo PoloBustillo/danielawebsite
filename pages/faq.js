@@ -12,6 +12,18 @@ const FAQ = (props) => {
   const [flag, setFlag] = useState();
   return (
     <div id="sectionFAQ">
+      <Head>
+        <title>Psicologo Puebla - Preguntas Frecuentes </title>
+        <meta
+          name="title"
+          content="Consultas para citas psicologicas, horarios y servicios"
+        />
+        <meta
+          name="description"
+          content="Preguntas acerca de citas y terapias - Citas en Puebla - Contenido enfocado a la psicologia - Ayuda psicologica para jovenes, adultos y niños"
+        />
+        <meta http-equiv="content-language" content="es" />
+      </Head>
       <div className="services-header">
         <h1 className="section-title header">
           <div>Preguntas Frecuentes</div>
