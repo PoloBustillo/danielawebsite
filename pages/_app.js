@@ -33,6 +33,10 @@ function MyApp({ Component, pageProps }) {
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
         <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
+        <script
+          data-pace-options='{ "ajax": false, "eventLag": false }'
+          src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"
+        ></script>
       </Head>
       <MessengerCustomerChat
         pageId="106715554719583"
