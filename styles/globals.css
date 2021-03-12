@@ -7,6 +7,9 @@
 .simplybook-widget-container {
   width: 80%;
 }
+.sb-widget-iframe {
+  height: 1500px !important;
+}
 #citaMenu {
   position: fixed;
   top: 0;
