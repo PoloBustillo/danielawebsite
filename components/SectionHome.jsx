@@ -31,9 +31,21 @@ const SectionHome = (props) => {
       >
         <Row className="sectionButtonsContainer">
           <Col className="heroButtonContainer">
-            <a href="/citas">
+            <span
+              onClick={() => {
+                document
+                  .getElementsByClassName("simplybook-widget-button")[0]
+                  .click();
+                document.getElementsByClassName(
+                  "simplybook-widget-button"
+                )[0].onload = function () {
+                  document.body.scrollTop = 0;
+                  document.documentElement.scrollTop = 0;
+                };
+              }}
+            >
               <Button className="buttonHero element-animation">Citas</Button>
-            </a>
+            </span>
           </Col>
           <Col className="heroButtonContainer">
             <Link href="/instituciones">

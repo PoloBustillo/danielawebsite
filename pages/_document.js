@@ -10,11 +10,7 @@ class MyDocument extends Document {
       <Html lang="es">
         <Head>
           <meta charSet="UTF-8" />
-          <meta name="description" content="Servicios psicologicos" />
-          <meta
-            name="keywords"
-            content="Psicologia, Terapia infantil, Terapia parejas, Picologia Educativa, "
-          />
+          <meta http-equiv="content-language" content="es" />
           <meta name="author" content="Daniela Diaz Merino" />
           <meta
             name="viewport"

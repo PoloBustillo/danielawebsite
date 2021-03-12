@@ -27,7 +27,8 @@ const SectionServices = (props) => {
       <div className="services-header">
         <h1 className="section-title header">
           <div>Servicios</div>
-          <div>Profesionales</div>
+          <div>Psicológicos</div>
+          <div>Puebla/Online</div>
         </h1>
       </div>
 

@@ -36,13 +36,23 @@ const SideMenu = (props) => {
           </a>
         </Link>
 
-        <a
-          href="/citas"
-          onClick={() => props.setOpen(false)}
+        <span
+          onClick={() => {
+            document
+              .getElementsByClassName("simplybook-widget-button")[0]
+              .click();
+            document.getElementsByClassName(
+              "simplybook-widget-button"
+            )[0].onload = function () {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            };
+            props.setOpen(false);
+          }}
           className="bm-item menu-item"
         >
           <FontAwesomeIcon icon={faCalendarAlt} /> Citas
-        </a>
+        </span>
 
         <Link id="contact" className="menu-item" href="/blogs">
           <a onClick={() => props.setOpen(false)} className="bm-item menu-item">
