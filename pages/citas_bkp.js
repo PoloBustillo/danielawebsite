@@ -33,6 +33,12 @@ const citas = (props) => {
           content="Citas en Puebla - Agenda tu terapia - Citas psicologicas para jovenes, adultos y niños. Accede para conocer mas acerca de las citas"
         />
         <meta http-equiv="content-language" content="es" />
+        <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var widget = new SimplybookWidget({"widget_type":"iframe","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"1","timeline_modern_display":"as_slots","sb_base_color":"#0a3d65","display_item_mode":"list","sb_review_image":"8","sb_review_image_preview":"\/uploads\/psicdaniela\/image_files\/preview\/5e5db6503b03b1a88085ec8f1319f38e.png","dark_font_color":"#262020","light_font_color":"#ecf0f9","btn_color_1":"#ffa64c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#f57070","sb_available":"#f7faff"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]}});`,
+          }}
+        />
       </Head>
 
       <Navbar
@@ -41,7 +47,6 @@ const citas = (props) => {
           position: "fixed",
           top: "0",
           width: "100vw",
-          height: "85px",
         }}
         bg="dark"
         variant="dark"
@@ -73,11 +78,6 @@ const citas = (props) => {
         ></StickyBar>
       </div>
       <Seo seo={seo} />
-      <iframe
-        width="100%"
-        height="2000px"
-        src="https://psicdaniela.simplybook.me/v2/#book?widget-type=iframe&theme=bookingtroll&theme=bookingtroll&timeline=modern&datepicker=top_calendar#book"
-      ></iframe>
       <Footer sitios={props.sitios}></Footer>
     </div>
   );
