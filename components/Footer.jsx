@@ -188,7 +188,7 @@ const Footer = (props) => {
                 </Link>
               </span>
               <span id="social-icon">
-                <Link href="https://www.instagram.com/psic.danielaedm/">
+                <Link href="https://www.instagram.com/psic_danieladiazm/">
                   <FontAwesomeIcon fixedWidth size="2x" icon={faInstagram} />
                 </Link>
               </span>

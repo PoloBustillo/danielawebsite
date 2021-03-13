@@ -33,6 +33,7 @@ const Article = ({ article, sitios }) => {
     <SinglePageLayout title={article.Nombre} id={article.id} sitios={sitios}>
       <Head>
         <title>{`${article.Nombre} - Psicologo Puebla - Haz tu cita`}</title>
+        <link rel="shortcut icon" href="logonobg.png" />
         <meta
           name="title"
           content={`${article.Nombre} - Psicologo Puebla - Haz tu cita`}

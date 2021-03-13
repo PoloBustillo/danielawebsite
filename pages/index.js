@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { NextSeo, LocalBusinessJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import { fetchAPI } from "../lib/api";
@@ -8,8 +7,6 @@ import SideMenu from "components/SideMenu";
 import StickyBar from "components/StickyBar";
 import SectionServices from "components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
-import SectionCitas from "../components/SectionCitas";
-import CardBlog from "../components/CardBlog";
 import Footer from "../components/Footer";
 import { useSession, signIn, signOut } from "next-auth/client";
 
@@ -54,14 +51,14 @@ export default function Home(props) {
           longitude: "-98.24550779630408",
         }}
         images={[
-          "https://example.com/photos/1x1/photo.jpg",
+          "https://psic-danieladiaz.com/PsicologoPueblaAgendar.png",
           "https://example.com/photos/4x3/photo.jpg",
           "https://example.com/photos/16x9/photo.jpg",
         ]}
         sameAs={[
-          "www.company-website-url1.dev",
-          "www.company-website-url2.dev",
-          "www.company-website-url3.dev",
+          "https://www.facebook.com/PsicoterapiaDiazMer",
+          "https://www.instagram.com/psic_danieladiazm/",
+          "https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:",
         ]}
         openingHours={[
           {
@@ -122,7 +119,11 @@ export default function Home(props) {
         setFilter={setFilter}
       ></SectionServices>
       <div id="banner">
-        <img src="/bannerAgendar.png" alt="Agendar Cita Psicologo Puebla"></img>
+        <img
+          title="Pasos para agendar cita terapia en Puebla"
+          src="/psicologo_puebla_agendar.png"
+          alt="Agendar Cita Psicologo Puebla"
+        ></img>
       </div>
       {/*
       <SectionCitas
@@ -149,14 +150,14 @@ export default function Home(props) {
         ></iframe>
         </div>*/}
 
+      {/*<CardBlog></CardBlog>*/}
+      <Footer sitios={props.sitios}></Footer>
       <script
         dangerouslySetInnerHTML={{
           __html: `var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#0a3d65","display_item_mode":"list","sb_review_image":"6","sb_review_image_preview":"\/uploads\/psicdaniela\/image_files\/preview\/801453c79c2bc1a14c066ad82b046c55.png","dark_font_color":"#262020","light_font_color":"#ecf0f9","btn_color_1":"#ffa64c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#f57070","sb_available":"#f7faff"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"Reserva tu cita ","button_background_color":"#009cff","button_text_color":"#ffffff","button_position":"right","button_position_offset":"55%"});
           `,
         }}
       />
-      {/*<CardBlog></CardBlog>*/}
-      <Footer sitios={props.sitios}></Footer>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>http://psic-danieladiaz.com/</loc>
+    <image:image>
+      <image:loc>http://psic-danieladiaz.com/logo500.webp</image:loc>
+      <image:geo_location>Puebla, Mexico</image:geo_location>
+      <image:title>Logo Psicologo Puebla Daniela Diaz</image:title>
+      <image:caption>Logo Psicologo Puebla</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://psic-danieladiaz.com/psicologo_puebla_agendar.png</image:loc>
+      <image:geo_location>Puebla, Mexico</image:geo_location>
+      <image:title>Instrucciones Agendar Terapia Psicologo Puebla</image:title>
+      <image:caption>Instrucciones Agendar Terapia Psicologo Puebla</image:caption>
+    </image:image>
+     <image:image>
+      <image:loc>http://psic-danieladiaz.com/portada_psicologo_puebla.jpg</image:loc>
+      <image:geo_location>Puebla, Mexico</image:geo_location>
+      <image:title>Instrucciones Agendar Terapia Psicologo Puebla</image:title>
+      <image:caption>Instrucciones Agendar Terapia Psicologo Puebla</image:caption>
+    </image:image>
+  </url> 
+</urlset> 

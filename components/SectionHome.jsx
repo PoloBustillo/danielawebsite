@@ -3,7 +3,7 @@ import { Col, Row, Card, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import LazyHero from "react-lazy-hero";
 import Image from "next/image";
-import scrollDown from "public/scroll-down3.gif";
+import scrollDown from "public/scroll_down_servicios_psicologicos.gif";
 import Link from "next/link";
 import { particleOptions, motionForce } from "../utils/particles";
 import ParticleImage from "react-particle-image";
@@ -26,7 +26,7 @@ const SectionHome = (props) => {
         transitionDuration={1000}
         isCentered={true}
         minHeight={"100vh"}
-        imageSrc="/heroImage.jpg"
+        imageSrc="/portada_psicologo_puebla.jpg"
         height="100vh"
       >
         <Row className="sectionButtonsContainer">
@@ -84,7 +84,8 @@ const SectionHome = (props) => {
           >
             <Image
               src={scrollDown}
-              alt="Sigue hacia abajo"
+              alt="Abajo encontraras servicios de Psicologo en Puebla Daniela Diaz Merino"
+              title="Abajo encontraras servicios de Psicologo en Puebla Daniela Diaz Merino"
               width={100}
               height={100}
             />

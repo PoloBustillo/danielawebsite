@@ -8,8 +8,6 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-import PropTypes from "prop-types";
-import marked from "marked";
 import {
   faCalendarDay,
   faDollarSign,
@@ -19,7 +17,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 <i class="fas fa-calendar-day"></i>;
 import Fade from "react-reveal/Fade";
 import { AwesomeButton } from "react-awesome-button";
-import scrollDown from "public/scroll-down3.gif";
 import Link from "next/link";
 const myLoader = ({ src, width, quality }) => {
   return `${src}`;
@@ -51,6 +48,8 @@ const CardService = (props) => {
                 maxHeight: "270px",
               }}
               variant="bottom"
+              title={`${props.terapia?.Nombre} - Psicologo Puebla - Daniela Diaz`}
+              alt={`${props.terapia?.Nombre}`}
               src={props.terapia?.Contenido[0]?.Imagen.url}
             />
           </Link>

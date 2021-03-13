@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
-import Fade from "react-reveal/Fade";
-import Plx from "react-plx";
 import CardService from "./CardService";
 import { Row, Col } from "react-bootstrap";
 import SubMenuServices from "./SubMenuServices";
