@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { particleOptions, motionForce } from "../utils/particles";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,
 });
@@ -304,7 +304,8 @@ const Footer = (props) => {
           </ul>
           <NotMobile>
             <div className="logo">
-              <img
+              <LazyLoadImage
+                effect="blur"
                 style={style2}
                 src="/logo500.webp"
                 width="200"

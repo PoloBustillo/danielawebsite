@@ -18,9 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Fade from "react-reveal/Fade";
 import { AwesomeButton } from "react-awesome-button";
 import Link from "next/link";
-const myLoader = ({ src, width, quality }) => {
-  return `${src}`;
-};
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CardService = (props) => {
   return (
@@ -40,17 +38,16 @@ const CardService = (props) => {
       >
         <Card.Body style={{ padding: "0.8rem", minHeight: "100%" }}>
           <Link href={`/tratamiento/${props.terapia.id}`}>
-            <Card.Img
+            <LazyLoadImage
               style={{
                 height: "55.45%",
-                width: "100%",
                 minHeight: "270px",
                 maxHeight: "270px",
               }}
-              variant="bottom"
+              effect="blur"
+              src={props.terapia?.Contenido[0]?.Imagen.url}
               title={`${props.terapia?.Nombre} - Psicologo Puebla - Daniela Diaz`}
               alt={`${props.terapia?.Nombre}`}
-              src={props.terapia?.Contenido[0]?.Imagen.url}
             />
           </Link>
           <Link href={`/tratamiento/${props.terapia.id}`}>

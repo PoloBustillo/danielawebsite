@@ -9,6 +9,8 @@ import SectionServices from "components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
 import Footer from "../components/Footer";
 import { useSession, signIn, signOut } from "next-auth/client";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import LazyLoad from "react-lazyload";
 
 export default function Home(props) {
   const [color, setColor] = useState();
@@ -106,7 +108,9 @@ export default function Home(props) {
           ],
         }}
       />
-      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+      <LazyLoad>
+        <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+      </LazyLoad>
       <StickyBar
         isMenuOpen={isOpen}
         setOpenMenu={setOpen}
@@ -119,11 +123,12 @@ export default function Home(props) {
         setFilter={setFilter}
       ></SectionServices>
       <div id="banner">
-        <img
+        <LazyLoadImage
+          effect="blur"
           title="Pasos para agendar cita terapia en Puebla"
           src="/psicologo_puebla_agendar.png"
           alt="Agendar Cita Psicologo Puebla"
-        ></img>
+        />
       </div>
       {/*
       <SectionCitas
@@ -151,7 +156,9 @@ export default function Home(props) {
         </div>*/}
 
       {/*<CardBlog></CardBlog>*/}
-      <Footer sitios={props.sitios}></Footer>
+      <LazyLoad offset={100}>
+        <Footer sitios={props.sitios}></Footer>
+      </LazyLoad>
       <script
         dangerouslySetInnerHTML={{
           __html: `var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/psicdaniela.simplybook.me","theme":"bookingtroll","theme_settings":{"timeline_hide_unavailable":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#0a3d65","display_item_mode":"list","sb_review_image":"6","sb_review_image_preview":"\/uploads\/psicdaniela\/image_files\/preview\/801453c79c2bc1a14c066ad82b046c55.png","dark_font_color":"#262020","light_font_color":"#ecf0f9","btn_color_1":"#ffa64c","sb_company_label_color":"#ffffff","hide_img_mode":"0","sb_busy":"#f57070","sb_available":"#f7faff"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"allow_switch_to_ada":0,"predefined":[]},"button_title":"Reserva tu cita ","button_background_color":"#009cff","button_text_color":"#ffffff","button_position":"right","button_position_offset":"55%"});

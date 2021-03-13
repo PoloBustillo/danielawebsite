@@ -2,6 +2,7 @@ import "../styles/timeline.css";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-awesome-button/dist/themes/theme-one.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Provider } from "next-auth/client";
 import Head from "next/head";
@@ -21,7 +22,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta http-equiv="content-language" content="es" />
+        <meta httpEquiv="content-language" content="es" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
