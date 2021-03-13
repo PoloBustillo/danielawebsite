@@ -8,13 +8,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const SinglePageLayout = (props) => {
   return (
     <>
-      <Navbar style={{ backgroundColor: "#24201e" }} bg="dark" variant="dark">
+      <Navbar
+        style={{ backgroundColor: "#24201e !important" }}
+        bg="dark"
+        variant="dark"
+      >
         <Navbar.Brand href="#home">
           <p
             style={{
               width: "50vw",
               wordWrap: "break-word",
               whiteSpace: "initial",
+              fontFamily: "Playfair Display",
+              fontWeight: "900",
+              fontSize: "20px",
+              fontStyle: "italic",
             }}
           >
             {props.title ? props.title : "Psic. Daniela Diaz Merino"}

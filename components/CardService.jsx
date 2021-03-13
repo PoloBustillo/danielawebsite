@@ -37,19 +37,17 @@ const CardService = (props) => {
         }}
       >
         <Card.Body style={{ padding: "0.8rem", minHeight: "100%" }}>
-          <Link href={`/tratamiento/${props.terapia.id}`}>
-            <LazyLoadImage
-              style={{
-                height: "55.45%",
-                minHeight: "270px",
-                maxHeight: "270px",
-              }}
-              effect="blur"
-              src={props.terapia?.Contenido[0]?.Imagen.url}
-              title={`${props.terapia?.Nombre} - Psicologo Puebla - Daniela Diaz`}
-              alt={`${props.terapia?.Nombre}`}
-            />
-          </Link>
+          <LazyLoadImage
+            style={{
+              height: "55.45%",
+              minHeight: "270px",
+              maxHeight: "270px",
+            }}
+            effect="blur"
+            src={props.terapia?.Contenido[0]?.Imagen.url}
+            title={`${props.terapia?.Nombre} - Psicologo Puebla - Daniela Diaz`}
+            alt={`${props.terapia?.Nombre}`}
+          />
           <Link href={`/tratamiento/${props.terapia.id}`}>
             <Card.Title
               style={{
@@ -173,8 +171,8 @@ const CardService = (props) => {
             </Col>
             <Col>
               <Card.Link style={{ fontFamily: "Noto Sans", color: "#325c99" }}>
-                <Link href={`/tratamiento/${props.terapia.id}`}>
-                  Más Información
+                <Link href={`/terapia/${props.terapia.Nombre}`}>
+                  {`Más Información de ${props.terapia?.Nombre}`}
                 </Link>
               </Card.Link>
             </Col>

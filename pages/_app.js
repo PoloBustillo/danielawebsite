@@ -1,8 +1,7 @@
-import "../styles/timeline.css";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-awesome-button/dist/themes/theme-one.css";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Provider } from "next-auth/client";
 import Head from "next/head";
 import dynamic from "next/dynamic";
@@ -21,7 +20,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta httpEquiv="content-language" content="es" />
+        <meta http-equiv="content-language" content="es" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
@@ -33,12 +32,17 @@ function MyApp({ Component, pageProps }) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
         <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
-        <script
-          data-pace-options='{ "ajax": false, "eventLag": false }'
-          src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"
-        ></script>
       </Head>
-
+      <MessengerCustomerChat
+        pageId="106715554719583"
+        appId="430433931632815"
+        htmlRef="messengerRef"
+        minimized={true}
+        loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
+        greetingDialogDisplay="fade"
+        language="es_LA"
+        shouldShowDialog={false}
+      />
       <NotMobile>
         <div style={{ zIndex: "1100" }}>
           <AnimatedCursor

@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import CardService from "./CardService";
 import { Row, Col } from "react-bootstrap";
 import SubMenuServices from "./SubMenuServices";
-import MessengerCustomerChat from "react-messenger-customer-chat";
-import LazyLoad from "react-lazyload";
 const parallaxDataColor = [
   {
     start: "self",
@@ -29,7 +27,6 @@ const SectionServices = (props) => {
           <div>Puebla/Online</div>
         </h1>
       </div>
-
       <Row style={{ justifyContent: "center" }}>
         <Row
           style={{
