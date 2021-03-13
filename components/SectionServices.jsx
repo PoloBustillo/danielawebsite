@@ -22,18 +22,6 @@ const parallaxDataColor = [
 const SectionServices = (props) => {
   return (
     <div id="sectionServices" style={{ justifyContent: "center" }}>
-      <LazyLoad>
-        <MessengerCustomerChat
-          pageId="106715554719583"
-          appId="430433931632815"
-          htmlRef="messengerRef"
-          minimized={true}
-          loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
-          greetingDialogDisplay="fade"
-          language="es_LA"
-          shouldShowDialog={false}
-        />
-      </LazyLoad>
       <div className="services-header">
         <h1 className="section-title header">
           <div>Servicios</div>
