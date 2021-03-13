@@ -21,6 +21,7 @@ import Link from "next/link";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CardService = (props) => {
+  let newTerapia = props.terapia?.Nombre.replaceAll(" ", "_");
   return (
     <Fade bottom ssrFadeout fraction={0.05} distance={"100px"}>
       <Card
@@ -48,7 +49,7 @@ const CardService = (props) => {
             title={`${props.terapia?.Nombre} - Psicologo Puebla - Daniela Diaz`}
             alt={`${props.terapia?.Nombre}`}
           />
-          <Link href={`/tratamiento/${props.terapia.id}`}>
+          <Link href={`/tratamiento/${newTerapia}`}>
             <Card.Title
               style={{
                 margin: "2vh 0",
@@ -171,7 +172,7 @@ const CardService = (props) => {
             </Col>
             <Col>
               <Card.Link style={{ fontFamily: "Noto Sans", color: "#325c99" }}>
-                <Link href={`/terapia/${props.terapia.Nombre}`}>
+                <Link href={`/terapia/${newTerapia}`}>
                   {`Más Información de ${props.terapia?.Nombre}`}
                 </Link>
               </Card.Link>

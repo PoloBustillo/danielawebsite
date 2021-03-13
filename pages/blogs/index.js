@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Row, Col, Accordion, Card } from "react-bootstrap";
 import { NextSeo, SocialProfileJsonLd } from "next-seo";
-import SinglePageLayot from "components/SinglePageLayout";
+import SinglePageLayot from "../../components/SinglePageLayout";
 const Blogs = (props) => {
   return (
     <div id="sectionBlog">

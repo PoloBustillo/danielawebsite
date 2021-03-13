@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NextSeo, FAQPageJsonLd } from "next-seo";
 import { Row, Col, Accordion, Card } from "react-bootstrap";
-import SinglePageLayout from "components/SinglePageLayout";
+import SinglePageLayout from "../components/SinglePageLayout";
 import { fetchAPI } from "../lib/api";
-import SectionFAQ from "components/SectionFAQ";
+import SectionFAQ from "../components/SectionFAQ";
 const FAQ = (props) => {
   const [accordionSelected, setAccordionSelected] = useState();
   const [flag, setFlag] = useState();

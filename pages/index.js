@@ -2,10 +2,10 @@ import { NextSeo, LocalBusinessJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import { fetchAPI } from "../lib/api";
 import React, { useState } from "react";
-import SectionHome from "components/SectionHome";
-import SideMenu from "components/SideMenu";
-import StickyBar from "components/StickyBar";
-import SectionServices from "components/SectionServices";
+import SectionHome from "../components/SectionHome";
+import SideMenu from "../components/SideMenu";
+import StickyBar from "../components/StickyBar";
+import SectionServices from "../components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
 import Footer from "../components/Footer";
 import { useSession, signIn, signOut } from "next-auth/client";
@@ -108,9 +108,7 @@ export default function Home(props) {
           ],
         }}
       />
-      <LazyLoad>
-        <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
-      </LazyLoad>
+      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
       <StickyBar
         isMenuOpen={isOpen}
         setOpenMenu={setOpen}

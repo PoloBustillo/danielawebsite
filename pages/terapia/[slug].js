@@ -178,8 +178,10 @@ const Article = ({ article, sitios }) => {
 export async function getStaticPaths() {
   const articles = await fetchAPI("tipos-terapias");
   const params = articles.map((article) => {
-    return { params: { slug: encodeURI(article.Nombre) } };
+    let newTerapia = article.Nombre.replace(/\s+/g, "_");
+    return { params: { slug: newTerapia } };
   });
+  console.log(params);
   return {
     paths: params,
     fallback: false,
@@ -187,9 +189,10 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params }) => {
+  let newTerapia = params.slug.replace(/_/g, " ");
   try {
     const [article, footer] = await Promise.all([
-      fetchAPI(`tipos-terapias/name/${params.slug}`),
+      fetchAPI(`tipos-terapias/name/${newTerapia}`),
       fetchAPI("footer"),
     ]);
 
