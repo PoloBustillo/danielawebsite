@@ -178,7 +178,7 @@ const Article = ({ article, sitios }) => {
 export async function getStaticPaths() {
   const articles = await fetchAPI("tipos-terapias");
   const params = articles.map((article) => {
-    return { params: { slug: article.Nombre } };
+    return { params: { slug: encodeURI(article.Nombre) } };
   });
   return {
     paths: params,
