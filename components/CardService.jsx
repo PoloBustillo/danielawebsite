@@ -21,7 +21,7 @@ import Link from "next/link";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CardService = (props) => {
-  let newTerapia = props.terapia?.Nombre.replaceAll(" ", "_");
+  let newTerapia = props.terapia?.Nombre.replace(/\s+/g, "_");
   return (
     <Fade bottom ssrFadeout fraction={0.05} distance={"100px"}>
       <Card
