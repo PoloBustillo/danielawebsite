@@ -16,6 +16,7 @@ const FAQ = (props) => {
       <FAQPageJsonLd mainEntity={FAQ} />
       <NextSeo
         title="Psicólogo Puebla - Preguntas Frecuentes - Resuelve tus dudas para hacer tu cita "
+        canonical="https://psic-danieladiaz.com/faq"
         description="Psicólogo Puebla - Preguntas Frecuentes - Resuelve tus dudas para hacer tu cita "
         facebook={{
           appId: "430433931632815",

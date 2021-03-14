@@ -67,6 +67,7 @@ const citas = (props) => {
         ]}
       />
       <NextSeo
+        canonical="https://psic-danieladiaz.com/citas"
         title="Citas terapias Puebla - Citas psicológicas Puebla - Puedes agendar tus citas en Puebla"
         description="Citas en Puebla - Agenda tu terapia - Citas psicologicas para jovenes, adultos y niños. Accede para conocer mas acerca de las citas"
         facebook={{

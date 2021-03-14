@@ -52,11 +52,7 @@ export default function Home(props) {
           latitude: "19.00596091031922",
           longitude: "-98.24550779630408",
         }}
-        images={[
-          "https://psic-danieladiaz.com/PsicologoPueblaAgendar.png",
-          "https://example.com/photos/4x3/photo.jpg",
-          "https://example.com/photos/16x9/photo.jpg",
-        ]}
+        images={["https://psic-danieladiaz.com/PsicologoPueblaAgendar.png"]}
         sameAs={[
           "https://www.facebook.com/PsicoterapiaDiazMer",
           "https://www.instagram.com/psic_danieladiazm/",
@@ -81,6 +77,7 @@ export default function Home(props) {
       />
       <NextSeo
         title="Psicólogo Puebla - Terapias - Talleres "
+        canonical="https://psic-danieladiaz.com/"
         description="Psicólogo en Puebla para diversas terapias y talleres - Terapia comunitaria ayudando a precios accesibles - Profesionalismo - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños."
         facebook={{
           appId: "430433931632815",

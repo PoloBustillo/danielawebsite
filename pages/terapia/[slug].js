@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
-import Head from "next/head";
+
+import { NextSeo, ProductJsonLd } from "next-seo";
 import { useState } from "react";
 import { fetchAPI } from "../../lib/api";
 import SinglePageLayout from "../../components/SinglePageLayout";
@@ -26,27 +27,147 @@ const Article = ({ article, sitios }) => {
     shareImage: article.Contenido[0]?.Imagen.url,
     article: true,
   };
-  const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/tratamiento/${article.id}`;
+  const shareUrl = `${
+    process.env.NEXT_PUBLIC_VERCEL_URL
+  }/terapia/${article.Nombre.replace(/\s+/g, "_")}`;
   const date = new Date(article.published_at);
 
   return (
     <SinglePageLayout title={article.Nombre} id={article.id} sitios={sitios}>
-      <Head>
-        <title>{`${article.Nombre} - Psicologo Puebla - Haz tu cita`}</title>
-        <link rel="shortcut icon" href="logonobg.png" />
-        <meta
-          name="title"
-          content={`${article.Nombre} - Psicologo Puebla - Haz tu cita`}
-        />
-        <meta
-          name="description"
-          content={`${article.Nombre} - Especialista Psicologo en ${article.Nombre}, citas en Puebla. Mejores precios en terapia psicologicas`}
-        />
-        <meta http-equiv="content-language" content="es" />
-        <meta name="keywords" content={`{article.Nombre}`} />
-        <meta name="author" content="Daniela Diaz Merino" />
-        <link rel="shortcut icon" href="logonobg.png" />
-      </Head>
+      <ProductJsonLd
+        productName={`${article.Nombre}`}
+        images={[`${article.Contenido[0]?.Imagen.url}`]}
+        description={`${article?.Contenido[0]?.Descripcion}`}
+        brand="Psicologo Puebla"
+        reviews={[
+          {
+            author: {
+              type: "Person",
+              name: "Polo Bustillo",
+            },
+            datePublished: "2019-01-05T03:37:40Z",
+            reviewBody: "Muy profesional y super puntual",
+            name: "La mejor psicologa de Puebla!!!",
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+            publisher: {
+              type: "Organization",
+              name: "Piscolo Puebla Daniela Diaz",
+            },
+          },
+          {
+            author: {
+              type: "Person",
+              name: "Jorge Gonzalez",
+            },
+            datePublished: "2020-02-05T08:37:40Z",
+            reviewBody:
+              "Entendio mis problemas desde el principio y me ayudo a superarlos",
+            name: "Muy buena experiencia",
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+            publisher: {
+              type: "Organization",
+              name: "Piscolo Puebla Daniela Diaz",
+            },
+          },
+          {
+            author: {
+              type: "Person",
+              name: "Alicia Lovegood",
+            },
+            datePublished: "2020-03-19T18:12:30Z",
+            reviewBody: "De lo mejor en Puebla, siempre atenta",
+            name: "Super recomendada",
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+            publisher: {
+              type: "Organization",
+              name: "Piscolo Puebla Daniela Diaz",
+            },
+          },
+          {
+            author: {
+              type: "Person",
+              name: "German Mendieta",
+            },
+            datePublished: "2020-02-25T18:12:30Z",
+            reviewBody: "De lo mejor en Puebla, siempre atenta",
+            name: "Super recomendada",
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+            publisher: {
+              type: "Organization",
+              name: "Piscolo Puebla Daniela Diaz",
+            },
+          },
+        ]}
+        aggregateRating={{
+          ratingValue: "4.8",
+          reviewCount: "89",
+        }}
+        offers={[
+          {
+            price: `${article?.Contenido[0]?.Costo}`,
+            priceCurrency: "MXN",
+            priceValidUntil: "2020-11-05",
+            url: `https://psic-danieladiaz.com/${article.Nombre.replace(
+              /\s+/g,
+              "_"
+            )}`,
+            seller: {
+              name: "Psicolo en Puebla Daniela Diaz",
+            },
+          },
+        ]}
+        mpn="925872"
+      />
+      <NextSeo
+        canonical={`https://psic-danieladiaz.com/${article.Nombre.replace(
+          /\s+/g,
+          "_"
+        )}`}
+        title={`${article.Nombre} en Puebla - Citas psicológicas Puebla - Psicologo Daniela Diaz`}
+        description={`${article.Nombre} en Puebla usando metodologías especializadas, Psicólogo Daniela Diaz`}
+        facebook={{
+          appId: "430433931632815",
+        }}
+        openGraph={{
+          type: "website",
+          url: `https://psic-danieladiaz.com/${article.Nombre.replace(
+            /\s+/g,
+            "_"
+          )}`,
+          title: `${article.Nombre} en Puebla - Citas psicológicas Puebla - Psicologo Daniela Diaz`,
+          description: `${article.Nombre} en Puebla usando metodologías especializadas, Psicólogo Daniela Diaz`,
+          images: [
+            {
+              url: "https://www.psic-danieladiaz.com/logo500.webp",
+              width: 500,
+              height: 500,
+              alt: "Psicologo Daniela Diaz Logo",
+            },
+            {
+              url: `${article.Contenido[0]?.Imagen.url}`,
+              width: 800,
+              height: 600,
+              alt: `${article.Nombre} en Puebla - Citas psicológicas Puebla`,
+            },
+          ],
+        }}
+      />
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
       <StickyBar
         isMenuOpen={isOpen}
