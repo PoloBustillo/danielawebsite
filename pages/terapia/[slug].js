@@ -118,35 +118,37 @@ const Article = ({ article, sitios }) => {
           ratingValue: "4.8",
           reviewCount: "89",
         }}
+        sku={`${article.id}`}
         offers={[
           {
             price: `${article?.Contenido[0]?.Costo}`,
             priceCurrency: "MXN",
+            availability: "https://schema.org/InStock",
             priceValidUntil: "2020-11-05",
-            url: `https://psic-danieladiaz.com/${article.Nombre.replace(
+            url: `https://psic-danieladiaz.com/terapia/${article.Nombre.replace(
               /\s+/g,
               "_"
             )}`,
             seller: {
-              name: "Psicolo en Puebla Daniela Diaz",
+              name: "Psicologo en Puebla Daniela Diaz",
             },
           },
         ]}
         mpn="925872"
       />
       <NextSeo
-        canonical={`https://psic-danieladiaz.com/${article.Nombre.replace(
+        canonical={`https://psic-danieladiaz.com/terapia/${article.Nombre.replace(
           /\s+/g,
           "_"
         )}`}
-        title={`${article.Nombre} en Puebla - Citas psicológicas Puebla - Psicologo Daniela Diaz`}
+        title={`${article.Nombre} en Puebla - Citas psicológicas Puebla - Psicólogo Puebla`}
         description={`${article.Nombre} en Puebla usando metodologías especializadas, Psicólogo Daniela Diaz`}
         facebook={{
           appId: "430433931632815",
         }}
         openGraph={{
           type: "website",
-          url: `https://psic-danieladiaz.com/${article.Nombre.replace(
+          url: `https://psic-danieladiaz.com/terapia/${article.Nombre.replace(
             /\s+/g,
             "_"
           )}`,

@@ -8,7 +8,7 @@ const Blogs = (props) => {
     <div id="sectionBlog">
       <SocialProfileJsonLd
         type="Person"
-        name="Psicologo en Puebla Daniela Diaz"
+        name="Psicólogo en Puebla Daniela Diaz"
         url="http://www.psic-danieladiaz.com/blogs"
         sameAs={[
           "https://www.facebook.com/PsicoterapiaDiazMer",
@@ -17,8 +17,8 @@ const Blogs = (props) => {
         ]}
       />
       <NextSeo
-        title="Blog para Psicologos en Puebla - Metodologías terapeuticas - Contenido Psicología "
-        description="Quieres saber mas acerca de las terapias y metodologias usadas en las sesiones terapeuticas en Puebla? Entra y conoce mas. Psicologo espcialista en diversos topicos"
+        title="Blog para Psicólogos en Puebla - Metodologías terapeuticas - Contenido Psicología "
+        description="Quieres saber mas acerca de las terapias y metodologías usadas en las sesiones terapeuticas en Puebla? Entra y conoce mas. Psicologo espcialista en diversos topicos"
         facebook={{
           appId: "430433931632815",
         }}
@@ -26,7 +26,7 @@ const Blogs = (props) => {
           type: "website",
           url: "https://www.psic-danieladiaz.com/blogs",
           title:
-            "Blog para Psicologos en Puebla - Metodologías terapeuticas - Contenido Psicología",
+            "Blog para Psicólogos en Puebla - Metodologías terapeuticas - Contenido Psicología",
           description:
             "Quieres saber mas acerca de las terapias y metodologias usadas en las sesiones terapeuticas en Puebla? Entra y conoce mas. Psicologo espcialista en diversos topicos",
           images: [

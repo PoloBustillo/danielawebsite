@@ -49,7 +49,7 @@ const CardService = (props) => {
             title={`${props.terapia?.Nombre} - Psicologo Puebla - Daniela Diaz`}
             alt={`${props.terapia?.Nombre}`}
           />
-          <Link href={`/tratamiento/${newTerapia}`}>
+          <Link href={`/terapia/${newTerapia}`}>
             <Card.Title
               style={{
                 margin: "2vh 0",
@@ -144,8 +144,9 @@ const CardService = (props) => {
               margin: "3vh 0vw",
             }}
           ></div>
-          <Row>
+          <Row style={{ display: "table" }}>
             <Col
+              style={{ display: "table-cell", verticalAlign: "middle" }}
               onClick={() => {
                 document
                   .getElementsByClassName("simplybook-widget-button")[0]
@@ -171,8 +172,14 @@ const CardService = (props) => {
               </AwesomeButton>
             </Col>
             <Col>
-              <Card.Link style={{ fontFamily: "Noto Sans", color: "#325c99" }}>
-                <Link href={`/terapia/${newTerapia}`}>
+              <Card.Link
+                href={`/terapia/${newTerapia}`}
+                style={{ fontFamily: "Noto Sans", color: "#325c99" }}
+              >
+                <Link
+                  style={{ fontFamily: "Noto Sans", color: "#325c99" }}
+                  href={`/terapia/${newTerapia}`}
+                >
                   {`Más Información de ${props.terapia?.Nombre}`}
                 </Link>
               </Card.Link>

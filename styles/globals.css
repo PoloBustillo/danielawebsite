@@ -454,3 +454,6 @@ html {
   background: rgba(41, 47, 69, 0.96);
   top: 0;
 }
+.social-container button {
+  margin-right: 10px;
+}

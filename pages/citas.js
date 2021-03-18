@@ -22,7 +22,7 @@ const citas = (props) => {
       <LocalBusinessJsonLd
         type="Store"
         id="http://psic-danieladiaz.com"
-        name="Psicologo en Puebla Daniela Diaz Merino"
+        name="Psicólogo en Puebla Daniela Diaz Merino"
         description="Psicólogo en Puebla para diversas terapias y talleres - Terapia comunitaria ayudando a precios accesibles - Profesionalismo - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños."
         url="http://psic-danieladiaz.com/#sectionServices"
         telephone="2211165866"
@@ -68,7 +68,7 @@ const citas = (props) => {
       />
       <NextSeo
         canonical="https://psic-danieladiaz.com/citas"
-        title="Citas terapias Puebla - Citas psicológicas Puebla - Puedes agendar tus citas en Puebla"
+        title="Citas terapias Piscólogo Puebla - Citas psicológicas Puebla - Puedes agendar tus citas en Puebla"
         description="Citas en Puebla - Agenda tu terapia - Citas psicologicas para jovenes, adultos y niños. Accede para conocer mas acerca de las citas"
         facebook={{
           appId: "430433931632815",

@@ -43,7 +43,7 @@ const Article = ({ article, sitios }) => {
           content={`${article.Nombre} - Especialista Psicologo en ${article.Nombre}, citas en Puebla. Mejores precios en terapia psicologicas`}
         />
         <meta http-equiv="content-language" content="es" />
-        <meta name="keywords" content={`{article.Nombre}`} />
+        <meta name="keywords" content={`${article.Nombre}`} />
         <meta name="author" content="Daniela Diaz Merino" />
         <link rel="shortcut icon" href="logonobg.png" />
       </Head>

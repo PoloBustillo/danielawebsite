@@ -82,7 +82,7 @@ const Insituciones = (props) => {
         }}
       />
       <SinglePageLayout
-        title={"Instituciones asociadas a Pisoclogo en Puebla Daniela Diaz"}
+        title={"Instituciones asociadas a Psicologo en Puebla Daniela Diaz"}
       >
         <>
           <div className="services-header">

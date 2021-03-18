@@ -35,9 +35,9 @@ export default function Home(props) {
       <LocalBusinessJsonLd
         type="Store"
         id="http://psic-danieladiaz.com"
-        name="Psicologo en Puebla Daniela Diaz Merino"
-        description="Psicólogo en Puebla para diversas terapias y talleres - Terapia comunitaria ayudando a precios accesibles - Profesionalismo - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños."
-        url="http://psic-danieladiaz.com/#sectionServices"
+        name="Psicologo en Puebla -Terapias - Daniela Diaz Merino"
+        description="Psicólogo en Puebla, diversas terapias (inviduales, pareja, grupales etc.) - especialidad en psicopedagogía - Terapia comunitaria a precios accesibles  - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños."
+        url="http://psic-danieladiaz.com"
         telephone="2211165866"
         priceRange="150 - 300"
         address={{
@@ -76,9 +76,9 @@ export default function Home(props) {
         ]}
       />
       <NextSeo
-        title="Psicólogo Puebla - Terapias - Talleres "
+        title="Psicólogo Puebla - Terapias - Piscopedagogía - Precios accesibles"
         canonical="https://psic-danieladiaz.com/"
-        description="Psicólogo en Puebla para diversas terapias y talleres - Terapia comunitaria ayudando a precios accesibles - Profesionalismo - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños."
+        description="Psicólogo en Puebla, diversas terapias (inviduales, pareja, grupales etc.)- especialidad en psicopedagogía - Terapia comunitaria a precios accesibles  - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños."
         facebook={{
           appId: "430433931632815",
         }}
@@ -87,7 +87,7 @@ export default function Home(props) {
           url: "https://www.psic-danieladiaz.com/",
           title: "Psicologa en Puebla",
           description:
-            "Psicólogo en Puebla para diversas terapias y talleres - Terapia comunitaria ayudando a precios accesibles - Profesionalismo - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños.",
+            "Psicólogo en Puebla, diversas terapias (inviduales, pareja, grupales etc.)- especialidad en psicopedagogía - Terapia comunitaria a precios accesibles  - Contenido enfocado a la psicología - Ayuda psicológica para jóvenes, adultos y niños.",
           images: [
             {
               url: "https://www.psic-danieladiaz.com/logo500.webp",
