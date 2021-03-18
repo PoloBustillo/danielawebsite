@@ -92,7 +92,7 @@ const CardService = (props) => {
               }
             >
               <span>
-                Costo:{" "}
+                Costo Terapia Puebla:{" "}
                 <FontAwesomeIcon
                   fixedWidth
                   size="sm"
@@ -121,7 +121,7 @@ const CardService = (props) => {
                 }
               >
                 <span>
-                  Sesión en linea:{" "}
+                  Costo Sesión en linea:{" "}
                   <FontAwesomeIcon
                     fixedWidth
                     size="sm"

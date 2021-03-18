@@ -16,6 +16,7 @@ const SectionFAQ = (props) => {
         <h1 className="section-title header">
           <div>Preguntas</div>
           <div>Frecuentes</div>
+          <div>Terapias</div>
         </h1>
       </div>
 

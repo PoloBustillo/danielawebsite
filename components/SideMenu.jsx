@@ -34,7 +34,7 @@ const SideMenu = (props) => {
               onClick={() => props.setOpen(false)}
               className="bm-item menu-item "
             >
-              <FontAwesomeIcon icon={faHome} /> Home
+              <FontAwesomeIcon icon={faHome} /> Inicio
             </a>
           </Link>
 
@@ -61,7 +61,7 @@ const SideMenu = (props) => {
               onClick={() => props.setOpen(false)}
               className="bm-item menu-item"
             >
-              <FontAwesomeIcon icon={faFilm} /> Recursos
+              <FontAwesomeIcon icon={faFilm} /> Blog
             </a>
           </Link>
           <Link className="menu-item" shallow href="/#sectionServices">
@@ -69,7 +69,7 @@ const SideMenu = (props) => {
               onClick={() => props.setOpen(false)}
               className="bm-item menu-item"
             >
-              <FontAwesomeIcon icon={faPeopleArrows} /> Servicios
+              <FontAwesomeIcon icon={faPeopleArrows} /> Terapias
             </a>
           </Link>
         </div>

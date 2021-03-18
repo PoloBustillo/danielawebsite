@@ -225,7 +225,7 @@ const Article = ({ article, sitios }) => {
             data-uk-grid="true"
           >
             <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">Daniela Diaz Merino</p>
+              <p className="uk-margin-remove-bottom">Psicóloga Daniela Diaz</p>
               <p className="uk-text-meta uk-margin-remove-top">
                 {date.toLocaleString()}
               </p>
@@ -304,7 +304,6 @@ export async function getStaticPaths() {
     let newTerapia = article.Nombre.replace(/\s+/g, "_");
     return { params: { slug: newTerapia } };
   });
-  console.log(params);
   return {
     paths: params,
     fallback: false,

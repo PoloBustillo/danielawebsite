@@ -16,7 +16,10 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <link rel="shortcut icon" href="logonobg.png" />
+          <link
+            rel="shortcut icon"
+            href="https://psic-danieladiaz.com/logonobg.png"
+          />
         </Head>
         <body>
           <Main />

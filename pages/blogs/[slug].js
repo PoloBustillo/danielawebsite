@@ -45,7 +45,6 @@ const Article = ({ article, sitios }) => {
         <meta http-equiv="content-language" content="es" />
         <meta name="keywords" content={`${article.Nombre}`} />
         <meta name="author" content="Daniela Diaz Merino" />
-        <link rel="shortcut icon" href="logonobg.png" />
       </Head>
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
       <StickyBar

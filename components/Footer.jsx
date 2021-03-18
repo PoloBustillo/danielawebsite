@@ -87,7 +87,7 @@ const Footer = (props) => {
                   href="/#sectionHome"
                   style={{ opacity: "1", fontWeight: "bold" }}
                 >
-                  IR A HOME{" "}
+                  IR A INICIO{" "}
                   <FontAwesomeIcon
                     fixedWidth
                     size="1x"
@@ -211,10 +211,10 @@ const Footer = (props) => {
             }}
           >
             <li>
-              <a href="/#sectionServices">SERVICIOS /</a>
+              <a href="/#sectionServices">TERAPIAS /</a>
             </li>
             <li>
-              <a href="/faq">FAQ /</a>
+              <a href="/faq">PREGUNTAS FRECUENTES /</a>
             </li>
             <li>
               <a href="/blogs">BLOGS /</a>
@@ -298,7 +298,7 @@ const Footer = (props) => {
             </li>
             <li>
               <a href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
-                SERVICIOS&middot;ESPECIALES
+                TERAPIAS&middot;ESPECIALES
               </a>
             </li>
           </ul>
@@ -311,7 +311,7 @@ const Footer = (props) => {
                 width="200"
                 height="200"
                 className="align-top"
-                alt="Daniela Díaz Merino Psicóloga"
+                alt="Logo Terapias Psicológicas"
                 onMouseEnter={(e) => {
                   setStyle({ display: "block" });
                   setStyle2({ display: "none" });

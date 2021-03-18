@@ -73,7 +73,7 @@ const SectionHome = (props) => {
             {props.slogan}
           </h5>
           <h1 className="title border-button" style={{ color: "white" }}>
-            Psic. Daniela Diaz Merino
+            Psicóloga Daniela Diaz Merino
           </h1>
           <h6 style={{ color: "white" }}>Puebla, Mexico.</h6>
         </div>
@@ -84,8 +84,8 @@ const SectionHome = (props) => {
           >
             <Image
               src={scrollDown}
-              alt="Abajo encontraras servicios de Psicologo en Puebla Daniela Diaz Merino"
-              title="Abajo encontraras servicios de Psicologo en Puebla Daniela Diaz Merino"
+              alt="Abajo encontraras servicios de Psicología en Puebla"
+              title="Abajo encontraras servicios de Psicología en Puebla - Daniela Diaz Merino"
               width={100}
               height={100}
             />
@@ -119,7 +119,7 @@ const SectionHome = (props) => {
                 width="150"
                 height="150"
                 className="align-top"
-                alt="Daniela Díaz Merino Psicóloga"
+                alt="Logo Servicios Psicológicos"
               />
             </div>
           }
@@ -131,7 +131,7 @@ const SectionHome = (props) => {
               width="200"
               height="200"
               className="align-top"
-              alt="Daniela Díaz Merino Psicóloga"
+              alt="Logo Servicios Psicológicos"
               onMouseEnter={(e) => {
                 setStyle({ display: "block" });
                 setStyle2({ display: "none" });

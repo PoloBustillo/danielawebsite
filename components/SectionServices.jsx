@@ -22,7 +22,7 @@ const SectionServices = (props) => {
     <div id="sectionServices" style={{ justifyContent: "center" }}>
       <div className="services-header">
         <h1 className="section-title header">
-          <div>Servicios</div>
+          <div>Terapias</div>
           <div>Psicológicos</div>
           <div>Puebla/Online</div>
         </h1>
