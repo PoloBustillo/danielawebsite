@@ -45,7 +45,8 @@
     "react-share": "^4.3.1",
     "react-skylight": "^0.5.1",
     "styled-components": "^5.2.1",
-    "update": "^0.7.4"
+    "update": "^0.7.4",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "next-purgecss": "^4.0.0"

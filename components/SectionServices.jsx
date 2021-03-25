@@ -23,7 +23,7 @@ const SectionServices = (props) => {
       <div className="services-header">
         <h1 className="section-title header">
           <div>Terapias</div>
-          <div>Psicológicos</div>
+          <div>Psicológicas</div>
           <div>Puebla/Online</div>
         </h1>
       </div>
