@@ -28,7 +28,7 @@ const Article = ({ article, sitios }) => {
     article: true,
   };
   const shareUrl = `${
-    process.env.NEXT_PUBLIC_VERCEL_URL
+    process.env.NEXT_PUBLIC_BASE_URL
   }/terapia/${article.Nombre.replace(/\s+/g, "_")}`;
   const date = new Date(article.published_at);
 
