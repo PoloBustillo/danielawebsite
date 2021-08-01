@@ -192,7 +192,7 @@ const Article = ({ article, sitios }) => {
             <FacebookShareButton
               quote={`Te invito a checar esta terapia: ${article.Nombre}`}
               url={shareUrl}
-              hashtag={"#Puebla"}
+              hashtag={"#Puebla #Terapia #Piscologo"}
             >
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>

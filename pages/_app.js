@@ -1,6 +1,11 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-awesome-button/dist/themes/theme-one.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+// You should do that in a Layout file or in `gatsby-browser.js`.
+config.autoAddCss = false;
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Provider } from "next-auth/client";
 import Head from "next/head";
