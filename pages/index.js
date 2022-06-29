@@ -14,8 +14,6 @@ import { Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import Image from "next/image";
 
 const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,

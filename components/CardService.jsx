@@ -1,13 +1,6 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import {
-  Card,
-  Button,
-  Col,
-  Row,
-  OverlayTrigger,
-  Tooltip,
-} from "react-bootstrap";
+import Markdown from "markdown-to-jsx";
+import { Card, Col, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
 import {
   faCalendarDay,
   faDollarSign,
@@ -75,10 +68,7 @@ const CardService = (props) => {
               marginBottom: "2vh",
             }}
           >
-            <ReactMarkdown
-              source={props.terapia?.Contenido[0]?.Descripcion}
-              escapeHtml={false}
-            />
+            <Markdown>{props.terapia?.Contenido[0]?.Descripcion}</Markdown>
           </div>
           <div>
             <OverlayTrigger

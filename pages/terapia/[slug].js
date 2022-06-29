@@ -1,5 +1,4 @@
-import ReactMarkdown from "react-markdown";
-
+import Markdown from "markdown-to-jsx";
 import { NextSeo, ProductJsonLd } from "next-seo";
 import { useState } from "react";
 import { fetchAPI } from "../../lib/api";
@@ -232,10 +231,7 @@ const Article = ({ article, sitios }) => {
             </div>
           </div>
           <div className="content-article">
-            <ReactMarkdown
-              source={article.Contenido[0].DescripcionAmplia}
-              escapeHtml={false}
-            />
+            <Markdown>{article.Contenido[0].DescripcionAmplia}</Markdown>
           </div>
         </div>
       </div>

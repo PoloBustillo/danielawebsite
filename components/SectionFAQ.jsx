@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 import HeadShake from "react-reveal/HeadShake";
-import Fade from "react-reveal/Fade";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Accordion, Card } from "react-bootstrap";
@@ -83,7 +81,7 @@ const SectionFAQ = (props) => {
                       }}
                     >
                       <Card.Body>
-                        <ReactMarkdown source={item.Respuesta} />
+                        <Markdown>{item.Respuesta}</Markdown>
                       </Card.Body>
                     </Accordion.Collapse>
                   </HeadShake>
