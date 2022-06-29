@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { isMobile } from "react-device-detect";
 
 const NotMobile = (props) => {
