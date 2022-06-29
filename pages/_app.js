@@ -6,10 +6,15 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 
 // You should do that in a Layout file or in `gatsby-browser.js`.
 config.autoAddCss = false;
-import { MessengerChat } from "react-messenger-chat-plugin";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+const MessengerChat = dynamic(
+  () => import("react-messenger-chat-plugin").then((mod) => mod.MessengerChat),
+  {
+    ssr: false,
+  }
+);
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
 });
