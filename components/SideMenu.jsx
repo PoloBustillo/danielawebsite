@@ -1,5 +1,5 @@
 import React from "react";
-import { stack as Menu } from "react-burger-menu/lib/menus/stack";
+import { stack as Menu } from "react-burger-menu";
 import Link from "next/link";
 import {
   faHome,
