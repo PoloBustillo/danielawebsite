@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Sling as Hamburger } from "hamburger-react";
+import { Spin as Hamburger } from "hamburger-react";
 
 const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);

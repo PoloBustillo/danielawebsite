@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Navbar, NavDropdown, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Footer from "../components/Footer";
 import StickyBar from "../components/StickyBar";
 import SideMenu from "../components/SideMenu";
