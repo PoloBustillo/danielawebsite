@@ -171,11 +171,13 @@ export default function Home(props) {
           </h6>
         </Col>
       </Row>
-      <SectionServices
-        areas={props.areas}
-        terapias={filterData()}
-        setFilter={setFilter}
-      ></SectionServices>
+      <LazyLoad offset={100}>
+        <SectionServices
+          areas={props.areas}
+          terapias={filterData()}
+          setFilter={setFilter}
+        ></SectionServices>
+      </LazyLoad>
       <div id="banner">
         <LazyLoadImage
           effect="blur"

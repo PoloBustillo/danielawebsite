@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-awesome-button/dist/themes/theme-one.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import LazyLoad from "react-lazyload";
 
-// You should do that in a Layout file or in `gatsby-browser.js`.
 config.autoAddCss = false;
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
@@ -43,16 +43,18 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
         <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
       </Head>
-      <MessengerChat
-        pageId="106715554719583"
-        appId="430433931632815"
-        htmlRef="messengerRef"
-        minimized={true}
-        loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
-        greetingDialogDisplay="fade"
-        language="es_LA"
-        shouldShowDialog={false}
-      />
+      <LazyLoad>
+        <MessengerChat
+          pageId="106715554719583"
+          appId="430433931632815"
+          htmlRef="messengerRef"
+          minimized={true}
+          loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
+          greetingDialogDisplay="fade"
+          language="es_LA"
+          shouldShowDialog={false}
+        />
+      </LazyLoad>
       <NotMobile>
         <div style={{ zIndex: "1100" }}>
           <AnimatedCursor
