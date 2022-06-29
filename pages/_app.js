@@ -7,7 +7,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 // You should do that in a Layout file or in `gatsby-browser.js`.
 config.autoAddCss = false;
 import MessengerCustomerChat from "react-messenger-customer-chat";
-import { Provider } from "next-auth/client";
+import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
@@ -21,7 +21,7 @@ export function reportWebVitals(metric) {
   //console.log(metric);
 }
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
       <Head>
@@ -60,9 +60,9 @@ function MyApp({ Component, pageProps }) {
           />
         </div>
       </NotMobile>
-      <Provider session={pageProps.session}>
+      <SessionProvider session={session}>
         <Component {...pageProps} />
-      </Provider>
+      </SessionProvider>
     </>
   );
 }

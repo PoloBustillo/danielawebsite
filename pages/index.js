@@ -8,7 +8,6 @@ import StickyBar from "../components/StickyBar";
 import SectionServices from "../components/SectionServices";
 import SectionFAQ from "../components/SectionFAQ";
 import Footer from "../components/Footer";
-import { useSession, signIn, signOut } from "next-auth/client";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import LazyLoad from "react-lazyload";
 import { Col, Row } from "react-bootstrap";
@@ -17,7 +16,6 @@ import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import scrollDown from "public/scroll_down_servicios_psicologicos.gif";
 
 const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,
@@ -27,7 +25,6 @@ export default function Home(props) {
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
-  const [session, loading] = useSession();
 
   const router = useRouter();
 
@@ -120,7 +117,7 @@ export default function Home(props) {
           className="m-auto py-2"
           style={{
             backgroundColor: "#48A9A6",
-            color: "#082D46",
+            color: "#FEFDFB",
             fontFamily: "Manrope,Helvetica,Arial,sans-serif",
             fontSize: ".6875rem",
           }}
@@ -150,7 +147,7 @@ export default function Home(props) {
       </NotMobile>
 
       <SectionHome slogan={props.slogan}></SectionHome>
-      <Row style={{ marginTop: "200px" }}>
+      <Row style={{ marginTop: "200px", marginLeft: "100px !important" }}>
         <Col
           style={{
             float: "right",
@@ -174,24 +171,7 @@ export default function Home(props) {
           <h6 style={{ color: "#17364E", fontSize: "18px" }}>
             Puebla, Mexico.
           </h6>
-
-          <Link href="/#sectionServices">
-            <div
-              className="gifContainer"
-              style={{ top: "35vh", position: "relative" }}
-            >
-              <Image
-                color="#17364E"
-                src={scrollDown}
-                alt="Abajo encontraras servicios de Psicología en Puebla"
-                title="Abajo encontraras servicios de Psicología en Puebla - Daniela Diaz Merino"
-                width={100}
-                height={100}
-              />
-            </div>
-          </Link>
         </Col>
-        <Col>Columna 1</Col>
       </Row>
       <SectionServices
         areas={props.areas}
@@ -206,12 +186,7 @@ export default function Home(props) {
           alt="Agendar Cita Psicologo Puebla"
         />
       </div>
-      {/*
-      <SectionCitas
-        areas={props.areas}
-        terapias={filterData()}
-        setFilter={setFilter}
-      ></SectionCitas>*/}
+
       <SectionFAQ preguntas={props.preguntas} />
       {/*<div style={{ height: "800px" }}>
         <iframe

@@ -3,7 +3,6 @@ import { Col, Row, Card, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import LazyHero from "react-lazy-hero";
 import Image from "next/image";
-import scrollDown from "public/scroll_down_servicios_psicologicos.gif";
 import Link from "next/link";
 import { particleOptions, motionForce } from "../utils/particles";
 import ParticleImage from "react-particle-image";
@@ -18,27 +17,16 @@ const SectionHome = (props) => {
     display: "none",
     position: "relative",
     top: "40px",
-    left: "10px",
+    left: "20px",
   });
   const [style2, setStyle2] = useState({
     display: "block",
     position: "absolute",
     top: "40px",
-    left: "10px",
+    left: "20px",
   });
   return (
     <div id="sectionHome">
-      {/* <LazyHero
-        style={{  width: "100vw", paddingTop:"100px"}}
-        parallaxOffset={200}
-        color="#000"
-        opacity={0.4}
-        transitionDuration={1000}
-        isCentered={true}
-        minHeight={"90vh"}
-        imageSrc="/portada_psicologo_puebla.jpg"
-        height="90vh"
-      > */}
       <NotMobile
         mobileChildren={
           <div className="logo">
@@ -66,7 +54,7 @@ const SectionHome = (props) => {
                 display: "block",
                 position: "absolute",
                 top: "40px",
-                left: "10px",
+                left: "20px",
               });
               setStyle2({ display: "none" });
             }}
@@ -78,7 +66,7 @@ const SectionHome = (props) => {
                 display: "block",
                 position: "absolute",
                 top: "40px",
-                left: "10px",
+                left: "20px",
               });
             }}
             style={style}
@@ -93,7 +81,20 @@ const SectionHome = (props) => {
           />
         </div>
       </NotMobile>
-      <Row className="sectionButtonsContainer">
+      <Row
+        className="sectionButtonsContainer"
+        style={{
+          float: "right",
+          margin: "30px",
+          color: "#9B287B",
+          width: "450px",
+        }}
+      >
+        <Col className="heroButtonContainer">
+          <Link href="https://daniela-cms-2.herokuapp.com/auth/google/callback">
+            Pacientes
+          </Link>
+        </Col>
         <Col className="heroButtonContainer">
           <a
             onClick={() => {
@@ -129,8 +130,6 @@ const SectionHome = (props) => {
           z-index: 1040;
         }
       `}</style>
-
-      {/* </LazyHero> */}
     </div>
   );
 };
