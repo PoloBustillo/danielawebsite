@@ -6,7 +6,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 
 // You should do that in a Layout file or in `gatsby-browser.js`.
 config.autoAddCss = false;
-import MessengerCustomerChat from "react-messenger-customer-chat";
+import { MessengerChat } from "react-messenger-chat-plugin";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
         <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
       </Head>
-      <MessengerCustomerChat
+      <MessengerChat
         pageId="106715554719583"
         appId="430433931632815"
         htmlRef="messengerRef"
