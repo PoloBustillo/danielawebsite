@@ -5,6 +5,9 @@
 @import url(https://use.typekit.net/yfz7sly.css);
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400;1,500;1,800&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap);
+.sticky-top {
+  z-index: 400 !important;
+}
 
 .simplybook-widget-container {
   width: 80%;
@@ -60,14 +63,14 @@ canvas {
 }
 .toggle-nav {
   z-index: 200;
-  padding: 0.8vh !important;
+  
 }
 .toggle-nav,
 .toggle-nav span {
   color: #fff !important;
 }
 .hamburger-react div {
-  background-color: #fff !important;
+  background-color: #000 !important;
 }
 .box {
   min-height: 10em;
@@ -205,14 +208,14 @@ html {
   }
   .toggle-nav {
     z-index: 200;
-    padding: 0.8vh !important;
   }
   .toggle-nav,
   .toggle-nav span {
     color: #fff !important;
   }
+ 
   .hamburger-react div {
-    background-color: #fff !important;
+    background-color: #000 !important;
   }
   .box {
     min-height: 10em;

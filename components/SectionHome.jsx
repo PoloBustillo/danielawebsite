@@ -15,32 +15,20 @@ const NotMobile = dynamic(() => import("../components/NotMobile"), {
 const SectionHome = (props) => {
   const [style, setStyle] = useState({
     display: "none",
-    position: "relative",
-    top: "40px",
-    left: "20px",
+    position: "absolute",
+    top: "300px",
+    left: "1020px",
+    zIndex: "300",
   });
   const [style2, setStyle2] = useState({
     display: "block",
     position: "absolute",
-    top: "40px",
-    left: "20px",
+    top: "300px",
+    left: "1020px",
   });
   return (
     <div id="sectionHome">
-      <NotMobile
-        mobileChildren={
-          <div className="logo">
-            <img
-              style={style2}
-              src="/logo500.webp"
-              width="150"
-              height="150"
-              className="align-top"
-              alt="Logo Servicios Psicológicos"
-            />
-          </div>
-        }
-      >
+      <NotMobile mobileChildren={<></>}>
         <div>
           <img
             style={style2}
@@ -53,8 +41,8 @@ const SectionHome = (props) => {
               setStyle({
                 display: "block",
                 position: "absolute",
-                top: "40px",
-                left: "20px",
+                top: "300px",
+                left: "1020px",
               });
               setStyle2({ display: "none" });
             }}
@@ -65,8 +53,8 @@ const SectionHome = (props) => {
               setStyle2({
                 display: "block",
                 position: "absolute",
-                top: "40px",
-                left: "20px",
+                top: "300px",
+                left: "1020px",
               });
             }}
             style={style}
@@ -81,44 +69,6 @@ const SectionHome = (props) => {
           />
         </div>
       </NotMobile>
-      <Row
-        className="sectionButtonsContainer"
-        style={{
-          float: "right",
-          margin: "30px",
-          color: "#9B287B",
-          width: "450px",
-        }}
-      >
-        <Col className="heroButtonContainer">
-          <Link href="https://daniela-cms-2.herokuapp.com/auth/google/callback">
-            Pacientes
-          </Link>
-        </Col>
-        <Col className="heroButtonContainer">
-          <a
-            onClick={() => {
-              document
-                .getElementsByClassName("simplybook-widget-button")[0]
-                .click();
-              document.getElementsByClassName(
-                "simplybook-widget-button"
-              )[0].onload = function () {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-              };
-            }}
-          >
-            Citas
-          </a>
-        </Col>
-        <Col className="heroButtonContainer">
-          <Link href="/instituciones">Instituciones</Link>
-        </Col>
-        <Col className="heroButtonContainer">
-          <Link href="/#sectionServices">Servicios</Link>
-        </Col>
-      </Row>
 
       <style jsx>{`
         #sectionHome {

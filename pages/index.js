@@ -10,7 +10,7 @@ import SectionFAQ from "../components/SectionFAQ";
 import Footer from "../components/Footer";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import LazyLoad from "react-lazyload";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Navbar, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import dynamic from "next/dynamic";
@@ -129,20 +129,14 @@ export default function Home(props) {
           Nueva caracteristica: Pacientes y Visitantes ya pueden iniciar sesión.
         </p>
       </Row>
-      <NotMobile
-        mobileChildren={
-          <>
-            <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
-            <StickyBar
-              isMenuOpen={isOpen}
-              setOpenMenu={setOpen}
-              color={color}
-            ></StickyBar>
-          </>
-        }
-      >
-        <></>
-      </NotMobile>
+
+      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+
+      <StickyBar
+        isMenuOpen={isOpen}
+        setOpenMenu={setOpen}
+        color={color}
+      ></StickyBar>
 
       <SectionHome slogan={props.slogan}></SectionHome>
       <Row style={{ marginTop: "200px", marginLeft: "100px !important" }}>

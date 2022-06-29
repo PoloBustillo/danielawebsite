@@ -1,55 +1,73 @@
 import React, { useState } from "react";
 
-import { Spin as Hamburger } from "hamburger-react";
+import { Spiral as Hamburger } from "hamburger-react";
+import { Col, Container, Navbar, Row } from "react-bootstrap";
+import Link from "next/link";
 
 const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        position: "sticky",
-        top: "0",
-        zIndex: "1030",
-        overflow: "hidden",
-        float: "right",
-        maxHeight: "100%",
-        maxWidth: "100%",
-      }}
-    >
-      <div
-        aria-controls="responsive-navbar-nav"
-        className="toggle-nav"
-        onClick={() => {
-          setOpenMenu(!isMenuOpen);
-          setOpen(!isMenuOpen);
-        }}
-        style={{
-          borderColor: color,
-          textAlign: "center",
-          marginLeft: "auto",
-          padding: "2.5vw",
-          position: "relative",
-        }}
-      >
-        <span style={{ color: isMenuOpen ? "white" : color }}>
-          {isMenuOpen ? "CERRAR" : "MENU"}
-        </span>
+    <Navbar sticky="top" expand="xs" variant="light" bg="light">
+      <Container>
+        <Navbar.Brand href="#">
+          <div className="logo">
+            <img
+              src="/logo500.webp"
+              width="50"
+              height="50"
+              className="align-top"
+              alt="Logo Servicios Psicológicos"
+            />
+          </div>
+        </Navbar.Brand>{" "}
+        <Row
+          className="sectionButtonsContainer"
+          style={{
+            float: "right",
+            margin: "30px",
+            color: "#9B287B",
+            width: "450px",
+          }}
+        >
+          <Col className="heroButtonContainer">
+            <Link href="https://daniela-cms-2.herokuapp.com/auth/google/callback">
+              Pacientes
+            </Link>
+          </Col>
+          <Col className="heroButtonContainer">
+            <a
+              onClick={() => {
+                document
+                  .getElementsByClassName("simplybook-widget-button")[0]
+                  .click();
+                document.getElementsByClassName(
+                  "simplybook-widget-button"
+                )[0].onload = function () {
+                  document.body.scrollTop = 0;
+                  document.documentElement.scrollTop = 0;
+                };
+              }}
+            >
+              Citas
+            </a>
+          </Col>
+          <Col className="heroButtonContainer">
+            <Link href="/instituciones">Instituciones</Link>
+          </Col>
+          <Col className="heroButtonContainer">
+            <Link href="/#sectionServices">Servicios</Link>
+          </Col>
+        </Row>
         <Hamburger
-          label="Menu principal"
-          rounded
-          duration={1}
-          distance="lg"
-          color={isMenuOpen ? "white" : color}
-          size={85}
-          direction={"left"}
           toggled={isMenuOpen}
-          toggle={setOpen}
+          toggle={() => {
+            setOpenMenu(!isMenuOpen);
+            setOpen(!isMenuOpen);
+          }}
         />
-      </div>
-      <div className={`box ${isMenuOpen ? "animate-menu" : ""}`}></div>
-    </div>
+      </Container>
+    </Navbar>
   );
 };
 
