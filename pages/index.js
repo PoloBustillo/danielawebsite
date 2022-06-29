@@ -11,6 +11,17 @@ import Footer from "../components/Footer";
 import { useSession, signIn, signOut } from "next-auth/client";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import LazyLoad from "react-lazyload";
+import { Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import Image from "next/image";
+import scrollDown from "public/scroll_down_servicios_psicologicos.gif";
+
+const NotMobile = dynamic(() => import("../components/NotMobile"), {
+  ssr: false,
+});
 
 export default function Home(props) {
   const [color, setColor] = useState();
@@ -104,13 +115,84 @@ export default function Home(props) {
           ],
         }}
       />
-      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
-      <StickyBar
-        isMenuOpen={isOpen}
-        setOpenMenu={setOpen}
-        color={color}
-      ></StickyBar>
+      <Row style={{ backgroundColor: "#48A9A6" }}>
+        <p
+          className="m-auto py-2"
+          style={{
+            backgroundColor: "#48A9A6",
+            color: "#082D46",
+            fontFamily: "Manrope,Helvetica,Arial,sans-serif",
+            fontSize: ".6875rem",
+          }}
+        >
+          <FontAwesomeIcon
+            fixedWidth
+            size="sm"
+            icon={faBullhorn}
+          ></FontAwesomeIcon>
+          {"  "}
+          Nueva caracteristica: Pacientes y Visitantes ya pueden iniciar sesión.
+        </p>
+      </Row>
+      <NotMobile
+        mobileChildren={
+          <>
+            <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+            <StickyBar
+              isMenuOpen={isOpen}
+              setOpenMenu={setOpen}
+              color={color}
+            ></StickyBar>
+          </>
+        }
+      >
+        <></>
+      </NotMobile>
+
       <SectionHome slogan={props.slogan}></SectionHome>
+      <Row style={{ marginTop: "200px" }}>
+        <Col
+          style={{
+            float: "right",
+          }}
+        >
+          <h5
+            style={{
+              color: "#9B287B",
+              letterSpacing: "3px",
+              fontSize: "15px",
+            }}
+          >
+            {props.slogan}
+          </h5>
+          <h1
+            className="title border-button"
+            style={{ color: "#17364E", fontSize: "20px" }}
+          >
+            Psicóloga Daniela Diaz Merino
+          </h1>
+          <h6 style={{ color: "#17364E", fontSize: "18px" }}>
+            Puebla, Mexico.
+          </h6>
+
+          <Link href="/#sectionServices">
+            <div
+              className="gifContainer"
+              style={{ top: "35vh", position: "relative" }}
+            >
+              <Image
+                color="#17364E"
+                src={scrollDown}
+                alt="Abajo encontraras servicios de Psicología en Puebla"
+                title="Abajo encontraras servicios de Psicología en Puebla - Daniela Diaz Merino"
+                width={100}
+                height={100}
+              />
+            </div>
+          </Link>
+        </Col>
+        <Col>Columna 1</Col>
+      </Row>
       <SectionServices
         areas={props.areas}
         terapias={filterData()}
@@ -148,7 +230,6 @@ export default function Home(props) {
           frameborder="0"
         ></iframe>
         </div>*/}
-
       {/*<CardBlog></CardBlog>*/}
       <LazyLoad offset={100}>
         <Footer sitios={props.sitios}></Footer>

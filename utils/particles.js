@@ -27,7 +27,7 @@ const particleOptions = {
     const pixel = image.get(x, y);
     const magnitude = (pixel.r + pixel.g + pixel.b) / 3;
     // Lighter colors will have smaller radius
-    return 2.5;
+    return 2;
   },
   mass: () => 20,
   friction: () => 0.15,
