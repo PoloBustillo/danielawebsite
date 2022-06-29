@@ -4045,7 +4045,7 @@ react-bootstrap@^1.4.3:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-burger-menu@^3.0.4:
+react-burger-menu@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-3.0.8.tgz#78744db0a576f981aeade4f3f8ee956bc094c107"
   integrity sha512-pkPHOUKKd5ClLg5OERIZLXtnYCO2Vxvti+BBIIVLNiD2xjCdgfkSt4TZ2IPUQBkYUY/id7Mq56YDgQ16p4kZog==
