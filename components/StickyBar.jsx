@@ -13,7 +13,9 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
     <Navbar
       sticky="top"
       expand="xs"
-      style={{ backgroundColor: "#FEFDFB" }}
+      style={{
+        backdropFilter: "blur(8px)",
+      }}
       color="#FEFDFB"
     >
       <Container>

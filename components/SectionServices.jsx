@@ -1,37 +1,59 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import CardService from "./CardService";
 import { Row, Col } from "react-bootstrap";
 import SubMenuServices from "./SubMenuServices";
-const parallaxDataColor = [
-  {
-    start: "self",
-    duration: 5000,
-    properties: [
-      {
-        startValue: "#f7f8fc",
-        endValue: "#FFFFFF",
-        property: "backgroundColor",
-      },
-    ],
-  },
-];
+import { Parallax } from "react-parallax";
+
+const insideStyles = {
+  background: "transparent",
+  padding: 20,
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%,-50%)",
+};
 
 const SectionServices = (props) => {
   return (
     <div id="sectionServices" style={{ justifyContent: "center" }}>
-      <div className="services-header">
-        <h1 className="section-title header">
-          <div>Terapias</div>
-          <div>Psicológicas</div>
-          <div>Puebla/Online</div>
-        </h1>
-      </div>
+      <Parallax
+        bgImage={""}
+        strength={200}
+        renderLayer={(percentage) => (
+          <div>
+            <div
+              style={{
+                position: "absolute",
+                background: `rgba(163, 211, 209,${percentage * 1})`,
+                left: "50%",
+                top: "50%",
+                borderRadius: "50%",
+                transform: "translate(-50%,-50%)",
+                width: (1 + percentage) * 150,
+                height: (1 + percentage) * 150,
+              }}
+            />
+          </div>
+        )}
+      >
+        <div style={{ height: 300 }}>
+          <div style={insideStyles}>
+            <div className="services-header">
+              <span className="section-title header">
+                <div>Terapias Psicológicas</div>
+                <div></div>
+                <div>Puebla y Online</div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </Parallax>
+
       <Row style={{ justifyContent: "center" }}>
         <Row
           style={{
             display: "flex",
-            marginTop: "-45px",
+            marginTop: "0px",
             justifyContent: "center",
             color: "#007bff",
           }}
@@ -60,20 +82,20 @@ const SectionServices = (props) => {
         #sectionServices {
           height: 100%;
           overflow: hidden;
-          background-color: rgb(236, 240, 249);
+          background-color: transparent;
           position: relative;
         }
         .services-header {
           font-family: muli, sans-serif !important;
-          font-size: 6vh;
+          font-size: 4vh;
           font-weight: 600;
           padding: 10vmin;
-          background-color: rgb(255, 255, 255);
+          background-color: transparent;
           margin-bottom: 2vh;
         }
         .section-title {
           text-align: center;
-          color: rgb(41, 47, 69);
+          color: #082d46;
           font-weight: 900;
           margin-block-end: 0;
           font-family: "Noto Sans";

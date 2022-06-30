@@ -1,44 +1,43 @@
-import React, { useState } from "react";
-import { Col, Row, Card, Button } from "react-bootstrap";
-import PropTypes from "prop-types";
-import LazyHero from "react-lazy-hero";
-import Image from "next/image";
-import Link from "next/link";
-import { particleOptions, motionForce } from "../utils/particles";
-import ParticleImage from "react-particle-image";
-import dynamic from "next/dynamic";
-
-const NotMobile = dynamic(() => import("../components/NotMobile"), {
-  ssr: false,
-});
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 const SectionHome = (props) => {
-  const [style, setStyle] = useState({
-    display: "none",
-    position: "absolute",
-    top: "300px",
-    left: "1020px",
-    zIndex: "300",
-  });
-  const [style2, setStyle2] = useState({
-    display: "block",
-    position: "absolute",
-    top: "300px",
-    left: "1020px",
-  });
+  const imgArray = ["adoles.png", "family.png", "ninos.png", "online.png"];
+  const [indexImg, setIndexImg] = useState(Math.floor(Math.random() * 4));
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      let index = Math.floor(Math.random() * 4);
+      if (index == indexImg) index = Math.floor(Math.random() * 4);
+      setIndexImg(index);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, [indexImg]);
+
   return (
-    <div id="sectionHome">
-      <style jsx>{`
-        #sectionHome {
-        }
-        .sectionButtonsContainer {
-          top: 0;
-          position: absolute;
-          right: 30vw;
-          z-index: 1040;
-        }
-      `}</style>
-    </div>
+    <Container>
+      <Row>
+        <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+          <img src={imgArray[indexImg]} width="100%" alt="Psicologa" />
+        </Col>
+        <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+          <h5
+            style={{
+              color: "#9B287B",
+              letterSpacing: "3px",
+              fontSize: "15px",
+            }}
+          >
+            {props.slogan}
+          </h5>
+          <h1 className="title" style={{ color: "#17364E", fontSize: "20px" }}>
+            Psicóloga Daniela Diaz Merino
+          </h1>
+          <h6 style={{ color: "#17364E", fontSize: "18px" }}>
+            Puebla, Mexico.
+          </h6>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
