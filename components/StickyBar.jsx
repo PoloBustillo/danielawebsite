@@ -14,6 +14,7 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
       sticky="top"
       expand="xs"
       style={{
+        WebkitFilter: "blur(8px)",
         backdropFilter: "blur(8px)",
       }}
       color="#FEFDFB"
