@@ -76,7 +76,9 @@ const SideMenu = (props) => {
 
         <div className="menu-container">
           <ListGroup variant="flush">
-            <ListGroup.Item style={{ cursor: "pointer" }}>
+            <ListGroup.Item
+              style={{ cursor: "pointer", backgroundColor: "#FEFDFB" }}
+            >
               <Link shallow href="/#sectionHome">
                 <a
                   href="/#sectionHome"

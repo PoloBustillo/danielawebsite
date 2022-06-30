@@ -55,18 +55,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
           shouldShowDialog={false}
         />
       </LazyLoad>
-      <NotMobile>
-        <div style={{ zIndex: "1100" }}>
-          <AnimatedCursor
-            innerSize={18}
-            outerSize={24}
-            color="182,95,207"
-            outerAlpha={0.2}
-            innerScale={2}
-            outerScale={5}
-          />
-        </div>
-      </NotMobile>
+
       <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>

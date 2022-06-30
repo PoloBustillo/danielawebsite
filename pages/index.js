@@ -12,8 +12,18 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import LazyLoad from "react-lazyload";
 import { Col, Container, Navbar, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBrain,
+  faBullhorn,
+  faLocation,
+  faLocationDot,
+  faMap,
+  faMapMarkerAlt,
+  faPhoneAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import dynamic from "next/dynamic";
+import { Divider } from "@material-ui/core";
+import Link from "next/link";
 
 const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,
@@ -114,6 +124,7 @@ export default function Home(props) {
         <p
           className="m-auto py-4"
           style={{
+            textAlign: "center",
             backgroundColor: "#A3D3D1",
             color: "#082D46",
             fontFamily: "Manrope,Helvetica,Arial,sans-serif",
@@ -139,7 +150,83 @@ export default function Home(props) {
       ></StickyBar>
 
       <SectionHome slogan={props.slogan}></SectionHome>
+      <Divider className="mx-10 my-3"></Divider>
+      <Container>
+        <Row>
+          <Col
+            className="px-5 my-auto col-md-7"
+            style={{ textAlign: "center" }}
+          >
+            <h6
+              style={{
+                color: "#17364E",
+                fontSize: "20px",
+                marginBottom: "5vh",
+              }}
+            >
+              <FontAwesomeIcon fixedWidth size="1x" icon={faBrain} />
+              Psicologa Puebla/Teziutlan
+            </h6>
+            <div
+              className="m-auto"
+              style={{
+                color: "#17364E",
+                fontFamily: "WoodfordBournePRO",
+                fonSize: "12px",
+                lineHeight: "1.5",
+                fontSize: "12px",
+                fontWeight: "900",
+              }}
+            >
+              <Link href="https://goo.gl/maps/kmrqWeGX3nQRaU8q7">
+                <Row
+                  className="m-auto"
+                  style={{ textAlign: "justify", cursor: "pointer" }}
+                >
+                  <FontAwesomeIcon
+                    style={{ fontSize: "60px", marginRight: "20px" }}
+                    icon={faLocationDot}
+                  ></FontAwesomeIcon>
 
+                  <div>
+                    <div>Mártires del 2 de Octubre</div>
+                    <div>Reserva TerritorialAtlixcáyotl</div>
+                    <div>Ex-Rancho Vaquerías, 72464</div>
+                    Puebla, Pue.
+                  </div>
+                </Row>
+              </Link>
+              <Link href="tel:2211165866">
+                <Row
+                  className="m-auto"
+                  style={{
+                    textAlign: "justify",
+                    float: "right",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div>
+                    <FontAwesomeIcon fixedWidth size="3x" icon={faPhoneAlt} />
+                    <span className="my-auto">
+                      22&middot;11&middot;16&middot;58&middot;66
+                    </span>
+                  </div>
+                </Row>
+              </Link>
+            </div>
+          </Col>
+          <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
+              frameBorder="0"
+              style={{ border: "0", height: "35vh" }}
+              allowFullScreen={false}
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </Col>
+        </Row>
+      </Container>
       <LazyLoad offset={100}>
         <SectionServices
           areas={props.areas}
