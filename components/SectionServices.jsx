@@ -17,7 +17,7 @@ const SectionServices = (props) => {
   return (
     <div id="sectionServices" style={{ justifyContent: "center" }}>
       <Parallax
-        bgImage={""}
+        bgImage={"tes.jpeg"}
         strength={200}
         renderLayer={(percentage) => (
           <div>
@@ -36,7 +36,7 @@ const SectionServices = (props) => {
           </div>
         )}
       >
-        <div style={{ height: 300 }}>
+        <div style={{ height: 900 }}>
           <div style={insideStyles}>
             <div className="services-header">
               <span className="section-title header">
