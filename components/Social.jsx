@@ -25,14 +25,14 @@ const Social = (props) => {
   } */
   return (
     <div className="social-container">
-      <iframe
+      {/* <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.323223481286!2d-98.24784688509992!3d19.00547368712844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33f973c342c5addd!2sPsic%C3%B3logo%20Daniela%20Diaz%20Merino%20-%20Puebla%20-%20Terapia!5e0!3m2!1sen!2smx!4v1612124170876!5m2!1sen!2smx"
         frameBorder="0"
         style={{ border: "0", height: "35vh", width: "40vw" }}
         allowFullScreen={false}
         aria-hidden="false"
         tabIndex="0"
-      ></iframe>
+      ></iframe> */}
       <Link href="tel:2211165866">
         <div>
           <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />

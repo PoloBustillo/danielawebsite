@@ -70,7 +70,7 @@ canvas {
   color: #fff !important;
 }
 .hamburger-react div {
-  background-color: #000 !important;
+  background-color: #9B287B !important;
 }
 .box {
   min-height: 10em;
@@ -85,14 +85,28 @@ canvas {
 .row-cards {
   width: 90vw;
 }
+
+.menu-item:link {
+  text-decoration: none;
+}
+.menu-item:visited {
+  text-decoration: none;
+}
+.menu-item:hover {
+  text-decoration: none;
+}
+.menu-item:active {
+  text-decoration: none;
+}
 .menu-item {
-  font-family: "Lato", sans-serif;
-  font-size: 6vmin;
-  color: rgb(255 255 255) !important;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer !important;
   font-weight: 900;
 }
 .menu-item:hover {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(146, 23, 23, 0.8) !important;
 }
 .element-animation:hover {
   animation: animationFrames linear 1s;
@@ -264,7 +278,7 @@ html {
   letter-spacing: 3px !important;
 }
 .buttonHero {
-  color: #17364E !important;
+  color: #9B287B !important;
   border-color: rgba(29, 181, 120, 0.8) !important;
   background-color: rgba(255, 255, 255, 0.2) !important;
   margin-bottom: 7%;
@@ -274,33 +288,38 @@ html {
 .vertical-timeline {
   width: 80% !important;
 }
-
+#navbarScrollingDropdown{
+  color: #9B287B !important;
+}
 .heroButtonContainer {
   padding-left: 5%;
+  text-decoration: none !important;
   margin-top: 7%;
   text-align: center;
+  font-family: "Yanone Kaffeesatz" !important;
+  cursor: pointer !important;
+  font-weight: bolder;
+  font-size: 20px
+  
 }
 .heroButtonContainer>a{
+  text-decoration: none !important;
   color: #17364E;
 }
 .heroButtonContainer>span {
+  text-decoration: none !important;
   color: #17364E;
 }
 .nav-link:hover {
   font-size: medium;
 }
-.dropdown-menu.show {
-  left: 30vw !important;
-  top: 40vh !important;
-  position: fixed !important;
-}
+
 .toggle-nav {
   font-size: 0.7rem !important;
 }
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
-  cursor: grab;
   top: 0;
 }
 .drop-item:hover,
@@ -308,8 +327,7 @@ html {
   color: rgba(29, 181, 120, 0.8) !important;
 }
 .bm-menu {
-  background: rgba(0, 0, 0, 0.8);
-  width: 50vw;
+  background:#FEFDFB;
   text-align: center;
   font-size: 1.15em;
   cursor: grab;
@@ -327,24 +345,9 @@ html {
   padding: 15px;
   margin-top: 30px !important;
 }
-.bm-item,
-.bm-item:hover {
-  display: inline-block;
-  cursor: grab !important;
-  text-decoration: none;
-}
-.bm-item {
-  color: #000;
-  margin: 2% 5%;
-}
-.bm-item:hover {
-  color: rgba(148, 148, 148, 0.8);
-}
-.bm-item:active {
-  cursor: grabbing !important;
-}
+
 .bm-overlay {
-  background: rgba(41, 47, 69, 0.96);
+  background: #FEFDFB;
   top: 0;
 }
 .social-container button {
