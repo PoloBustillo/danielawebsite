@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import Link from "next/link";
 import {
@@ -6,18 +6,24 @@ import {
   faCalendarAlt,
   faFilm,
   faPeopleArrows,
-  faSignInAlt,
-  faSignIn,
-  faUserAltSlash,
-  faUserAlt,
   faPersonWalking,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Social from "./Social";
 import LazyLoad from "react-lazyload";
 import { ListGroup } from "react-bootstrap";
+import NotMobile from "./NotMobile";
+import ParticleImage from "react-particle-image";
+import { motionForce, particleOptions } from "../utils/particles";
 
 const SideMenu = (props) => {
+  const [style, setStyle] = useState({
+    display: "none",
+  });
+  const [style2, setStyle2] = useState({
+    display: "block",
+    margin: "auto",
+  });
   const changeMenu = () => {
     props.setOpen(!props.isOpen);
     return props.isOpen;
@@ -32,6 +38,42 @@ const SideMenu = (props) => {
       customBurgerIcon={false}
     >
       <LazyLoad>
+        <div>
+          <img
+            style={style2}
+            src="/logo500.webp"
+            width="100"
+            height="100"
+            className="align-top"
+            alt="Logo Servicios Psicológicos"
+            onMouseEnter={(e) => {
+              setStyle({
+                display: "block",
+                margin: "auto",
+              });
+              setStyle2({ display: "none" });
+            }}
+          />
+          <ParticleImage
+            onMouseLeave={(e) => {
+              setStyle({ display: "none" });
+              setStyle2({
+                display: "block",
+                margin: "auto",
+              });
+            }}
+            style={style}
+            src={"/logo100.png"}
+            width={100}
+            height={100}
+            scale={1}
+            entropy={0}
+            maxParticles={3000}
+            particleOptions={particleOptions}
+            mouseMoveForce={motionForce}
+          />
+        </div>
+
         <div className="menu-container">
           <ListGroup variant="flush">
             <ListGroup.Item style={{ cursor: "pointer" }}>
@@ -89,8 +131,8 @@ const SideMenu = (props) => {
               </Link>
             </ListGroup.Item>
           </ListGroup>
+          <Social></Social>
         </div>
-        <Social></Social>
       </LazyLoad>
     </Menu>
   );

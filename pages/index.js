@@ -138,33 +138,34 @@ export default function Home(props) {
         color={color}
       ></StickyBar>
 
-      <SectionHome slogan={props.slogan}></SectionHome>
-      <Row style={{ marginTop: "200px", marginLeft: "100px !important" }}>
-        <Col
-          style={{
-            float: "right",
-          }}
-        >
-          <h5
-            style={{
-              color: "#9B287B",
-              letterSpacing: "3px",
-              fontSize: "15px",
-            }}
-          >
-            {props.slogan}
-          </h5>
-          <h1
-            className="title border-button"
-            style={{ color: "#17364E", fontSize: "20px" }}
-          >
-            Psicóloga Daniela Diaz Merino
-          </h1>
-          <h6 style={{ color: "#17364E", fontSize: "18px" }}>
-            Puebla, Mexico.
-          </h6>
-        </Col>
-      </Row>
+      {/* <SectionHome slogan={props.slogan}></SectionHome> */}
+      <Container>
+        <Row>
+          <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+            <img src="/adoles.png" width="100%" alt="Psicologa" />
+          </Col>
+          <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+            <h5
+              style={{
+                color: "#9B287B",
+                letterSpacing: "3px",
+                fontSize: "15px",
+              }}
+            >
+              {props.slogan}
+            </h5>
+            <h1
+              className="title"
+              style={{ color: "#17364E", fontSize: "20px" }}
+            >
+              Psicóloga Daniela Diaz Merino
+            </h1>
+            <h6 style={{ color: "#17364E", fontSize: "18px" }}>
+              Puebla, Mexico.
+            </h6>
+          </Col>
+        </Row>
+      </Container>
       <LazyLoad offset={100}>
         <SectionServices
           areas={props.areas}

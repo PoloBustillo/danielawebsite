@@ -54,9 +54,10 @@ canvas {
 }
 .social-icon svg {
   margin-right: 1vw;
+  color: #48A9A6 !important;
 }
 .social-icon svg:hover {
-  color: #7fff00;
+  color: #48A9A6;
 }
 #banner .sc-gsTCUz .sc-bdfBwQ {
   background-size: 100% 100% !important;
@@ -100,13 +101,14 @@ canvas {
 }
 .menu-item {
   font-family: "Manrope", sans-serif;
-  font-size: 14px;
+  color: #9B287B !important;
+  font-size: 16px;
   text-decoration: none;
   cursor: pointer !important;
   font-weight: 900;
 }
 .menu-item:hover {
-  color: rgba(146, 23, 23, 0.8) !important;
+  color: #17364E !important;
 }
 .element-animation:hover {
   animation: animationFrames linear 1s;
@@ -352,4 +354,5 @@ html {
 }
 .social-container button {
   margin-right: 10px;
+  color:#48A9A6
 }

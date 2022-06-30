@@ -89,13 +89,21 @@ const Social = (props) => {
 
       <style jsx>{`
         #social-icon:hover {
-          color: rgba(29, 181, 120, 0.8);
+          color: #48a9a6 !important;
         }
         #social-icon:active {
           cursor: grabbing;
         }
         .social-container {
-          color: #aaa;
+          color: #082d46 !important;
+          position: absolute;
+          margin: auto;
+          padding: 0;
+          width: 96%;
+          bottom: 0;
+        }
+        .social-container:hover {
+          color: #48a9a6 !important;
           position: absolute;
           margin: auto;
           padding: 0;
@@ -108,7 +116,7 @@ const Social = (props) => {
         }
         .icons-container {
           bottom: 5%;
-          color: white;
+          color: #082d46 !important;
           position: realtive;
           left: 10%;
           font-size: 3vmax;

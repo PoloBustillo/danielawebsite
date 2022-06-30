@@ -28,48 +28,6 @@ const SectionHome = (props) => {
   });
   return (
     <div id="sectionHome">
-      <NotMobile mobileChildren={<></>}>
-        <div>
-          <img
-            style={style2}
-            src="/logo500.webp"
-            width="100"
-            height="100"
-            className="align-top"
-            alt="Logo Servicios Psicológicos"
-            onMouseEnter={(e) => {
-              setStyle({
-                display: "block",
-                position: "absolute",
-                top: "300px",
-                left: "1020px",
-              });
-              setStyle2({ display: "none" });
-            }}
-          />
-          <ParticleImage
-            onMouseLeave={(e) => {
-              setStyle({ display: "none" });
-              setStyle2({
-                display: "block",
-                position: "absolute",
-                top: "300px",
-                left: "1020px",
-              });
-            }}
-            style={style}
-            src={"/logo100.png"}
-            width={100}
-            height={100}
-            scale={1}
-            entropy={0}
-            maxParticles={3000}
-            particleOptions={particleOptions}
-            mouseMoveForce={motionForce}
-          />
-        </div>
-      </NotMobile>
-
       <style jsx>{`
         #sectionHome {
         }
