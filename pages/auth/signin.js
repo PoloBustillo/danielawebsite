@@ -5,6 +5,7 @@ import SideMenu from "../../components/SideMenu";
 import StickyBar from "../../components/StickyBar";
 
 export default function SignIn({ providers }) {
+  console.log(providers);
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
   return (
@@ -16,13 +17,17 @@ export default function SignIn({ providers }) {
           <StickyBar isMenuOpen={isOpen} setOpenMenu={setOpen}></StickyBar>
           <Row>
             <div key={provider.name}>
-              <button onClick={() => signIn(provider.id)}>
-                Entrar con {provider.name}
+              <button
+                onClick={() => {
+                  console.log(provider);
+                }}
+              >
+                Entrar con {provider.id}
               </button>
             </div>
             <div key={provider.name}>
-              <button onClick={() => signIn(provider.id)}>
-                Entrar con {provider.name}
+              <button onClick={() => console.log(provider)}>
+                Entrar con {provider.id}
               </button>
             </div>
           </Row>

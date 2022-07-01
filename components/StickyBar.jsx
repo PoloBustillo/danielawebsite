@@ -1,14 +1,35 @@
 import React, { useState } from "react";
-
+import { useSession, signIn, signOut } from "next-auth/react";
 import { Divide as Hamburger } from "hamburger-react";
 import { Col, Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsersLine } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedinIn,
+  faFacebook,
+  faInstagram,
+  faWhatsapp,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
+import { faAt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);
+  const { data: session, status } = useSession();
 
+  let iconComponent =
+    status !== "authenticated" ? (
+      <FontAwesomeIcon size="xl" color="#9B287B" icon={faUsersLine} />
+    ) : (
+      <img
+        src={session?.user.image}
+        width="30"
+        height="30"
+        className="align-top"
+        alt="Perfil"
+      />
+    );
   return (
     <Navbar
       sticky="top"
@@ -58,14 +79,46 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
 
         <NavDropdown
           color="#9B287B"
-          title={
-            <FontAwesomeIcon size="xl" color="#9B287B" icon={faUsersLine} />
-          }
+          title={iconComponent}
           id="navbarScrollingDropdown"
         >
-          <NavDropdown.Item href="#action3">Iniciar Sesión</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action5">Configuraciones</NavDropdown.Item>
+          {status === "authenticated" ? (
+            <>
+              <NavDropdown.Item href="/perfil">{`Perfil de ${session?.user.name}`}</NavDropdown.Item>
+              <NavDropdown.Divider />
+            </>
+          ) : (
+            <></>
+          )}
+
+          {status !== "authenticated" ? (
+            <NavDropdown.Item
+              onClick={() => {
+                signIn("google");
+              }}
+            >
+              <span id="social-icon" className="margin-auto">
+                <FontAwesomeIcon fixedWidth size="1x" icon={faGoogle} />
+              </span>
+              {"  "}
+              <span id="social-icon" className="margin-auto">
+                Google
+              </span>
+            </NavDropdown.Item>
+          ) : (
+            <></>
+          )}
+          {status === "authenticated" ? (
+            <NavDropdown.Item
+              onClick={() => {
+                signOut();
+              }}
+            >
+              <span id="social-icon">Salir</span>
+            </NavDropdown.Item>
+          ) : (
+            <></>
+          )}
         </NavDropdown>
         <Hamburger
           duration={1}
