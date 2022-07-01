@@ -92,19 +92,34 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
           )}
 
           {status !== "authenticated" ? (
-            <NavDropdown.Item
-              onClick={() => {
-                signIn("google");
-              }}
-            >
-              <span id="social-icon" className="margin-auto">
-                <FontAwesomeIcon fixedWidth size="1x" icon={faGoogle} />
-              </span>
-              {"  "}
-              <span id="social-icon" className="margin-auto">
-                Google
-              </span>
-            </NavDropdown.Item>
+            <>
+              <NavDropdown.Item
+                onClick={() => {
+                  signIn("google", { callbackUrl: "/perfil" });
+                }}
+              >
+                <span id="social-icon" className="margin-auto">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faGoogle} />
+                </span>
+                {"  "}
+                <span id="social-icon" className="margin-auto">
+                  Google
+                </span>
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                onClick={() => {
+                  signIn("facebook", { callbackUrl: "/perfil" });
+                }}
+              >
+                <span id="social-icon" className="margin-auto">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faFacebook} />
+                </span>
+                {"  "}
+                <span id="social-icon" className="margin-auto">
+                  Facebook
+                </span>
+              </NavDropdown.Item>
+            </>
           ) : (
             <></>
           )}

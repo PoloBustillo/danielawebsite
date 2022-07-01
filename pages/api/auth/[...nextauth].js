@@ -1,18 +1,23 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
+import FacebookProvider from "next-auth/providers/facebook";
+
 const options = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
+    FacebookProvider({
+      clientId: "430433931632815",
+      clientSecret: "f7243f8e0ae6ff9aec2e52d10761038f",
+    }),
   ],
   pages: {
-    signIn: "/",
+    signIn: "/perfil",
     signOut: "/",
     error: "/auth/error", // Error code passed in query string as ?error=
-    newUser: "/", // New users will be directed here on first sign in (leave the property out if not of interest)
+    newUser: "/perfil", // New users will be directed here on first sign in (leave the property out if not of interest)
   },
   session: {
     strategy: "jwt",
