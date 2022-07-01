@@ -24,6 +24,7 @@ import {
 import dynamic from "next/dynamic";
 import { Divider } from "@material-ui/core";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,
@@ -33,6 +34,9 @@ export default function Home(props) {
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
+  const session = useSession();
+
+  console.log("SESION", session);
 
   const router = useRouter();
 
