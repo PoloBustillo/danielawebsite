@@ -14,7 +14,13 @@ import {
 import { faAt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
+const StickyBar = ({
+  color = "rgba(29,181,120)",
+  setOpenMenu,
+  isMenuOpen,
+  terapias,
+}) => {
+  console.log(terapias);
   const [isOpen, setOpen] = useState(isMenuOpen);
   const { data: session, status } = useSession();
 
@@ -74,7 +80,33 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
           <Link href="/instituciones">Instituciones</Link>
         </Col>
         <Col className="heroButtonContainer sectionButtonsContainer my-auto">
-          <Link href="/#sectionServices">Servicios</Link>
+          <NavDropdown
+            color="#9B287B"
+            title={"Servicios"}
+            id="navbarScrollingDropdown"
+          >
+            {terapias.map((area) => {
+              return (
+                <NavDropdown
+                  alignRight
+                  drop={"right"}
+                  color="#9B287B"
+                  title={area.Nombre}
+                  id="navbarScrollingDropdown"
+                >
+                  {area.tipos_terapias.map((terapia) => {
+                    return (
+                      <NavDropdown.Item
+                        href={`/terapia/${terapia.Nombre.replace(/\s+/g, "_")}`}
+                      >
+                        {terapia.Nombre}
+                      </NavDropdown.Item>
+                    );
+                  })}
+                </NavDropdown>
+              );
+            })}
+          </NavDropdown>
         </Col>
 
         <NavDropdown
@@ -117,6 +149,19 @@ const StickyBar = ({ color = "rgba(29,181,120)", setOpenMenu, isMenuOpen }) => {
                 {"  "}
                 <span id="social-icon" className="margin-auto">
                   Facebook
+                </span>
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                onClick={() => {
+                  signIn("instagram", { callbackUrl: "/perfil" });
+                }}
+              >
+                <span id="social-icon" className="margin-auto">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
+                </span>
+                {"  "}
+                <span id="social-icon" className="margin-auto">
+                  Instagram
                 </span>
               </NavDropdown.Item>
             </>

@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
+import InstagramProvider from "next-auth/providers/instagram";
 
 const options = {
   providers: [
@@ -9,8 +10,12 @@ const options = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     FacebookProvider({
-      clientId: "430433931632815",
-      clientSecret: "f7243f8e0ae6ff9aec2e52d10761038f",
+      clientId: process.env.FB_CLIENT_ID,
+      clientSecret: process.env.FB_CLIENT_SECRET,
+    }),
+    InstagramProvider({
+      clientId: process.env.INS_CLIENT_ID,
+      clientSecret: process.env.INS_CLIENT_SECRET,
     }),
   ],
   pages: {

@@ -148,6 +148,7 @@ export default function Home(props) {
       <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
 
       <StickyBar
+        terapias={props.terapias}
         isMenuOpen={isOpen}
         setOpenMenu={setOpen}
         color={color}
