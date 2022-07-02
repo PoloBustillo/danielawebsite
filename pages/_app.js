@@ -15,12 +15,12 @@ const MessengerChat = dynamic(
     ssr: false,
   }
 );
-const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
-  ssr: false,
-});
-const NotMobile = dynamic(() => import("../components/NotMobile"), {
-  ssr: false,
-});
+const HideOn = dynamic(
+  () => import("react-hide-on-scroll").then((mod) => mod.HideOn),
+  {
+    ssr: false,
+  }
+);
 
 export function reportWebVitals(metric) {
   //console.log(metric);
@@ -43,19 +43,20 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
         <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
       </Head>
-      <LazyLoad>
-        <MessengerChat
-          pageId="106715554719583"
-          appId="430433931632815"
-          htmlRef="messengerRef"
-          minimized={true}
-          loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
-          greetingDialogDisplay="fade"
-          language="es_LA"
-          shouldShowDialog={false}
-        />
-      </LazyLoad>
-
+      <HideOn height="300px">
+        <LazyLoad>
+          <MessengerChat
+            pageId="106715554719583"
+            appId="430433931632815"
+            htmlRef="messengerRef"
+            minimized={true}
+            loggedInGreeting="Bienvenido al chat de la psicóloga Daniela Diaz, responderemos lo mas pronto posible..."
+            greetingDialogDisplay="fade"
+            language="es_LA"
+            shouldShowDialog={false}
+          />
+        </LazyLoad>
+      </HideOn>
       <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>
