@@ -19,6 +19,7 @@ import {
 import StickyBar from "../../components/StickyBar";
 import SideMenu from "../../components/SideMenu";
 const Article = ({ article, terapias, sitios }) => {
+  console.log("article", article);
   const [isOpen, setOpen] = useState(false);
   const seo = {
     metaTitle: article.Nombre,
@@ -189,8 +190,8 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params }) => {
   try {
-    const [article, footer, areas] = await Promise.all([
-      fetchAPI(`tipos-terapias/name/${newTerapia}`),
+    const [article, footer, terapias] = await Promise.all([
+      fetchAPI(`tipos-terapias/${params.slug}`),
       fetchAPI("footer"),
       fetchAPI("areas"),
     ]);
@@ -199,7 +200,7 @@ export const getStaticProps = async ({ params }) => {
       props: {
         article: article,
         sitios: footer?.SitiosAfines,
-        terapias: areas,
+        terapias: terapias,
       },
       revalidate: 5,
     };
