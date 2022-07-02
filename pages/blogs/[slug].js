@@ -18,7 +18,7 @@ import {
 } from "react-share";
 import StickyBar from "../../components/StickyBar";
 import SideMenu from "../../components/SideMenu";
-const Article = ({ article, sitios }) => {
+const Article = ({ article, terapias, sitios }) => {
   const [isOpen, setOpen] = useState(false);
   const seo = {
     metaTitle: article.Nombre,
@@ -46,8 +46,13 @@ const Article = ({ article, sitios }) => {
         <meta name="keywords" content={`${article.Nombre}`} />
         <meta name="author" content="Daniela Diaz Merino" />
       </Head>
-      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+      <SideMenu
+        terapias={terapias}
+        isOpen={isOpen}
+        setOpen={setOpen}
+      ></SideMenu>
       <StickyBar
+        terapias={terapias}
         isMenuOpen={isOpen}
         setOpenMenu={setOpen}
         color={"black"}
@@ -184,15 +189,17 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params }) => {
   try {
-    const [article, footer] = await Promise.all([
-      fetchAPI(`tipos-terapias/${params.slug}`),
+    const [article, footer, areas] = await Promise.all([
+      fetchAPI(`tipos-terapias/name/${newTerapia}`),
       fetchAPI("footer"),
+      fetchAPI("areas"),
     ]);
 
     return {
       props: {
         article: article,
         sitios: footer?.SitiosAfines,
+        terapias: areas,
       },
       revalidate: 5,
     };

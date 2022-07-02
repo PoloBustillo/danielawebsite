@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
-import Footer from "../components/Footer";
-import StickyBar from "../components/StickyBar";
-import SideMenu from "../components/SideMenu";
-import Seo from "../components/SEO";
+import Footer from "./Footer";
+import StickyBar from "./StickyBar";
+import SideMenu from "./SideMenu";
+import Seo from "./SEO";
 import { faUndo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

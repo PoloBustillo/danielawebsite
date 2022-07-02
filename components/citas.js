@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 import { Navbar, Nav } from "react-bootstrap";
-import Footer from "../components/Footer";
-import StickyBar from "../components/StickyBar";
-import SideMenu from "../components/SideMenu";
-import Seo from "../components/SEO";
+import Footer from "./Footer";
+import StickyBar from "./StickyBar";
+import SideMenu from "./SideMenu";
+import Seo from "./SEO";
 import { faUndo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NextSeo, LocalBusinessJsonLd } from "next-seo";
