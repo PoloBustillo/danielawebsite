@@ -151,7 +151,11 @@ export default function Home(props) {
         </p>
       </Row>
 
-      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+      <SideMenu
+        terapias={props.terapias}
+        isOpen={isOpen}
+        setOpen={setOpen}
+      ></SideMenu>
       <HideScroll variant="down">
         <StickyBar
           terapias={props.terapias}

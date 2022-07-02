@@ -169,7 +169,11 @@ const Article = ({ article, sitios, terapias }) => {
           ],
         }}
       />
-      <SideMenu isOpen={isOpen} setOpen={setOpen}></SideMenu>
+      <SideMenu
+        terapias={terapias}
+        isOpen={isOpen}
+        setOpen={setOpen}
+      ></SideMenu>
       <StickyBar
         terapias={terapias}
         isMenuOpen={isOpen}
