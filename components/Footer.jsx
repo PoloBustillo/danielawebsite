@@ -28,7 +28,7 @@ const Footer = (props) => {
   const [style2, setStyle2] = useState({ display: "block" });
   const shareUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}`;
   return (
-    <div style={{ padding: "20px 0", backgroundColor: "#24201e" }}>
+    <div style={{ padding: "20px 0", backgroundColor: "#FEFDFB" }}>
       <div
         style={{
           borderBottom: "1px solid #929292",
@@ -41,7 +41,7 @@ const Footer = (props) => {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            color: "white",
+            color: "#082D46",
           }}
         >
           <Row
@@ -104,7 +104,7 @@ const Footer = (props) => {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            color: "white",
+            color: "#082D46",
             borderTop: "1px solid rgba(146,146,146,0.5)",
           }}
         >
@@ -145,9 +145,9 @@ const Footer = (props) => {
       </div>
       <Row
         style={{
-          color: "white",
+          color: "082D46",
           textAlign: "center",
-          backgroundColor: "#24201e",
+          backgroundColor: "#FEFDFB",
         }}
       >
         <Col sm={6}>
@@ -350,14 +350,17 @@ const Footer = (props) => {
         a svg {
           margin-right: 1vw;
         }
+        #social-icon {
+          color: #082d46;
+        }
         #social-icon:hover {
-          color: bisque;
+          color: #082d46;
         }
         .footerCol {
           font-family: "Gotham-Book", "Arial", sans-serif;
           font-size: 12px;
           line-height: 1.5;
-          color: white;
+          color: #082d46;
           opacity: 0.9;
           text-decoration: none;
         }
@@ -365,7 +368,7 @@ const Footer = (props) => {
           font-family: "Gotham-Book", "Arial", sans-serif;
           font-size: 10px;
           line-height: 1.5;
-          color: white;
+          color: #082d46;
           opacity: 0.7;
           padding: 12px 0;
           text-decoration: none !important;
@@ -376,7 +379,7 @@ const Footer = (props) => {
 
         a:hover {
           opacity: 1;
-          color: chartreuse;
+          color: #082d46;
         }
         li {
           margin-right: 20px !important;
@@ -388,7 +391,7 @@ const Footer = (props) => {
         }
         .section-title {
           font-family: "Anton", sans-serif;
-          color: white;
+          color: #082d46;
           align-items: center;
           font-size: 15vw;
           padding-top: 20vh;

@@ -19,7 +19,6 @@ import {
 import StickyBar from "../../components/StickyBar";
 import SideMenu from "../../components/SideMenu";
 const Article = ({ article, terapias, sitios }) => {
-  console.log("article", article);
   const [isOpen, setOpen] = useState(false);
   const seo = {
     metaTitle: article.Nombre,

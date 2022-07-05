@@ -54,10 +54,10 @@ canvas {
 }
 .social-icon svg {
   margin-right: 1vw;
-  color: #48A9A6 !important;
+  color: #082D46 !important;
 }
 .social-icon svg:hover {
-  color: #48A9A6;
+  color: #082D46;
 }
 #banner .sc-gsTCUz .sc-bdfBwQ {
   background-size: 100% 100% !important;
@@ -355,5 +355,5 @@ html {
 }
 .social-container button {
   margin-right: 10px;
-  color:#48A9A6
+  color:#082D46
 }

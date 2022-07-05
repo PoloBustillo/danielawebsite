@@ -25,12 +25,17 @@ import dynamic from "next/dynamic";
 import { Divider } from "@material-ui/core";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-const HideScroll = dynamic(
-  () => import("react-hide-on-scroll").then((mod) => mod.HideScroll),
+const HideDuring = dynamic(
+  () => import("react-hide-on-scroll").then((mod) => mod.HideDuring),
   {
     ssr: false,
   }
 );
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import { Background, Parallax } from "react-parallax";
 
 const NotMobile = dynamic(() => import("../components/NotMobile"), {
   ssr: false,
@@ -41,8 +46,6 @@ export default function Home(props) {
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
   const session = useSession();
-
-  console.log("SESION", session);
 
   const router = useRouter();
 
@@ -130,43 +133,48 @@ export default function Home(props) {
           ],
         }}
       />
-      <Row style={{ backgroundColor: "#A3D3D1" }}>
-        <p
-          className="m-auto py-4"
-          style={{
-            textAlign: "center",
-            backgroundColor: "#A3D3D1",
-            color: "#082D46",
-            fontFamily: "Manrope,Helvetica,Arial,sans-serif",
-            fontSize: ".8875rem",
-          }}
-        >
-          <FontAwesomeIcon
-            fixedWidth
-            size="sm"
-            icon={faBullhorn}
-          ></FontAwesomeIcon>
-          {"  "}
-          Nueva caracteristica: Pacientes y Visitantes ya pueden iniciar sesión.
-        </p>
-      </Row>
+
+      {props.mensaje.Habilitado ? (
+        <Row style={{ backgroundColor: "#A3D3D1" }}>
+          <p
+            className="m-auto py-4"
+            style={{
+              textAlign: "center",
+              backgroundColor: "#A3D3D1",
+              color: "#082D46",
+              fontFamily: "Manrope,Helvetica,Arial,sans-serif",
+              fontSize: ".8875rem",
+            }}
+          >
+            <FontAwesomeIcon
+              fixedWidth
+              size="sm"
+              icon={faBullhorn}
+            ></FontAwesomeIcon>
+            {"  "}
+            {props.mensaje.Mensaje}
+          </p>
+        </Row>
+      ) : (
+        <></>
+      )}
 
       <SideMenu
         terapias={props.terapias}
         isOpen={isOpen}
         setOpen={setOpen}
       ></SideMenu>
-      <HideScroll variant="down">
-        <StickyBar
-          terapias={props.terapias}
-          isMenuOpen={isOpen}
-          setOpenMenu={setOpen}
-          color={color}
-        ></StickyBar>
-      </HideScroll>
+
+      <StickyBar
+        terapias={props.terapias}
+        isMenuOpen={isOpen}
+        setOpenMenu={setOpen}
+        color={color}
+      ></StickyBar>
 
       <SectionHome id="home" slogan={props.slogan}></SectionHome>
       <Divider className="mx-10 my-3"></Divider>
+
       <Container>
         <Row>
           <Col
@@ -278,6 +286,123 @@ export default function Home(props) {
         ></iframe>
         </div>*/}
       {/*<CardBlog></CardBlog>*/}
+      <Parallax strength={300}>
+        <Background className="custom-bg">
+          <img src="adoles.png" alt="fill murray" />
+          <img src="family.png" alt="fill murray" />
+          <img src="online.png" alt="fill murray" />
+        </Background>
+        <VerticalTimeline lineColor="black">
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            contentArrowStyle={{
+              borderRight: "7px solid  rgb(33, 150, 243)",
+            }}
+            date="2011 - present"
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">
+              Creative Director
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+            <p>
+              Creative Direction, User Experience, Visual Design, Project
+              Management, Team Leading
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date="2010 - 2011"
+            contentStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            iconStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">Art Director</h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              San Francisco, CA
+            </h4>
+            <p>
+              Creative Direction, User Experience, Visual Design, SEO, Online
+              Marketing
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date="2008 - 2010"
+            contentStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            iconStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">Web Designer</h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Los Angeles, CA
+            </h4>
+            <p>User Experience, Visual Design</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            date="2006 - 2008"
+            iconStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">Web Designer</h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              San Francisco, CA
+            </h4>
+            <p>User Experience, Visual Design</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            contentStyle={{ background: "rgb(33, 150, 243,.6)", color: "#fff" }}
+            date="April 2013"
+            iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">
+              Content Marketing for Web, Mobile and Social Media
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Online Course
+            </h4>
+            <p>Strategy, Social Media</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            date="November 2012"
+            iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">
+              Agile Development Scrum Master
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Certification
+            </h4>
+            <p>Creative Direction, User Experience, Visual Design</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            date="2002 - 2006"
+            iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+            icon={<></>}
+          >
+            <h3 className="vertical-timeline-element-title">
+              Bachelor of Science in Interactive Digital Media Visual Imaging
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Bachelor Degree
+            </h4>
+            <p>Creative Direction, Visual Design</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+            icon={<></>}
+          />
+        </VerticalTimeline>
+      </Parallax>
       <LazyLoad offset={100}>
         <Footer sitios={props.sitios}></Footer>
       </LazyLoad>
@@ -294,11 +419,12 @@ export default function Home(props) {
 
 export const getStaticProps = async (context) => {
   try {
-    const [slogan, areas, preguntas, footer] = await Promise.all([
+    const [slogan, areas, preguntas, footer, mensaje] = await Promise.all([
       fetchAPI("slogan"),
       fetchAPI("areas"),
       fetchAPI("preguntas"),
       fetchAPI("footer"),
+      fetchAPI("mensaje"),
     ]);
 
     return {
@@ -310,6 +436,7 @@ export const getStaticProps = async (context) => {
         slogan: slogan.Texto,
         preguntas: preguntas.Pregunta,
         sitios: footer?.SitiosAfines,
+        mensaje: mensaje,
       },
       revalidate: 30,
     };

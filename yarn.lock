@@ -3081,6 +3081,11 @@ react-hide-on-scroll@^1.1.4:
   resolved "https://registry.yarnpkg.com/react-hide-on-scroll/-/react-hide-on-scroll-1.1.4.tgz#62cc8c77ed175653996829ccb7ea2c2078fb157f"
   integrity sha512-wN2Ubobr9s3DNp8ChWRZYlFhdb+vI1XmU01ssoe9lNV2F7rB8bjB10vfgjfOU2RTI+h74ncPZXcXFJivgA/UXA==
 
+react-intersection-observer@^8.26.2:
+  version "8.34.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.34.0.tgz#6f6e67831c52e6233f6b6cc7eb55814820137c42"
+  integrity sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw==
+
 react-is@^16.13.1, react-is@^16.3.2, react-is@^16.7.0, "react-is@^16.8.0 || ^17.0.0", react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -3185,6 +3190,15 @@ react-transition-group@^4.4.1:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-vertical-timeline-component@^3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-3.5.2.tgz#fd2c34e130176f5c1f10e2e3468c14a1d74a7453"
+  integrity sha512-Wcb85NUvmygLFF45bfxVGU4AyHOBjdQY9IqB8uLG1jXWvIthkQft1ZJOGirIlYHSYnDl9sOs8ItL1sNtqA7GUg==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react-intersection-observer "^8.26.2"
 
 react@17.0.1:
   version "17.0.1"

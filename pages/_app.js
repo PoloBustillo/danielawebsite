@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-awesome-button/dist/themes/theme-one.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "react-vertical-timeline-component/style.min.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import LazyLoad from "react-lazyload";
 

@@ -20,9 +20,15 @@ const StickyBar = ({
   isMenuOpen,
   terapias,
 }) => {
-  console.log(terapias);
   const [isOpen, setOpen] = useState(isMenuOpen);
   const { data: session, status } = useSession();
+  const [show, setShow] = useState(false);
+  const showDropdown = (e) => {
+    setShow(!show);
+  };
+  const hideDropdown = (e) => {
+    setShow(false);
+  };
 
   let iconComponent =
     status !== "authenticated" ? (
@@ -77,12 +83,12 @@ const StickyBar = ({
           </a>
         </Col>
         <Col className="heroButtonContainer sectionButtonsContainer my-auto">
-          <Link href="/instituciones">Instituciones</Link>
-        </Col>
-        <Col className="heroButtonContainer sectionButtonsContainer my-auto">
           <NavDropdown
             color="#9B287B"
             title={"Servicios"}
+            show={show}
+            onMouseEnter={showDropdown}
+            onMouseLeave={hideDropdown}
             id="navbarScrollingDropdown"
           >
             {terapias.map((area) => {
@@ -107,6 +113,9 @@ const StickyBar = ({
               );
             })}
           </NavDropdown>
+        </Col>
+        <Col className="heroButtonContainer sectionButtonsContainer my-auto">
+          <Link href="/blogs">Blogs</Link>
         </Col>
 
         <NavDropdown

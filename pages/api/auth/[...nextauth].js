@@ -37,17 +37,12 @@ const options = {
     //   return Promise.resolve(session);
     // },
     jwt: async ({ token, user, account }) => {
-      console.log("POLO1", token);
-      console.log("POLO2", user);
-      console.log("POLO3", account);
-
       const isSignIn = user ? true : false;
       if (isSignIn) {
         const response = await fetch(
           `https://daniela-cms-2.herokuapp.com/auth/google/callback?access_token=${account?.access_token}`
         );
         const data = await response.json();
-        console.log("DARTA", data);
       }
       return token;
     },

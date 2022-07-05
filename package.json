@@ -43,6 +43,7 @@
     "react-reveal": "^1.2.2",
     "react-share": "^4.4.0",
     "react-skylight": "^0.5.1",
+    "react-vertical-timeline-component": "^3.5.2",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
