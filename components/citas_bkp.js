@@ -32,7 +32,7 @@ const citas = (props) => {
           name="description"
           content="Citas en Puebla - Agenda tu terapia - Citas psicologicas para jovenes, adultos y niños. Accede para conocer mas acerca de las citas"
         />
-        <meta http-equiv="content-language" content="es" />
+        <meta httpEquiv="content-language" content="es" />
         <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
         <script
           dangerouslySetInnerHTML={{
