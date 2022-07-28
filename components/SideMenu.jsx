@@ -221,7 +221,7 @@ const SideMenu = (props) => {
               <NavDropdown
                 drop={"right"}
                 title={
-                  <a className="menu-item" onClick={() => props.setOpen(false)}>
+                  <a className="menu-item">
                     <FontAwesomeIcon icon={faPeopleArrows} /> Terapias
                   </a>
                 }
@@ -229,6 +229,7 @@ const SideMenu = (props) => {
                 {props.terapias.map((area) => {
                   return (
                     <NavDropdown
+                      key={area.Nombre}
                       alignRight
                       drop={"right"}
                       color="#9B287B"
@@ -242,6 +243,7 @@ const SideMenu = (props) => {
                               /\s+/g,
                               "_"
                             )}`}
+                            key={terapia.Nombre}
                           >
                             {terapia.Nombre}
                           </NavDropdown.Item>

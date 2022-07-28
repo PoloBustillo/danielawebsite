@@ -25,12 +25,6 @@ import dynamic from "next/dynamic";
 import { Divider } from "@material-ui/core";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-const HideDuring = dynamic(
-  () => import("react-hide-on-scroll").then((mod) => mod.HideDuring),
-  {
-    ssr: false,
-  }
-);
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -172,7 +166,11 @@ export default function Home(props) {
         color={color}
       ></StickyBar>
 
-      <SectionHome id="home" slogan={props.slogan}></SectionHome>
+      <SectionHome
+        id="home"
+        homeData={props.home}
+        slogan={props.slogan}
+      ></SectionHome>
       <Divider className="mx-10 my-3"></Divider>
 
       <Container>
@@ -419,13 +417,16 @@ export default function Home(props) {
 
 export const getStaticProps = async (context) => {
   try {
-    const [slogan, areas, preguntas, footer, mensaje] = await Promise.all([
-      fetchAPI("slogan"),
-      fetchAPI("areas"),
-      fetchAPI("preguntas"),
-      fetchAPI("footer"),
-      fetchAPI("mensaje"),
-    ]);
+    const [slogan, areas, preguntas, footer, mensaje, home] = await Promise.all(
+      [
+        fetchAPI("slogan"),
+        fetchAPI("areas"),
+        fetchAPI("preguntas"),
+        fetchAPI("footer"),
+        fetchAPI("mensaje"),
+        fetchAPI("home"),
+      ]
+    );
 
     return {
       props: {
@@ -437,6 +438,7 @@ export const getStaticProps = async (context) => {
         preguntas: preguntas.Pregunta,
         sitios: footer?.SitiosAfines,
         mensaje: mensaje,
+        home: home,
       },
       revalidate: 30,
     };

@@ -12,10 +12,6 @@ class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta httpEquiv="content-language" content="es" />
           <meta name="author" content="Daniela Diaz Merino" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
           <link
             rel="shortcut icon"
             href="https://psic-danieladiaz.com/logonobg.png"

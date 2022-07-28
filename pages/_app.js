@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
       <Head>
-        <meta http-equiv="content-language" content="es" />
+        <meta httpEquiv="content-language" content="es" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"

@@ -17,7 +17,11 @@ const SectionHome = (props) => {
     <Container>
       <Row>
         <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
-          <img src={imgArray[indexImg]} width="100%" alt="Psicologa" />
+          <img
+            src={props.homeData.Imagenes[indexImg].url}
+            width="100%"
+            alt="Psicologa"
+          />
         </Col>
         <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
           <h5
@@ -30,10 +34,10 @@ const SectionHome = (props) => {
             {props.slogan}
           </h5>
           <h1 className="title" style={{ color: "#17364E", fontSize: "20px" }}>
-            Psicóloga Daniela Diaz Merino
+            {props.homeData.Mensaje}
           </h1>
           <h6 style={{ color: "#17364E", fontSize: "18px" }}>
-            Puebla, Mexico.
+            Psicóloga Daniela Diaz Merino
           </h6>
         </Col>
       </Row>
