@@ -171,10 +171,7 @@ export default function Home(props) {
 
       <Container>
         <Row>
-          <Col
-            className="px-5 my-auto col-md-7"
-            style={{ textAlign: "center" }}
-          >
+          <Col className="px-5 my-auto" style={{ textAlign: "center" }}>
             <h6
               style={{
                 color: "#17364E",
@@ -202,7 +199,7 @@ export default function Home(props) {
                   style={{ textAlign: "justify", cursor: "pointer" }}
                 >
                   <FontAwesomeIcon
-                    style={{ fontSize: "60px", marginRight: "20px" }}
+                    style={{ fontSize: "20px", marginRight: "20px" }}
                     icon={faLocationDot}
                   ></FontAwesomeIcon>
 
@@ -224,7 +221,7 @@ export default function Home(props) {
                   }}
                 >
                   <div>
-                    <FontAwesomeIcon fixedWidth size="3x" icon={faPhoneAlt} />
+                    <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
                     <span className="my-auto">
                       22&middot;11&middot;16&middot;58&middot;66
                     </span>
