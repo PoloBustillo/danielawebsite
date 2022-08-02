@@ -17,7 +17,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Social from "./Social";
 import LazyLoad from "react-lazyload";
 import { ListGroup, NavDropdown } from "react-bootstrap";
-import NotMobile from "./NotMobile";
+import dynamic from "next/dynamic";
+
+const NotMobile = dynamic(() => import("../components/NotMobile"), {
+  ssr: false,
+});
+const IsMobile = dynamic(() => import("../components/IsMobile"), {
+  ssr: false,
+});
 import ParticleImage from "react-particle-image";
 import { motionForce, particleOptions } from "../utils/particles";
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -114,81 +121,168 @@ const SideMenu = (props) => {
             <ListGroup.Item
               style={{ cursor: "pointer", textDecoration: "none" }}
             >
-              <NavDropdown drop={"right"} title={iconComponent}>
-                {status === "authenticated" ? (
-                  <>
-                    <NavDropdown.Item href="/perfil">{`Perfil de ${session?.user.name}`}</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                  </>
-                ) : (
-                  <></>
-                )}
+              <IsMobile>
+                <NavDropdown drop={"down"} title={iconComponent}>
+                  {status === "authenticated" ? (
+                    <>
+                      <NavDropdown.Item href="/perfil">{`Perfil de ${session?.user.name}`}</NavDropdown.Item>
+                      <NavDropdown.Divider />
+                    </>
+                  ) : (
+                    <></>
+                  )}
 
-                {status !== "authenticated" ? (
-                  <>
+                  {status !== "authenticated" ? (
+                    <>
+                      <NavDropdown.Item
+                        onClick={() => {
+                          signIn("google", { callbackUrl: "/perfil" });
+                        }}
+                      >
+                        <span id="social-icon" className="margin-auto">
+                          <FontAwesomeIcon
+                            fixedWidth
+                            size="1x"
+                            icon={faGoogle}
+                          />
+                        </span>
+                        {"  "}
+                        <span id="social-icon" className="margin-auto">
+                          Google
+                        </span>
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        onClick={() => {
+                          signIn("facebook", { callbackUrl: "/perfil" });
+                        }}
+                      >
+                        <span id="social-icon" className="margin-auto">
+                          <FontAwesomeIcon
+                            fixedWidth
+                            size="1x"
+                            icon={faFacebook}
+                          />
+                        </span>
+                        {"  "}
+                        <span id="social-icon" className="margin-auto">
+                          Facebook
+                        </span>
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        onClick={() => {
+                          signIn("instagram", { callbackUrl: "/perfil" });
+                        }}
+                      >
+                        <span id="social-icon" className="margin-auto">
+                          <FontAwesomeIcon
+                            fixedWidth
+                            size="1x"
+                            icon={faInstagram}
+                          />
+                        </span>
+                        {"  "}
+                        <span id="social-icon" className="margin-auto">
+                          Instagram
+                        </span>
+                      </NavDropdown.Item>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                  {status === "authenticated" ? (
                     <NavDropdown.Item
                       onClick={() => {
-                        signIn("google", { callbackUrl: "/perfil" });
+                        signOut();
                       }}
                     >
-                      <span id="social-icon" className="margin-auto">
-                        <FontAwesomeIcon fixedWidth size="1x" icon={faGoogle} />
-                      </span>
-                      {"  "}
-                      <span id="social-icon" className="margin-auto">
-                        Google
-                      </span>
+                      <span id="social-icon">Salir</span>
                     </NavDropdown.Item>
+                  ) : (
+                    <></>
+                  )}
+                </NavDropdown>
+              </IsMobile>
+              <NotMobile>
+                <NavDropdown drop={"right"} title={iconComponent}>
+                  {status === "authenticated" ? (
+                    <>
+                      <NavDropdown.Item href="/perfil">{`Perfil de ${session?.user.name}`}</NavDropdown.Item>
+                      <NavDropdown.Divider />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+
+                  {status !== "authenticated" ? (
+                    <>
+                      <NavDropdown.Item
+                        onClick={() => {
+                          signIn("google", { callbackUrl: "/perfil" });
+                        }}
+                      >
+                        <span id="social-icon" className="margin-auto">
+                          <FontAwesomeIcon
+                            fixedWidth
+                            size="1x"
+                            icon={faGoogle}
+                          />
+                        </span>
+                        {"  "}
+                        <span id="social-icon" className="margin-auto">
+                          Google
+                        </span>
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        onClick={() => {
+                          signIn("facebook", { callbackUrl: "/perfil" });
+                        }}
+                      >
+                        <span id="social-icon" className="margin-auto">
+                          <FontAwesomeIcon
+                            fixedWidth
+                            size="1x"
+                            icon={faFacebook}
+                          />
+                        </span>
+                        {"  "}
+                        <span id="social-icon" className="margin-auto">
+                          Facebook
+                        </span>
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        onClick={() => {
+                          signIn("instagram", { callbackUrl: "/perfil" });
+                        }}
+                      >
+                        <span id="social-icon" className="margin-auto">
+                          <FontAwesomeIcon
+                            fixedWidth
+                            size="1x"
+                            icon={faInstagram}
+                          />
+                        </span>
+                        {"  "}
+                        <span id="social-icon" className="margin-auto">
+                          Instagram
+                        </span>
+                      </NavDropdown.Item>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                  {status === "authenticated" ? (
                     <NavDropdown.Item
                       onClick={() => {
-                        signIn("facebook", { callbackUrl: "/perfil" });
+                        signOut();
                       }}
                     >
-                      <span id="social-icon" className="margin-auto">
-                        <FontAwesomeIcon
-                          fixedWidth
-                          size="1x"
-                          icon={faFacebook}
-                        />
-                      </span>
-                      {"  "}
-                      <span id="social-icon" className="margin-auto">
-                        Facebook
-                      </span>
+                      <span id="social-icon">Salir</span>
                     </NavDropdown.Item>
-                    <NavDropdown.Item
-                      onClick={() => {
-                        signIn("instagram", { callbackUrl: "/perfil" });
-                      }}
-                    >
-                      <span id="social-icon" className="margin-auto">
-                        <FontAwesomeIcon
-                          fixedWidth
-                          size="1x"
-                          icon={faInstagram}
-                        />
-                      </span>
-                      {"  "}
-                      <span id="social-icon" className="margin-auto">
-                        Instagram
-                      </span>
-                    </NavDropdown.Item>
-                  </>
-                ) : (
-                  <></>
-                )}
-                {status === "authenticated" ? (
-                  <NavDropdown.Item
-                    onClick={() => {
-                      signOut();
-                    }}
-                  >
-                    <span id="social-icon">Salir</span>
-                  </NavDropdown.Item>
-                ) : (
-                  <></>
-                )}
-              </NavDropdown>
+                  ) : (
+                    <></>
+                  )}
+                </NavDropdown>
+              </NotMobile>
             </ListGroup.Item>
             <ListGroup.Item
               onClick={() => {
@@ -218,41 +312,80 @@ const SideMenu = (props) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <NavDropdown
-                drop={"right"}
-                title={
-                  <a className="menu-item">
-                    <FontAwesomeIcon icon={faPeopleArrows} /> Terapias
-                  </a>
-                }
-              >
-                {props.terapias.map((area) => {
-                  return (
-                    <NavDropdown
-                      key={area.Nombre}
-                      alignRight
-                      drop={"right"}
-                      color="#9B287B"
-                      title={area.Nombre}
-                      id="navbarScrollingDropdown"
-                    >
-                      {area.tipos_terapias.map((terapia) => {
-                        return (
-                          <NavDropdown.Item
-                            href={`/terapia/${terapia.Nombre.replace(
-                              /\s+/g,
-                              "_"
-                            )}`}
-                            key={terapia.Nombre}
-                          >
-                            {terapia.Nombre}
-                          </NavDropdown.Item>
-                        );
-                      })}
-                    </NavDropdown>
-                  );
-                })}
-              </NavDropdown>
+              <IsMobile>
+                <NavDropdown
+                  drop={"down"}
+                  title={
+                    <a className="menu-item">
+                      <FontAwesomeIcon icon={faPeopleArrows} /> Terapias
+                    </a>
+                  }
+                >
+                  {props.terapias.map((area) => {
+                    return (
+                      <NavDropdown
+                        key={area.Nombre}
+                        alignRight
+                        drop={"down"}
+                        color="#9B287B"
+                        title={area.Nombre}
+                        id="navbarScrollingDropdown"
+                      >
+                        {area.tipos_terapias.map((terapia) => {
+                          return (
+                            <NavDropdown.Item
+                              href={`/terapia/${terapia.Nombre.replace(
+                                /\s+/g,
+                                "_"
+                              )}`}
+                              key={terapia.Nombre}
+                            >
+                              {terapia.Nombre}
+                            </NavDropdown.Item>
+                          );
+                        })}
+                      </NavDropdown>
+                    );
+                  })}
+                </NavDropdown>
+              </IsMobile>
+              <NotMobile>
+                <NavDropdown
+                  drop={"right"}
+                  title={
+                    <a className="menu-item">
+                      <FontAwesomeIcon icon={faPeopleArrows} /> Terapias
+                    </a>
+                  }
+                >
+                  {props.terapias.map((area) => {
+                    return (
+                      <NavDropdown
+                        key={area.Nombre}
+                        alignRight
+                        drop={"right"}
+                        color="#9B287B"
+                        title={area.Nombre}
+                        id="navbarScrollingDropdown"
+                      >
+                        {area.tipos_terapias.map((terapia) => {
+                          return (
+                            <NavDropdown.Item
+                              href={`/terapia/${terapia.Nombre.replace(
+                                /\s+/g,
+                                "_"
+                              )}`}
+                              key={terapia.Nombre}
+                            >
+                              {terapia.Nombre}
+                            </NavDropdown.Item>
+                          );
+                        })}
+                      </NavDropdown>
+                    );
+                  })}
+                </NavDropdown>
+              </NotMobile>
             </ListGroup.Item>
           </ListGroup>
           <Social></Social>

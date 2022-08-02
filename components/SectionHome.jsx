@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import dynamic from "next/dynamic";
+
+const NotMobile = dynamic(() => import("../components/NotMobile"), {
+  ssr: false,
+});
+const IsMobile = dynamic(() => import("../components/IsMobile"), {
+  ssr: false,
+});
 
 const SectionHome = (props) => {
   const imgArray = ["adoles.png", "family.png", "ninos.png", "online.png"];
@@ -23,23 +31,47 @@ const SectionHome = (props) => {
             alt="Psicologa"
           />
         </Col>
-        <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
-          <h5
-            style={{
-              color: "#9B287B",
-              letterSpacing: "3px",
-              fontSize: "15px",
-            }}
-          >
-            {props.slogan}
-          </h5>
-          <h1 className="title" style={{ color: "#17364E", fontSize: "20px" }}>
-            {props.homeData.Mensaje}
-          </h1>
-          <h6 style={{ color: "#17364E", fontSize: "18px" }}>
-            Psicóloga Daniela Diaz Merino
-          </h6>
-        </Col>
+        <NotMobile>
+          <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+            <h5
+              style={{
+                color: "#9B287B",
+                letterSpacing: "3px",
+                fontSize: "15px",
+              }}
+            >
+              {props.slogan}
+            </h5>
+            <h1
+              className="title"
+              style={{ color: "#17364E", fontSize: "20px" }}
+            >
+              {props.homeData.Mensaje}
+            </h1>
+            <h6 style={{ color: "#17364E", fontSize: "18px" }}>
+              Psicóloga Daniela Diaz Merino
+            </h6>
+          </Col>
+        </NotMobile>
+        <IsMobile>
+          <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
+            <div
+              style={{
+                color: "#9B287B",
+                letterSpacing: "3px",
+                fontSize: "15px",
+              }}
+            >
+              {props.slogan}
+            </div>
+            <div
+              className="title"
+              style={{ color: "#17364E", fontSize: "12px" }}
+            >
+              {props.homeData.Mensaje}
+            </div>
+          </Col>
+        </IsMobile>
       </Row>
     </Container>
   );

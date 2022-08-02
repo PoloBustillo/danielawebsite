@@ -31,10 +31,6 @@ import {
 } from "react-vertical-timeline-component";
 import { Background, Parallax } from "react-parallax";
 
-const NotMobile = dynamic(() => import("../components/NotMobile"), {
-  ssr: false,
-});
-
 export default function Home(props) {
   const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
