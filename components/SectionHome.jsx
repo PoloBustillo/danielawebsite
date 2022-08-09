@@ -59,14 +59,14 @@ const SectionHome = (props) => {
               style={{
                 color: "#9B287B",
                 letterSpacing: "3px",
-                fontSize: "15px",
+                fontSize: "12px",
               }}
             >
               {props.slogan}
             </div>
             <div
               className="title"
-              style={{ color: "#17364E", fontSize: "12px" }}
+              style={{ color: "#17364E", fontSize: "10px" }}
             >
               {props.homeData.Mensaje}
             </div>
