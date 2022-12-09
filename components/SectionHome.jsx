@@ -10,14 +10,13 @@ const IsMobile = dynamic(() => import("../components/IsMobile"), {
 });
 
 const SectionHome = (props) => {
-  const imgArray = ["adoles.png", "family.png", "ninos.png", "online.png"];
   const [indexImg, setIndexImg] = useState(Math.floor(Math.random() * 4));
   useEffect(() => {
     const timer = setTimeout(() => {
       let index = Math.floor(Math.random() * 4);
       if (index == indexImg) index = Math.floor(Math.random() * 4);
       setIndexImg(index);
-    }, 10000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [indexImg]);
 
@@ -25,11 +24,7 @@ const SectionHome = (props) => {
     <Container>
       <Row>
         <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
-          <img
-            src={props.homeData.Imagenes[indexImg].url}
-            width="100%"
-            alt="Psicologa"
-          />
+          <img src={props.images[indexImg]} width="100%" alt="Psicologa" />
         </Col>
         <NotMobile>
           <Col className="mx-auto my-auto" style={{ textAlign: "center" }}>
@@ -46,7 +41,7 @@ const SectionHome = (props) => {
               className="title"
               style={{ color: "#17364E", fontSize: "20px" }}
             >
-              {props.homeData.Mensaje}
+              {props.frase}
             </h1>
             <h6 style={{ color: "#17364E", fontSize: "18px" }}>
               Psicóloga Daniela Diaz Merino
@@ -68,7 +63,7 @@ const SectionHome = (props) => {
               className="title"
               style={{ color: "#17364E", fontSize: "10px" }}
             >
-              {props.homeData.Mensaje}
+              "MENSAJE"
             </div>
           </Col>
         </IsMobile>

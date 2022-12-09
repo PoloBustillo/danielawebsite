@@ -256,23 +256,25 @@ const Footer = (props) => {
               fontSize: "12px",
               margin: "2vmin",
               fontWeight: "900",
+              cursor: "pointer",
             }}
           >
             <div>
               <FontAwesomeIcon fixedWidth size="1x" icon={faBrain} />
               Psicologa en Puebla.
             </div>
-            <Link href="https://goo.gl/maps/kmrqWeGX3nQRaU8q7">
+            <Link href={props.map}>
               <div>
                 <FontAwesomeIcon fixedWidth size="1x" icon={faMapMarkerAlt} />
-                Mártires del 2 de Octubre, Reserva Territorial Atlixcáyotl,
-                Ex-Rancho Vaquerías, 72464 Puebla, Pue.
+                {props.address.map((addressLine) => {
+                  return <span>{addressLine.values} </span>;
+                })}
               </div>
             </Link>
-            <Link href="tel:2211165866">
+            <Link href={`tel:${props.telefono}`}>
               <div>
                 <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-                22&middot;11&middot;16&middot;58&middot;66
+                {props.telefono}
               </div>
             </Link>
           </div>

@@ -1,6 +1,4 @@
 import { NextSeo, LocalBusinessJsonLd } from "next-seo";
-import { useRouter } from "next/router";
-import { fetchAPI } from "../lib/api";
 import React, { useState } from "react";
 import SectionHome from "../components/SectionHome";
 import SideMenu from "../components/SideMenu";
@@ -10,18 +8,14 @@ import SectionFAQ from "../components/SectionFAQ";
 import Footer from "../components/Footer";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import LazyLoad from "react-lazyload";
-import { Col, Container, Navbar, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBrain,
   faBullhorn,
-  faLocation,
   faLocationDot,
-  faMap,
-  faMapMarkerAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import dynamic from "next/dynamic";
 import { Divider } from "@material-ui/core";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
@@ -30,15 +24,14 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { Background, Parallax } from "react-parallax";
+import { getBannerImages, getMensajes, getWebData } from "../lib/api";
 
 export default function Home(props) {
-  const [color, setColor] = useState();
   const [isOpen, setOpen] = useState(false);
   const [filter, setFilter] = useState("");
   const session = useSession();
 
-  const router = useRouter();
-
+  console.log(props);
   const filterData = () => {
     let terapiasFiltered = props.terapias;
     if (filter !== "") {
@@ -124,7 +117,7 @@ export default function Home(props) {
         }}
       />
 
-      {props.mensaje.Habilitado ? (
+      {props.mensaje.enable ? (
         <Row style={{ backgroundColor: "#A3D3D1" }}>
           <p
             className="m-auto py-4"
@@ -142,7 +135,7 @@ export default function Home(props) {
               icon={faBullhorn}
             ></FontAwesomeIcon>
             {"  "}
-            {props.mensaje.Mensaje}
+            {props.mensaje.message}
           </p>
         </Row>
       ) : (
@@ -159,13 +152,14 @@ export default function Home(props) {
         terapias={props.terapias}
         isMenuOpen={isOpen}
         setOpenMenu={setOpen}
-        color={color}
       ></StickyBar>
 
       <SectionHome
         id="home"
         homeData={props.home}
-        slogan={props.slogan}
+        images={props.bannerImages}
+        slogan={`"${props.lema.message}"`}
+        frase={props.frase.message}
       ></SectionHome>
       <Divider className="mx-10 my-3"></Divider>
 
@@ -193,7 +187,7 @@ export default function Home(props) {
                 fontWeight: "900",
               }}
             >
-              <Link href="https://goo.gl/maps/kmrqWeGX3nQRaU8q7">
+              <Link href={props.gMapsUrl}>
                 <Row
                   className="m-auto"
                   style={{ textAlign: "justify", cursor: "pointer" }}
@@ -204,14 +198,13 @@ export default function Home(props) {
                   ></FontAwesomeIcon>
 
                   <div>
-                    <div>Mártires del 2 de Octubre</div>
-                    <div>Reserva TerritorialAtlixcáyotl</div>
-                    <div>Ex-Rancho Vaquerías, 72464</div>
-                    Puebla, Pue.
+                    {props.address.map((addressLine) => {
+                      return <div>{addressLine.values}</div>;
+                    })}
                   </div>
                 </Row>
               </Link>
-              <Link href="tel:2211165866">
+              <Link href={`tel:${props.telefono}`}>
                 <Row
                   className="m-auto"
                   style={{
@@ -222,9 +215,7 @@ export default function Home(props) {
                 >
                   <div>
                     <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
-                    <span className="my-auto">
-                      22&middot;11&middot;16&middot;58&middot;66
-                    </span>
+                    <span className="my-auto">{props.telefono}</span>
                   </div>
                 </Row>
               </Link>
@@ -414,7 +405,12 @@ export default function Home(props) {
         <></>
       )}
       <LazyLoad offset={100}>
-        <Footer sitios={props.sitios}></Footer>
+        <Footer
+          telefono={props.telefono}
+          address={props.address}
+          sitios={props.sitios}
+          map={props.gMapsUrl}
+        ></Footer>
       </LazyLoad>
 
       <script
@@ -429,38 +425,44 @@ export default function Home(props) {
 
 export const getStaticProps = async (context) => {
   try {
-    const [slogan, areas, preguntas, footer, mensaje, home] = await Promise.all(
-      [
-        fetchAPI("slogan"),
-        fetchAPI("areas"),
-        fetchAPI("preguntas"),
-        fetchAPI("footer"),
-        fetchAPI("mensaje"),
-        fetchAPI("home"),
-      ]
-    );
-
+    const mensajes = await getMensajes();
+    const bannerImages = await getBannerImages();
+    const data = await getWebData();
+    console.log(data);
     return {
       props: {
-        areas: areas.map((area) => {
-          return area.Nombre;
-        }),
-        terapias: areas,
-        slogan: slogan.Texto,
-        preguntas: preguntas.Pregunta,
-        sitios: footer?.SitiosAfines,
-        mensaje: mensaje,
-        home: home,
+        ...mensajes,
+        bannerImages: bannerImages,
+        address: data.address,
+        telefono: data.telefono,
+        gMapsUrl: data.googleMapUrl,
+        terapias: [],
+        slogan: [],
+        preguntas: [],
+        areas: [],
+        sitios: [],
+        home: "",
       },
-      revalidate: 30,
+      revalidate: 86400,
     };
   } catch (error) {
-    console.log("ERROR", error);
     return {
       props: {
-        areas: [],
         terapias: [],
-        slogan: "UNA VIDA SALUDABLE EMPIEZA CON UNA MENTE SALUDABLE.",
+        areas: [],
+        address: [
+          "Mártires del 2 de Octubre",
+          "Reserva Territorial Atlixcáyotl",
+          "Ex-Rancho Vaquerías",
+          "72464",
+          "Puebla, Puebla",
+        ],
+        frase: { message: "", enable: false },
+        mensaje: { message: "", enable: false },
+        bannerImages: [],
+        lema: {
+          message: "UNA VIDA SALUDABLE EMPIEZA CON UNA MENTE SALUDABLE.",
+        },
       },
       revalidate: 30,
     };
