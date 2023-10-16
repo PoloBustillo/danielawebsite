@@ -54,7 +54,7 @@ const SectionFAQ = (props) => {
                         cursor: "pointer",
                       }}
                     >
-                      {item.Pregunta}
+                      {item.pregunta}
                       {accordionSelected === index ? (
                         <FontAwesomeIcon
                           fixedWidth
@@ -81,7 +81,7 @@ const SectionFAQ = (props) => {
                       }}
                     >
                       <Card.Body>
-                        <Markdown>{item.Respuesta}</Markdown>
+                        <Markdown>{item.respuesta}</Markdown>
                       </Card.Body>
                     </Accordion.Collapse>
                   </HeadShake>

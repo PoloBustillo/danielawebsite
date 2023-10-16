@@ -65,7 +65,7 @@ const SectionServices = (props) => {
           ></SubMenuServices>
         </Row>
         <Row className="row-cards">
-          {props.terapias.map((terapia, index) => {
+          {[].map((terapia, index) => {
             return terapia.tipos_terapias?.map((tipo_terapia) => {
               return (
                 <Col xs={12} md={6} lg={{ span: 4 }}>

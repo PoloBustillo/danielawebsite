@@ -321,26 +321,27 @@ const SideMenu = (props) => {
                     </a>
                   }
                 >
-                  {props.terapias.map((area) => {
+                  {Object.keys(props.areas).map((area, index) => {
                     return (
                       <NavDropdown
-                        key={area.Nombre}
+                        key={index}
                         alignRight
                         drop={"down"}
                         color="#9B287B"
-                        title={area.Nombre}
+                        title={area}
                         id="navbarScrollingDropdown"
                       >
-                        {area.tipos_terapias.map((terapia) => {
+                        {props.areas[area].map((terapia) => {
+                          console.log(terapia);
                           return (
                             <NavDropdown.Item
-                              href={`/terapia/${terapia.Nombre.replace(
+                              href={`/terapia/${terapia.name.replace(
                                 /\s+/g,
                                 "_"
                               )}`}
-                              key={terapia.Nombre}
+                              key={terapia.name}
                             >
-                              {terapia.Nombre}
+                              {terapia.name}
                             </NavDropdown.Item>
                           );
                         })}
@@ -358,26 +359,26 @@ const SideMenu = (props) => {
                     </a>
                   }
                 >
-                  {props.terapias.map((area) => {
+                  {Object.keys(props.areas).map((area) => {
                     return (
                       <NavDropdown
-                        key={area.Nombre}
+                        key={area}
                         alignRight
                         drop={"right"}
                         color="#9B287B"
-                        title={area.Nombre}
+                        title={area}
                         id="navbarScrollingDropdown"
                       >
-                        {area.tipos_terapias.map((terapia) => {
+                        {props.areas[area].map((terapia) => {
                           return (
                             <NavDropdown.Item
-                              href={`/terapia/${terapia.Nombre.replace(
+                              href={`/terapia/${terapia.name.replace(
                                 /\s+/g,
                                 "_"
                               )}`}
-                              key={terapia.Nombre}
+                              key={terapia.name}
                             >
-                              {terapia.Nombre}
+                              {terapia.name}
                             </NavDropdown.Item>
                           );
                         })}
@@ -388,7 +389,11 @@ const SideMenu = (props) => {
               </NotMobile>
             </ListGroup.Item>
           </ListGroup>
-          <Social></Social>
+          <Social
+            redes={props.redes}
+            email={props.email}
+            telefono={props.telefono}
+          ></Social>
         </div>
       </LazyLoad>
     </Menu>

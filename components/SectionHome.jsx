@@ -44,7 +44,7 @@ const SectionHome = (props) => {
               {props.frase}
             </h1>
             <h6 style={{ color: "#17364E", fontSize: "18px" }}>
-              Psicóloga Daniela Diaz Merino
+              {props.nombre}
             </h6>
           </Col>
         </NotMobile>

@@ -33,7 +33,7 @@ const Social = (props) => {
         aria-hidden="false"
         tabIndex="0"
       ></iframe> */}
-      <Link href="tel:2211165866">
+      <Link href={`tel:${props.telefono}`}>
         <div>
           <FontAwesomeIcon fixedWidth size="1x" icon={faPhoneAlt} />
           22&middot;11&middot;16&middot;58&middot;66
@@ -41,29 +41,29 @@ const Social = (props) => {
       </Link>
       <div className="icons-container">
         <span id="social-icon">
-          <Link href="https://linkedin.com/in/daniela-diaz-408967144">
+          <a href={props.redes.linkedin} target="_blank">
             <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
-          </Link>
+          </a>
         </span>
         <span id="social-icon">
-          <Link href="mailto:danieladimersic@gmail.com">
+          <a href={`mailto:${props.email}`} target="_blank">
             <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
-          </Link>
+          </a>
         </span>
         <span id="social-icon">
-          <Link href="https://www.facebook.com/PsicoterapiaDiazMer">
+          <a href={props.redes.facebook} target="_blank">
             <FontAwesomeIcon fixedWidth size="1x" icon={faFacebook} />
-          </Link>
+          </a>
         </span>
         <span id="social-icon">
-          <Link href="https://www.instagram.com/psic_danieladiazm/">
+          <a href={props.redes.instagram} target="_blank">
             <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
-          </Link>
+          </a>
         </span>
         <span id="social-icon">
-          <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
+          <a href={props.redes.whatsapp} target="_blank">
             <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
-          </Link>
+          </a>
         </span>
       </div>
       <div className="contact-data">
@@ -88,6 +88,9 @@ const Social = (props) => {
       </div>
 
       <style jsx>{`
+        #social-icon a svg {
+          color: #212529 !important;
+        }
         #social-icon:hover {
           color: #48a9a6 !important;
         }
@@ -95,7 +98,7 @@ const Social = (props) => {
           cursor: grabbing;
         }
         .social-container {
-          color: #082d46 !important;
+          color: #212529 !important;
           position: absolute;
           margin: auto;
           padding: 0;
@@ -116,7 +119,7 @@ const Social = (props) => {
         }
         .icons-container {
           bottom: 5%;
-          color: #082d46 !important;
+          color: #212529 !important;
           position: realtive;
           left: 10%;
           font-size: 3vmax;

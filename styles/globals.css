@@ -52,8 +52,12 @@ canvas {
 .content-article {
   text-align: justify;
 }
-#social-icon{
+#social-icon a{
   cursor: pointer !important;
+  color: #082D46 !important;
+}
+#social-icon a svg:hover {
+  color: #48a9a6 !important
 }
 .social-icon svg {
   margin-right: 1vw;

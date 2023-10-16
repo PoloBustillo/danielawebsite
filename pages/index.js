@@ -11,6 +11,7 @@ import LazyLoad from "react-lazyload";
 import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAt,
   faBrain,
   faBullhorn,
   faLocationDot,
@@ -24,23 +25,18 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { Background, Parallax } from "react-parallax";
-import { getBannerImages, getMensajes, getWebData } from "../lib/api";
+import {
+  getBannerImages,
+  getMensajes,
+  getPreguntas,
+  getTerapias,
+  getWebData,
+} from "../lib/api";
 
 export default function Home(props) {
   const [isOpen, setOpen] = useState(false);
-  const [filter, setFilter] = useState("");
-  const session = useSession();
 
-  console.log(props);
-  const filterData = () => {
-    let terapiasFiltered = props.terapias;
-    if (filter !== "") {
-      terapiasFiltered = props.terapias.filter((data) => {
-        return data.Nombre === filter;
-      });
-    }
-    return terapiasFiltered;
-  };
+  const session = useSession();
 
   return (
     <div className="container-fluid">
@@ -143,13 +139,16 @@ export default function Home(props) {
       )}
 
       <SideMenu
-        terapias={props.terapias}
+        redes={props.redes}
+        areas={props.areas}
+        telefono={props.telefono}
+        email={props.email}
         isOpen={isOpen}
         setOpen={setOpen}
       ></SideMenu>
 
       <StickyBar
-        terapias={props.terapias}
+        areas={props.areas}
         isMenuOpen={isOpen}
         setOpenMenu={setOpen}
       ></StickyBar>
@@ -157,6 +156,7 @@ export default function Home(props) {
       <SectionHome
         id="home"
         homeData={props.home}
+        nombre={props.nombreSite ? props.nombreSite : ""}
         images={props.bannerImages}
         slogan={`"${props.lema.message}"`}
         frase={props.frase.message}
@@ -204,6 +204,20 @@ export default function Home(props) {
                   </div>
                 </Row>
               </Link>
+              <Link href={`mailto:${props.email}`}>
+                <Row
+                  className="m-auto"
+                  style={{ textAlign: "justify", cursor: "pointer" }}
+                >
+                  <FontAwesomeIcon
+                    style={{ fontSize: "20px", marginRight: "20px" }}
+                    icon={faAt}
+                  ></FontAwesomeIcon>
+
+                  <div>{props.email}</div>
+                </Row>
+              </Link>
+
               <Link href={`tel:${props.telefono}`}>
                 <Row
                   className="m-auto"
@@ -234,11 +248,7 @@ export default function Home(props) {
         </Row>
       </Container>
       <LazyLoad offset={100}>
-        <SectionServices
-          areas={props.areas}
-          terapias={filterData()}
-          setFilter={setFilter}
-        ></SectionServices>
+        <SectionServices areas={props.areas}></SectionServices>
       </LazyLoad>
       <div id="banner">
         <LazyLoadImage
@@ -407,8 +417,10 @@ export default function Home(props) {
       <LazyLoad offset={100}>
         <Footer
           telefono={props.telefono}
+          redes={props.redes}
           address={props.address}
           sitios={props.sitios}
+          email={props.email}
           map={props.gMapsUrl}
         ></Footer>
       </LazyLoad>
@@ -428,28 +440,95 @@ export const getStaticProps = async (context) => {
     const mensajes = await getMensajes();
     const bannerImages = await getBannerImages();
     const data = await getWebData();
-    console.log(data);
+    const preguntas = await getPreguntas();
+    const terapias = await getTerapias();
+
+    let areas = terapias.map((terapia) => {
+      return terapia.type;
+    });
+
+    let socialNetwork = data.socialNetwork?.reduce(
+      (a, v) => ({ ...a, [v.red]: v.values }),
+      {}
+    );
+
+    let areasTerapias = terapias?.reduce((a, v) => {
+      if (a[v.type]) {
+        a[v.type] = a[v.type].concat(v);
+      } else {
+        a[v.type] = [v];
+      }
+      return a;
+    }, {});
+
+    console.log(areasTerapias);
     return {
       props: {
         ...mensajes,
         bannerImages: bannerImages,
         address: data.address,
+        redes: socialNetwork,
+        email: data.email,
+        nombreSite: data.name,
         telefono: data.telefono,
         gMapsUrl: data.googleMapUrl,
-        terapias: [],
-        slogan: [],
-        preguntas: [],
-        areas: [],
+        preguntas: preguntas,
+        terapias: terapias,
+        areas: areasTerapias,
         sitios: [],
         home: "",
       },
       revalidate: 86400,
     };
   } catch (error) {
+    console.error("ERROR", error);
     return {
       props: {
         terapias: [],
-        areas: [],
+        areas: ["Social", "Educativa", "Organizacional", "Clinica"],
+        redes: {
+          facebook: "https://www.facebook.com/PsicoterapiaDiazMer",
+          linkedin: "https://www.linkedin.com/in/daniela-diaz-408967144",
+          whatsapp:
+            "https://api.whatsapp.com/send/?phone=5212211165866&text=Hola+Psic.+Daniela+quisiera+informaci%C3%B3n+acerca+de%3A&type=phone_number&app_absent=0",
+          instagram: "https://www.instagram.com/psic_danieladiazm/",
+        },
+        preguntas: [
+          {
+            pregunta:
+              "¿Maneja servicio de intervención en crisis (primeros auxilios psicológicos)?",
+            respuesta:
+              "El servicio de intervención en crisis psicológicas está disponible las 24 horas del día en modalidad telefónica. Para obtener una mejor intervención se recomienda posteriormente, solicitar sesiones presenciales para identificar y prevenir secuelas psicológicas.\n" +
+              "\n" +
+              "Escribe un mensaje con tus datos de identificación vía redes sociales (Messenger, WhatsApp, Instagram, mensajería telefónica) y en breve gestionaremos la llamada de primeros auxilios psicológicos.",
+          },
+          {
+            respuesta:
+              "Tienes dos opciones:\n" +
+              "\n" +
+              "1. Proceder con una evaluación socioeconómica para determinar el descuento a aplicar. ([Ver formato)](https://psic-danieladiaz.com/instituciones)\n" +
+              "\n" +
+              "2. Comprobar que se pertenece alguna de las instituciones asociadas ([Ver lista](https://psic-danieladiaz.com/instituciones))",
+            pregunta: "¿Cómo puedo acceder a algún descuento?",
+          },
+          {
+            respuesta:
+              "La forma de pago deberá realizarse mediante una transferencia bancaría al número de cuenta que se le proporcionará al momento de agendar cita y corroborar su información con la Psicoterapeuta.",
+            pregunta: "¿Cuál es el método de pago?",
+          },
+          {
+            pregunta: "¿Cómo recibir sesión terapéutica en línea?",
+            respuesta:
+              "El servicio psicológico en línea está dirigido específicamente para la modalidad de terapia individual. Escribe un mensaje con tus datos de identificación vía redes sociales (Messenger, WhatsApp, Instagram, mensajería telefónica), solicitando el servicio terapéutico en línea y en breve recibirás la información correspondiente a los detalles de las sesiones en línea.",
+          },
+          {
+            respuesta:
+              "El horario fijo es de Lunes a viernes de 9:00am a 12:00pm y de 2:00pm a 6:00pm. Sin embargo, mediante mutuo acuerdo pueden adaptarse horarios especiales.",
+            pregunta: "¿Qué horarios tiene disponibles?",
+          },
+        ],
+        nombreSite: "Psicóloga Daniela Diaz Merino",
+        email: "psic.danieladiazmer@gmail.com",
         address: [
           "Mártires del 2 de Octubre",
           "Reserva Territorial Atlixcáyotl",

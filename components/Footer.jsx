@@ -173,29 +173,29 @@ const Footer = (props) => {
             ></iframe>
             <div className="social-container">
               <span id="social-icon">
-                <Link href="https://linkedin.com/in/daniela-diaz-408967144">
-                  <FontAwesomeIcon fixedWidth size="2x" icon={faLinkedinIn} />
-                </Link>
+                <a href={props.redes.linkedin} target="_blank">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faLinkedinIn} />
+                </a>
               </span>
               <span id="social-icon">
-                <Link href="mailto:danieladimersic@gmail.com">
-                  <FontAwesomeIcon fixedWidth size="2x" icon={faAt} />
-                </Link>
+                <a href={`mailto:${props.email}`} target="_blank">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
+                </a>
               </span>
               <span id="social-icon">
-                <Link href="https://www.facebook.com/PsicoterapiaDiazMer">
-                  <FontAwesomeIcon fixedWidth size="2x" icon={faFacebook} />
-                </Link>
+                <a href={props.redes.facebook} target="_blank">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faFacebook} />
+                </a>
               </span>
               <span id="social-icon">
-                <Link href="https://www.instagram.com/psic_danieladiazm/">
-                  <FontAwesomeIcon fixedWidth size="2x" icon={faInstagram} />
-                </Link>
+                <a href={props.redes.instagram} target="_blank">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faInstagram} />
+                </a>
               </span>
               <span id="social-icon">
-                <Link href="https://wa.me/5212211165866?text=Hola%20Psic.%20Daniela%20quisiera%20información%20acerca%20de:">
-                  <FontAwesomeIcon fixedWidth size="2x" icon={faWhatsapp} />
-                </Link>
+                <a href={props.redes.whatsapp} target="_blank">
+                  <FontAwesomeIcon fixedWidth size="1x" icon={faWhatsapp} />
+                </a>
               </span>
             </div>
           </div>
@@ -269,6 +269,12 @@ const Footer = (props) => {
                 {props.address.map((addressLine) => {
                   return <span>{addressLine.values} </span>;
                 })}
+              </div>
+            </Link>
+            <Link href={`mailto:${props.email}`}>
+              <div>
+                <FontAwesomeIcon fixedWidth size="1x" icon={faAt} />
+                {props.email}
               </div>
             </Link>
             <Link href={`tel:${props.telefono}`}>
@@ -352,8 +358,9 @@ const Footer = (props) => {
         a svg {
           margin-right: 1vw;
         }
-        #social-icon {
+        #social-icon a {
           color: #082d46;
+          font-size: 30px;
         }
         #social-icon:hover {
           color: #082d46;

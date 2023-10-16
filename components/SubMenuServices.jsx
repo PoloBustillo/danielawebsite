@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Jump from "react-reveal/Jump";
 import SkyLight from "react-skylight";
 const SubMenuServices = (props) => {
+  console.log("PROPS", props);
   const [selected, setSelected] = useState("todos");
   const [animated, setAnimated] = useState();
   return !isMobile ? (
@@ -30,7 +31,7 @@ const SubMenuServices = (props) => {
                 props.setFilter(terapia);
                 setSelected(terapia);
               }}
-              key={terapia.id}
+              key={index}
               className={`headerAnimation subMenu ${
                 selected == terapia ? "active" : ""
               }`}

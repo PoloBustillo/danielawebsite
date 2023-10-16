@@ -18,7 +18,7 @@ const StickyBar = ({
   color = "rgba(29,181,120)",
   setOpenMenu,
   isMenuOpen,
-  terapias,
+  areas,
 }) => {
   const [isOpen, setOpen] = useState(isMenuOpen);
   const { data: session, status } = useSession();
@@ -91,21 +91,21 @@ const StickyBar = ({
             onMouseLeave={hideDropdown}
             id="navbarScrollingDropdown"
           >
-            {terapias.map((area) => {
+            {Object.keys(areas).map((area) => {
               return (
                 <NavDropdown
                   alignRight
                   drop={"right"}
                   color="#9B287B"
-                  title={area.Nombre}
+                  title={area}
                   id="navbarScrollingDropdown"
                 >
-                  {area.tipos_terapias.map((terapia) => {
+                  {areas[area].map((terapia) => {
                     return (
                       <NavDropdown.Item
-                        href={`/terapia/${terapia.Nombre.replace(/\s+/g, "_")}`}
+                        href={`/terapia/${terapia.name.replace(/\s+/g, "_")}`}
                       >
-                        {terapia.Nombre}
+                        {terapia.name}
                       </NavDropdown.Item>
                     );
                   })}
